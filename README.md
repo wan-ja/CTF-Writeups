@@ -13,3 +13,5 @@
 * [Devtools-sources](./dreamhack/web/level0/devtools-sources/devtools-sources.md) - **소스맵(.map) 파일 노출을 이용한 프론트엔드 원본 코드 탈취**
 
 * [php7cmp4re](./dreamhack/web/level0/php7cmp4re/php7cmp4re.md) - **PHP 7.x 느슨한 비교(Loose Comparison) 및 타입 저글링 취약점 우회**
+
+* [phpreg](./dreamhack/web/level0/phpreg/phpreg.md) - **PHP 정규표현식(preg_replace) 필터링 우회 및 OS 명령어 주입**
