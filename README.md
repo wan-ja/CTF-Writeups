@@ -15,3 +15,5 @@
 * [php7cmp4re](./dreamhack/web/level0/php7cmp4re/php7cmp4re.md) - **PHP 7.x 느슨한 비교(Loose Comparison) 및 타입 저글링 취약점 우회**
 
 * [phpreg](./dreamhack/web/level0/phpreg/phpreg.md) - **PHP 정규표현식(preg_replace) 필터링 우회 및 OS 명령어 주입**
+
+* [flying-chars](./dreamhack/web/level0/flying-chars/flying-chars.md) - **자바스크립트 시각적 교란 우회 및 클라이언트 사이드 정적 데이터 분석**
