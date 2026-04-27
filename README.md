@@ -21,3 +21,5 @@
 * [ex-reg-ex](./dreamhack/web/level0/ex-reg-ex/ex-reg-ex.md) - **파이썬 정규표현식(re.match) 패턴 분석 및 입력값 검증 우회**
 
 * [simple-web-request](./dreamhack/web/level0/simple-web-request/simple-web-request.md) - **HTTP GET/POST 요청 메서드 분석 및 단계별 파라미터 조작을 통한 인증 로직 우회**
+
+* [session](./dreamhack/web/level0/session/session.md) - **취약한 세션 생성 로직 분석 및 무작위 대입(Brute-force) 공격을 통한 세션 위조**
