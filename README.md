@@ -19,3 +19,5 @@
 * [flying-chars](./dreamhack/web/level0/flying-chars/flying-chars.md) - **자바스크립트 시각적 교란 우회 및 클라이언트 사이드 정적 데이터 분석**
 
 * [ex-reg-ex](./dreamhack/web/level0/ex-reg-ex/ex-reg-ex.md) - **파이썬 정규표현식(re.match) 패턴 분석 및 입력값 검증 우회**
+
+* [simple-web-request](./dreamhack/web/level0/simple-web-request/simple-web-request.md) - **HTTP GET/POST 요청 메서드 분석 및 단계별 파라미터 조작을 통한 인증 로직 우회**
