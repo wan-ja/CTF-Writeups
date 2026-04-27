@@ -17,3 +17,5 @@
 * [phpreg](./dreamhack/web/level0/phpreg/phpreg.md) - **PHP 정규표현식(preg_replace) 필터링 우회 및 OS 명령어 주입**
 
 * [flying-chars](./dreamhack/web/level0/flying-chars/flying-chars.md) - **자바스크립트 시각적 교란 우회 및 클라이언트 사이드 정적 데이터 분석**
+
+* [ex-reg-ex](./dreamhack/web/level0/ex-reg-ex/ex-reg-ex.md) - **파이썬 정규표현식(re.match) 패턴 분석 및 입력값 검증 우회**
