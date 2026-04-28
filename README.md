@@ -23,3 +23,5 @@
 * [simple-web-request](./dreamhack/web/level0/simple-web-request/simple-web-request.md) - **HTTP GET/POST 요청 메서드 분석 및 단계별 파라미터 조작을 통한 인증 로직 우회**
 
 * [session](./dreamhack/web/level0/session/session.md) - **취약한 세션 생성 로직 분석 및 무작위 대입(Brute-force) 공격을 통한 세션 위조**
+
+* [carve-party](./dreamhack/web/level0/carve-party/carve-party.md) - **클라이언트 사이드 검증 취약점 분석 및 DOM 이벤트 조작**
