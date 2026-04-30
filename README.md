@@ -36,6 +36,8 @@
 * [carve-party](./dreamhack/web/beginner/carve-party/carve-party.md) - **클라이언트 사이드 검증 취약점 분석 및 DOM 이벤트 조작**
 
 * [web-misconf-1](./dreamhack/web/beginner/web-misconf-1/web-misconf-1.md) - **보안 설정 오류(Security Misconfiguration)를 이용한 관리자 권한 탈취 및 민감 정보 노출**
+
+* [file-download-1](./dreamhack/web/beginner/file-download-1/file-download-1.md) - **Path Traversal(경로 조작) 취약점을 이용한 서버 내부 임의 파일 읽기**
 </details>
 
 </details>
