@@ -2,28 +2,40 @@
 
 보안 전문가(CERT/Forensic)를 목표로 공부한 기록
 
-## Dreamhack (Web)
+<details>
+<summary><h2>🌐 Dreamhack (Web) (클릭하여 펼치기)</h3></summary>
+<br>
 
-### Level 0
+<details>
+<summary><h3>🥉 Bronze</h3></summary>
+<br>
 
-* [Command Injection-1](./dreamhack/web/level0/command-injection-1/command-injection-1.md) - **OS 명령어 주입 취약점 기본**
+* [ex-reg-ex](./dreamhack/web/bronze/ex-reg-ex/ex-reg-ex.md) - **파이썬 정규표현식(re.match) 패턴 분석 및 입력값 검증 우회**
 
-* [Cookie](./dreamhack/web/level0/cookie/cookie.md)- **클라이언트 측 조작을 통한 관리자 인증 우회 (쿠키 변조)**
+* [phpreg](./dreamhack/web/bronze/phpreg/phpreg.md) - **PHP 정규표현식(preg_replace) 필터링 우회 및 OS 명령어 주입**
 
-* [Devtools-sources](./dreamhack/web/level0/devtools-sources/devtools-sources.md) - **소스맵(.map) 파일 노출을 이용한 프론트엔드 원본 코드 탈취**
+* [php7cmp4re](./dreamhack/web/bronze/php7cmp4re/php7cmp4re.md) - **PHP 7.x 느슨한 비교(Loose Comparison) 및 타입 저글링 취약점 우회**
+</details>
 
-* [php7cmp4re](./dreamhack/web/level0/php7cmp4re/php7cmp4re.md) - **PHP 7.x 느슨한 비교(Loose Comparison) 및 타입 저글링 취약점 우회**
+<details>
+<summary><h3>🌱 Beginner</h3></summary>
+<br>
 
-* [phpreg](./dreamhack/web/level0/phpreg/phpreg.md) - **PHP 정규표현식(preg_replace) 필터링 우회 및 OS 명령어 주입**
+* [Command Injection-1](./dreamhack/web/beginner/command-injection-1/command-injection-1.md) - **OS 명령어 주입 취약점 기본**
 
-* [flying-chars](./dreamhack/web/level0/flying-chars/flying-chars.md) - **자바스크립트 시각적 교란 우회 및 클라이언트 사이드 정적 데이터 분석**
+* [Cookie](./dreamhack/web/beginner/cookie/cookie.md) - **클라이언트 측 조작을 통한 관리자 인증 우회 (쿠키 변조)**
 
-* [ex-reg-ex](./dreamhack/web/level0/ex-reg-ex/ex-reg-ex.md) - **파이썬 정규표현식(re.match) 패턴 분석 및 입력값 검증 우회**
+* [Devtools-sources](./dreamhack/web/beginner/devtools-sources/devtools-sources.md) - **소스맵(.map) 파일 노출을 이용한 프론트엔드 원본 코드 탈취**
 
-* [simple-web-request](./dreamhack/web/level0/simple-web-request/simple-web-request.md) - **HTTP GET/POST 요청 메서드 분석 및 단계별 파라미터 조작을 통한 인증 로직 우회**
+* [flying-chars](./dreamhack/web/beginner/flying-chars/flying-chars.md) - **자바스크립트 시각적 교란 우회 및 클라이언트 사이드 정적 데이터 분석**
 
-* [session](./dreamhack/web/level0/session/session.md) - **취약한 세션 생성 로직 분석 및 무작위 대입(Brute-force) 공격을 통한 세션 위조**
+* [simple-web-request](./dreamhack/web/beginner/simple-web-request/simple-web-request.md) - **HTTP GET/POST 요청 메서드 분석 및 단계별 파라미터 조작을 통한 인증 로직 우회**
 
-* [carve-party](./dreamhack/web/level0/carve-party/carve-party.md) - **클라이언트 사이드 검증 취약점 분석 및 DOM 이벤트 조작**
+* [session](./dreamhack/web/beginner/session/session.md) - **취약한 세션 생성 로직 분석 및 무작위 대입(Brute-force) 공격을 통한 세션 위조**
 
-* [web-misconf-1](./dreamhack/web/level0/web-misconf-1/web-misconf-1.md) - **보안 설정 오류(Security Misconfiguration)를 이용한 관리자 권한 탈취 및 민감 정보 노출**
+* [carve-party](./dreamhack/web/beginner/carve-party/carve-party.md) - **클라이언트 사이드 검증 취약점 분석 및 DOM 이벤트 조작**
+
+* [web-misconf-1](./dreamhack/web/beginner/web-misconf-1/web-misconf-1.md) - **보안 설정 오류(Security Misconfiguration)를 이용한 관리자 권한 탈취 및 민감 정보 노출**
+</details>
+
+</details>
