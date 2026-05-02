@@ -10,11 +10,14 @@
 <summary><h3>🥉 Bronze</h3></summary>
 <br>
 
+#### **Bronze 4**
 * [ex-reg-ex](./dreamhack/web/bronze/ex-reg-ex/ex-reg-ex.md) - **파이썬 정규표현식(re.match) 패턴 분석 및 입력값 검증 우회**
 
 * [phpreg](./dreamhack/web/bronze/phpreg/phpreg.md) - **PHP 정규표현식(preg_replace) 필터링 우회 및 OS 명령어 주입**
 
 * [php7cmp4re](./dreamhack/web/bronze/php7cmp4re/php7cmp4re.md) - **PHP 7.x 느슨한 비교(Loose Comparison) 및 타입 저글링 취약점 우회**
+
+* [session-basic](./dreamhack/web/bronze/session-basic/session-basic.md) - **정보 노출 취약점을 이용한 세션 ID 탈취 및 관리자 인증 우회**
 </details>
 
 <details>
