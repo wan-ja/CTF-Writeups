@@ -18,6 +18,8 @@
 * [php7cmp4re](./dreamhack/web/bronze/php7cmp4re/php7cmp4re.md) - **PHP 7.x 느슨한 비교(Loose Comparison) 및 타입 저글링 취약점 우회**
 
 * [session-basic](./dreamhack/web/bronze/session-basic/session-basic.md) - **정보 노출 취약점을 이용한 세션 ID 탈취 및 관리자 인증 우회**
+
+* [image-storage](./dreamhack/web/bronze/image-storage/image-storage.md) - **파일 업로드 취약점 및 서버사이드 필터링 부재를 이용한 웹셸 업로드와 원격 코드 실행**
 </details>
 
 <details>
