@@ -20,6 +20,8 @@
 * [session-basic](./dreamhack/web/bronze/session-basic/session-basic.md) - **정보 노출 취약점을 이용한 세션 ID 탈취 및 관리자 인증 우회**
 
 * [image-storage](./dreamhack/web/bronze/image-storage/image-storage.md) - **파일 업로드 취약점 및 서버사이드 필터링 부재를 이용한 웹셸 업로드와 원격 코드 실행**
+
+* [command-injection-chatgpt](./dreamhack/web/bronze/command-injection-chatgpt/command-injection-chatgpt.md) - **f-string 기반의 OS 명령어 주입 필터링 우회 및 subprocess 취약점 분석**
 </details>
 
 <details>
