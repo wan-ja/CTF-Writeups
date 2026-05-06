@@ -24,6 +24,8 @@
 * [command-injection-chatgpt](./dreamhack/web/bronze/command-injection-chatgpt/command-injection-chatgpt.md) - **f-string 기반의 OS 명령어 주입 필터링 우회 및 subprocess 취약점 분석**
 
 * [random-test](./dreamhack/web/bronze/random-test/random-test.md) - **부분 일치(Partial Match) 검증 로직 취약점을 이용한 오라클 Brute-force 공격**
+
+* [broken-buffalo-wings](./dreamhack/web/bronze/broken-buffalo-wings/broken-buffalo-wings.md) - **PHP 출력 버퍼링(Output Buffering) 취약점을 이용한 CSP 우회 및 XSS 공격**
 </details>
 
 <details>
