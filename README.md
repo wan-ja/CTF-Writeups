@@ -26,6 +26,8 @@
 * [random-test](./dreamhack/web/bronze/random-test/random-test.md) - **부분 일치(Partial Match) 검증 로직 취약점을 이용한 오라클 Brute-force 공격**
 
 * [broken-buffalo-wings](./dreamhack/web/bronze/broken-buffalo-wings/broken-buffalo-wings.md) - **PHP 출력 버퍼링(Output Buffering) 취약점을 이용한 CSP 우회 및 XSS 공격**
+
+* [click-me](./dreamhack/web/bronze/click-me/click-me.md) - **자바스크립트 클라이언트 사이드 이벤트 우회 및 DOM 조작을 통한 강제 클릭 트리거**
 </details>
 
 <details>
