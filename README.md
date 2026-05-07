@@ -28,6 +28,8 @@
 * [broken-buffalo-wings](./dreamhack/web/bronze/broken-buffalo-wings/broken-buffalo-wings.md) - **PHP 출력 버퍼링(Output Buffering) 취약점을 이용한 CSP 우회 및 XSS 공격**
 
 * [click-me](./dreamhack/web/bronze/click-me/click-me.md) - **자바스크립트 클라이언트 사이드 이벤트 우회 및 DOM 조작을 통한 강제 클릭 트리거**
+
+* [test-your-luck](./dreamhack/web/bronze/test-your-luck/test-your-luck.md) - **검증 로직의 횟수 제한(Rate Limiting) 부재를 이용한 자동화 브루트 포스 공격**
 </details>
 
 <details>
