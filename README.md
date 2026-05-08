@@ -32,6 +32,8 @@
 * [test-your-luck](./dreamhack/web/bronze/test-your-luck/test-your-luck.md) - **검증 로직의 횟수 제한(Rate Limiting) 부재를 이용한 자동화 브루트 포스 공격**
 
 * [ctrl-c](./dreamhack/web/bronze/ctrl-c/ctrl-c.md) - **프록시를 이용한 클라이언트 사이드 복사 제한 우회 및 XOR 암호문 복호화**
+
+* [space](./dreamhack/web/bronze/space/space.md) - **비가시적 유니코드 제어 문자(LRM) 식별 및 시각적 기만 취약점 우회**
 </details>
 
 <details>
