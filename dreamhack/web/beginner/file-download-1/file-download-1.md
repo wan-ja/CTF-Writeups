@@ -1,4 +1,4 @@
-# [Dreamhack] file-download-1 - Web Hacking
+# [Dreamhack] File Download-1 - Web Hacking
 
 ## 1. 문제 개요
 

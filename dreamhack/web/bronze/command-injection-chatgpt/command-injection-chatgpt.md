@@ -1,4 +1,4 @@
-# [Dreamhack] command-injection-chatgpt - Web Hacking
+# [Dreamhack] Command Injection Chatgpt - Web Hacking
 
 ## 1. 문제 개요
 

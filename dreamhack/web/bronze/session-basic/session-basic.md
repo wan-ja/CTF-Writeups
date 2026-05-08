@@ -1,4 +1,4 @@
-# [Dreamhack] session-basic - Web Hacking
+# [Dreamhack] Session Basic - Web Hacking
 
 ## 1. 문제 개요
 

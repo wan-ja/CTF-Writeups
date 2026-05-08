@@ -1,4 +1,4 @@
-# [Dreamhack] image-storage - Web Hacking
+# [Dreamhack] Image Storage - Web Hacking
 
 ## 1. 문제 개요
 

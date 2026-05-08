@@ -1,7 +1,7 @@
-# [Dreamhack] test-your-luck - Web
+# [Dreamhack] Test Your Luck - Web
 
 ## 1. 문제 개요
-* **문제 링크:** [Dreamhack - test-your-luck](https://dreamhack.io/wargame/challenges/1955)
+* **문제 링크:** [Dreamhack - Test Your Luck](https://dreamhack.io/wargame/challenges/1955)
 * **분야:** Web
 
 * **목표:** 0부터 10000 사이의 무작위 숫자를 맞추는 웹 애플리케이션에서, 횟수 제한이 없는 점을 이용해 브루트 포스(Brute Force) 공격으로 플래그를 획득.

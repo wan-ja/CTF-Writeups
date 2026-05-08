@@ -1,4 +1,4 @@
-# [Dreamhack] simple-web-request - Web Hacking
+# [Dreamhack] Simple Web Request - Web Hacking
 
 ## 1. 문제 개요
 * **문제 링크:** [Dreamhack - simple-web-request](https://dreamhack.io/wargame/challenges/830)

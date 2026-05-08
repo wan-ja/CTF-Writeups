@@ -1,8 +1,8 @@
-# [Dreamhack] flying-chars - Web Hacking
+# [Dreamhack] Flying Chars - Web Hacking
 
 ## 1. 문제 개요
 
-* **문제 링크:** [Dreamhack - flying-chars](https://dreamhack.io/wargame/challenges/850)
+* **문제 링크:** [Dreamhack - Flying Chars](https://dreamhack.io/wargame/challenges/850)
 
 * **분야:** Web
 

@@ -1,7 +1,7 @@
-# [Dreamhack] carve-party - Web Hacking
+# [Dreamhack] Carve Party - Web Hacking
 
 ## 1. 문제 개요
-* **문제 링크:** [Dreamhack - carve-party](https://dreamhack.io/wargame/challenges/96)
+* **문제 링크:** [Dreamhack - Carve Party](https://dreamhack.io/wargame/challenges/96)
 
 * **분야:** Web
 

@@ -1,7 +1,7 @@
 # [Dreamhack] Command Injection-1 - Web Hacking
 
 ## 1. 문제 개요
-* **문제 링크:** [Dreamhack - Command Injection-1](https://dreamhack.io/wargame/challenges/44)
+* **문제 링크:** [Dreamhack - command-injection-1](https://dreamhack.io/wargame/challenges/44)
 
 * **분야:** Web
 

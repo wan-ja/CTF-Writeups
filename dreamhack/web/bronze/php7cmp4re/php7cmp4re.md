@@ -1,4 +1,4 @@
-# [Dreamhack] php7cmp4re - Web Hacking
+# [Dreamhack] PHP7cmp4re - Web Hacking
 
 ## 1. 문제 개요
 * **문제 링크:** [Dreamhack - php7cmp4re](https://dreamhack.io/wargame/challenges/1113)

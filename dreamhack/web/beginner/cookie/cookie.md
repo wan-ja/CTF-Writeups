@@ -1,7 +1,7 @@
-# [Dreamhack] cookie - Web Hacking
+# [Dreamhack] Cookie - Web Hacking
 
 ## 1. 문제 개요
-* **문제 링크:** [Dreamhack - Cookie](https://dreamhack.io/wargame/challenges/6)
+* **문제 링크:** [Dreamhack - cookie](https://dreamhack.io/wargame/challenges/6)
 
 * **분야:** Web
 

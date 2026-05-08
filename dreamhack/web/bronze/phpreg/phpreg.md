@@ -2,7 +2,7 @@
 
 ## 1. 문제 개요
 
-* **문제 링크:** [Dreamhack - PHPreg](https://dreamhack.io/wargame/challenges/873)
+* **문제 링크:** [Dreamhack - phpreg](https://dreamhack.io/wargame/challenges/873)
 
 * **분야:** Web
 

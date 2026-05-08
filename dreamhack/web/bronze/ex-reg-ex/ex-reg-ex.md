@@ -1,4 +1,4 @@
-# [Dreamhack] ex-reg-ex - Web Hacking
+# [Dreamhack] Ex Reg Ex - Web Hacking
 
 ## 1. 문제 개요
 * **문제 링크:** [Dreamhack - ex-reg-ex](https://dreamhack.io/wargame/challenges/834)

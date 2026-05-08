@@ -1,4 +1,4 @@
-# [Dreamhack] random-test - Web Hacking
+# [Dreamhack] Random Test - Web Hacking
 
 ## 1. 문제 개요
 

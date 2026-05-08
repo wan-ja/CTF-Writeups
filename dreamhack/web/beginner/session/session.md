@@ -1,4 +1,4 @@
-# [Dreamhack] session - Web Hacking
+# [Dreamhack] Session - Web Hacking
 
 ## 1. 문제 개요
 * **문제 링크:** [Dreamhack - session](https://dreamhack.io/wargame/challenges/266)

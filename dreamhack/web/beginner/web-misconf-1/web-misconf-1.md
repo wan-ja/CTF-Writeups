@@ -1,4 +1,4 @@
-# [Dreamhack] web-misconf-1 - Web Hacking
+# [Dreamhack] Web Misconf-1 - Web Hacking
 
 ## 1. 문제 개요
 * **문제 링크:** [Dreamhack - web-misconf-1](https://dreamhack.io/wargame/challenges/45)

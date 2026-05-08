@@ -1,4 +1,4 @@
-# [Dreamhack] devtools-sources - Web Hacking
+# [Dreamhack] Devtools Sources - Web Hacking
 
 ## 1. 문제 개요
 * **문제 링크:** [Dreamhack - devtools-sources](https://dreamhack.io/wargame/challenges/267)

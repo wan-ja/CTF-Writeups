@@ -1,4 +1,4 @@
-# [Dreamhack] pathtraversal - Web Hacking
+# [Dreamhack] Path Traversal - Web Hacking
 
 ## 1. 문제 개요
 * **문제 링크:** [Dreamhack - pathtraversal](https://dreamhack.io/wargame/challenges/12)
