@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>달고나</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title">달고나</h1>
+
+      <div id="menuScreen">
+        <p class="menu-subtitle">레벨을 선택하세요.</p>
+
+        <div class="level-grid">
+          <button class="level-btn" data-level="1">
+            <div class="level-number">Lv.1</div>
+            <div class="level-name">동그라미</div>
+            <div class="level-status" id="levelStatus1">Unlocked</div>
+          </button>
+
+          <button class="level-btn" data-level="2">
+            <div class="level-number">Lv.2</div>
+            <div class="level-name">별</div>
+            <div class="level-status" id="levelStatus2">Locked</div>
+          </button>
+
+          <button class="level-btn" data-level="3">
+            <div class="level-number">Lv.3</div>
+            <div class="level-name">우산</div>
+            <div class="level-status" id="levelStatus3">Locked</div>
+          </button>
+
+          <button class="level-btn" data-level="4">
+            <div class="level-number">Lv.4</div>
+            <div class="level-name">악몽</div>
+            <div class="level-status" id="levelStatus4">Locked</div>
+          </button>
+          
+          <button class="level-btn" data-level="5">
+            <div class="level-number">Lv.5</div>
+             <div class="level-name">???</div>
+             <div class="level-status" id="levelStatus5">Locked</div>
+            </button>
+        </div>
+
+        <p class="hint">
+          이전 레벨을 클리어 하면 다음 레벨이 잠금 해제됩니다.
+        </p>
+      </div>
+
+      <div id="gameScreen" style="display: none;">
+        <canvas id="gameCanvas" width="500" height="500"></canvas>
+
+        <div class="ui-row">
+          <button id="restartBtn">다시 시작</button>
+          <button id="menuBtn" class="secondary-btn">메인 메뉴</button>
+          <span id="statusText"></span>
+        </div>
+
+        <p class="hint" id="levelHint">
+          선의 90% 이상을 긁으면 성공
+        </p>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+  </body>
+</html>

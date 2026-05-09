@@ -34,6 +34,8 @@
 * [Ctrl-C](./dreamhack/web/bronze/ctrl-c/ctrl-c.md) - **프록시를 이용한 클라이언트 사이드 복사 제한 우회 및 XOR 암호문 복호화**
 
 * [(공백)](./dreamhack/web/bronze/space/space.md) - **비가시적 유니코드 제어 문자(LRM) 식별 및 시각적 기만 취약점 우회**
+
+* [달고나](./dreamhack/web/bronze/dalgona/dalgona.md) - **HTTP 메소드 조작 및 서버사이드 상태 검증 부재를 이용한 게임 로직 우회 및 플래그 탈취**
 </details>
 
 <details>
