@@ -40,6 +40,8 @@
 * [Dream Badge](./dreamhack/web/bronze/dream-badge/dream-badge.md) - **Nginx 웹 캐시 기만(Web Cache Deception) 설계 결함 및 Dockerfile 노출을 이용한 배포 환경 정보 유출 파훼**
 
 * [403 Forbidden](./dreamhack/web/bronze/403-forbbiden/403-forbbiden.md) - **클라이언트 전송 데이터 검증 미흡을 이용한 403 Forbidden 우회 및 플래그 탈취**
+
+* [Find Real One](./dreamhack/web/bronze/find-real-one/find-real-one.md) - **대량의 정적 리소스 중 유일한 파일 경로 식별 및 페이지 소스 분석을 통한 플래그 탈취**
 </details>
 
 <details>
