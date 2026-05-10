@@ -36,6 +36,8 @@
 * [(공백)](./dreamhack/web/bronze/space/space.md) - **비가시적 유니코드 제어 문자(LRM) 식별 및 시각적 기만 취약점 우회**
 
 * [달고나](./dreamhack/web/bronze/dalgona/dalgona.md) - **HTTP 메소드 조작 및 서버사이드 상태 검증 부재를 이용한 게임 로직 우회 및 플래그 탈취**
+
+* [Dream Badge](./dreamhack/web/bronze/dream-badge/dream-badge.md) - **Nginx 웹 캐시 기만(Web Cache Deception) 설계 결함 및 Dockerfile 노출을 이용한 배포 환경 정보 유출 파훼**
 </details>
 
 <details>
