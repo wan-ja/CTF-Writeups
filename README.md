@@ -9,6 +9,12 @@
 <summary><h3>🥉 Bronze</h3></summary>
 
 <details>
+<summary><h4>Bronze 3</h4></summary>
+
+* [Proxy-1](./dreamhack/web/bronze/bronze-3/proxy-1/proxy-1.md) - **SSRF 취약점과 Raw Socket 통신을 이용한 내부망 서비스 접근 및 관리자 인증 우회**
+</details>
+
+<details>
 <summary><h4>Bronze 4</h4></summary>
 
 * [Ex Reg Ex](./dreamhack/web/bronze/bronze-4/ex-reg-ex/ex-reg-ex.md) - **파이썬 정규표현식(re.match) 패턴 분석 및 입력값 검증 우회**
