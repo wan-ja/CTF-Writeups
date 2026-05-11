@@ -42,6 +42,8 @@
 * [403 Forbidden](./dreamhack/web/bronze/403-forbbiden/403-forbbiden.md) - **클라이언트 전송 데이터 검증 미흡을 이용한 403 Forbidden 우회 및 플래그 탈취**
 
 * [Find Real One](./dreamhack/web/bronze/find-real-one/find-real-one.md) - **대량의 정적 리소스 중 유일한 파일 경로 식별 및 페이지 소스 분석을 통한 플래그 탈취**
+
+* [Fakeday](./dreamhack/web/bronze/fakeday/fakeday.md) - **블랙박스 환경에서의 로컬 리소스 분석 및 의도된 심리적 함정(Rabbit Hole) 우회**
 </details>
 
 <details>
