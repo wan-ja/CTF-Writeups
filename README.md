@@ -52,6 +52,8 @@
 * [Fakeday](./dreamhack/web/bronze/bronze-4/fakeday/fakeday.md) - **블랙박스 환경에서의 로컬 리소스 분석 및 의도된 심리적 함정(Rabbit Hole) 우회**
 
 * [CSRF-2](./dreamhack/web/bronze/bronze-4/csrf-2/csrf-2.md) - **CSRF 취약점을 이용한 관리자 비밀번호 변경 및 계정 탈취**
+
+* [Simple SQLi Chatgpt](./dreamhack/web/bronze/bronze-4/simple_sqli_chatgpt/simple_sqli_chatgpt.md) - **f-string 기반의 SQL 쿼리 주입 및 ORDER BY를 이용한 결과 정렬 조작 취약점 분석**
 </details>
 
 </details>
