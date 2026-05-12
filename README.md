@@ -50,6 +50,8 @@
 * [Find Real One](./dreamhack/web/bronze/bronze-4/find-real-one/find-real-one.md) - **대량의 정적 리소스 중 유일한 파일 경로 식별 및 페이지 소스 분석을 통한 플래그 탈취**
 
 * [Fakeday](./dreamhack/web/bronze/bronze-4/fakeday/fakeday.md) - **블랙박스 환경에서의 로컬 리소스 분석 및 의도된 심리적 함정(Rabbit Hole) 우회**
+
+* [CSRF-2](./dreamhack/web/bronze/bronze-4/csrf-2/csrf-2.md) - **CSRF 취약점을 이용한 관리자 비밀번호 변경 및 계정 탈취**
 </details>
 
 </details>
