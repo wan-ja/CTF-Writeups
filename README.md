@@ -24,6 +24,8 @@
 
 * [Simple SQLi](./dreamhack/web/bronze/bronze-3/simple_sqli/simple_sqli.md) - **f-string 기반의 동적 SQL 쿼리 생성 취약점 분석 및 주석을 이용한 인증 우회**
 
+* [What Is My IP](./dreamhack/web/bronze/bronze-3/what-is-my-ip/what-is-my-ip.md) - **HTTP X-Forwarded-For 헤더 변조 및 Flask access_route 구조적 결함을 이용한 Command Injection 공격**
+
 * [XSS Filtering Bypass](./dreamhack/web/bronze/bronze-3/xss-filtering-bypass/xss-filtering-bypass.md) - **단일 치환(Replace) 필터링 결함 및 더블링(Doubling) 기법을 이용한 XSS 우회와 관리자 세션 탈취**
 
 </details>
