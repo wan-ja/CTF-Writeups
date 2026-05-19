@@ -67,6 +67,8 @@
 
 * [Test Your Luck](./dreamhack/web/bronze/bronze-4/test-your-luck/test-your-luck.md) - **검증 로직의 횟수 제한(Rate Limiting) 부재를 이용한 자동화 브루트 포스 공격**
 
+* [Whoami](./dreamhack/web/bronze/bronze-4/whoami/whoami.md) - **HTTP X-Forwarded-For 헤더 변조 및 Express 내부 IP 검증 로직 우회를 통한 관리자 권한 및 플래그 획득**
+
 * [달고나](./dreamhack/web/bronze/bronze-4/dalgona/dalgona.md) - **HTTP 메소드 조작 및 서버사이드 상태 검증 부재를 이용한 게임 로직 우회 및 플래그 탈취**
 
 </details>
