@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TRAUMA TEAM - DASHBOARD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          {% for message in messages %} alert("{{ message }}"); {% endfor %}
+        </script>
+      {% endif %}
+    {% endwith %}
+
+    {% if flag %}
+    <div id="flagBox" class="flag-overlay">
+        <div class="flag-header">MISSION ACCOMPLISHED</div>
+        <p style="color: #fff;">Gloria Martinez: Insurance Status Updated.</p>
+        <div class="flag-content">
+            {{ flag }}
+        </div>
+        <button class="close-btn" onclick="document.getElementById('flagBox').style.display='none'">[ CONFIRM ]</button>
+    </div>
+    {% endif %}
+
+    <div class="container">
+        <div class="header">
+            <h1>TRAUMA TEAM INTERNATIONAL</h1>
+            <a href="/logout" style="color: #666; text-decoration: none; font-size: 14px;">Logout</a>
+        </div>
+        
+        <div class="status-box">
+            <p><strong>SUBJECT:</strong> {{ user }}</p>
+            <p><strong>CREDITS:</strong> {{ "{:,}".format(data.money) }} €$</p>
+            <p><strong>COVERAGE:</strong> 
+                {% if data.is_insured %}
+                <span class="insured">ACTIVE PROTECTION</span>
+                {% else %}
+                <span class="uninsured">NO COVERAGE</span>
+                {% endif %}
+            </p>
+        </div>
+
+        {% if user == "admin" %}
+        <div class="admin-panel">
+            <h3 style="color:#dc3545; margin-top:0;">[ADMIN OVERRIDE]</h3>
+            <form action="/add_insured" method="GET">
+                <input name="target" placeholder="Target User ID" required>
+                <button type="submit" style="background:#dc3545;">ENROLL SUBJECT</button>
+            </form>
+        </div>
+        {% else %}
+        <form action="/buy_insurance" method="POST">
+            <button type="submit" style="width: 100%;">PURCHASE PREMIUM PLAN</button>
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>

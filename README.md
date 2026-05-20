@@ -47,6 +47,8 @@
 
 * [Ctrl-C](./dreamhack/web/bronze/bronze-4/ctrl-c/ctrl-c.md) - **프록시를 이용한 클라이언트 사이드 복사 제한 우회 및 XOR 암호문 복호화**
 
+* [Dream of glorya](./dreamhack/web/bronze/bronze-4/dream-of-glorya/dream-of-glorya.md) - **대소문자 정규화 로직 결함 우회 및 취약한 난수 패스워드 무차별 대입을 통한 권한 탈취**
+
 * [Ex Reg Ex](./dreamhack/web/bronze/bronze-4/ex-reg-ex/ex-reg-ex.md) - **파이썬 정규표현식(re.match) 패턴 분석 및 입력값 검증 우회**
 
 * [Fakeday](./dreamhack/web/bronze/bronze-4/fakeday/fakeday.md) - **블랙박스 환경에서의 로컬 리소스 분석 및 의도된 심리적 함정(Rabbit Hole) 우회**
