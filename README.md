@@ -18,6 +18,8 @@
 <details>
 <summary><h4>Bronze 3</h4></summary>
 
+* [BypassIF](./dreamhack/web/bronze/bronze-3/bypassif/bypassif.md) - **입력값 필터링 제약 우회 및 서브프로세스 Timeout 예외 처리 결함을 이용한 비밀 키 유출 및 인증 로직 우회**
+
 * [File Vulnerability Advanced for Linux](./dreamhack/web/bronze/bronze-3/file-vulnerability-advanced-for-linux/file-vulnerability-advanced-for-linux.md) - **LFI를 이용한 환경변수 유출 및 RCE 취약점 연계를 통한 플래그 획득**
 
 * [Proxy-1](./dreamhack/web/bronze/bronze-3/proxy-1/proxy-1.md) - **SSRF 취약점과 Raw Socket 통신을 이용한 내부망 서비스 접근 및 관리자 인증 우회**
