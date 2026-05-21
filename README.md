@@ -22,6 +22,8 @@
 
 * [File Vulnerability Advanced for Linux](./dreamhack/web/bronze/bronze-3/file-vulnerability-advanced-for-linux/file-vulnerability-advanced-for-linux.md) - **LFI를 이용한 환경변수 유출 및 RCE 취약점 연계를 통한 플래그 획득**
 
+* [MongoBoard](./dreamhack/web/bronze/bronze-3/mongoboard/mongoboard.md) - **MongoDB ObjectID의 구조적 예측 가능성과 단건 조회 API의 인가 검증 미흡(IDOR)을 이용한 비밀글 데이터 열람 및 플래그 탈취**
+
 * [Proxy-1](./dreamhack/web/bronze/bronze-3/proxy-1/proxy-1.md) - **SSRF 취약점과 Raw Socket 통신을 이용한 내부망 서비스 접근 및 관리자 인증 우회**
 
 * [Simple SQLi](./dreamhack/web/bronze/bronze-3/simple_sqli/simple_sqli.md) - **f-string 기반의 동적 SQL 쿼리 생성 취약점 분석 및 주석을 이용한 인증 우회**
