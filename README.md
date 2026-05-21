@@ -26,6 +26,8 @@
 
 * [Proxy-1](./dreamhack/web/bronze/bronze-3/proxy-1/proxy-1.md) - **SSRF 취약점과 Raw Socket 통신을 이용한 내부망 서비스 접근 및 관리자 인증 우회**
 
+* [Simple PHParse](./dreamhack/web/bronze/bronze-3/simple-phparse/simple-phparse.md) - **웹 서버와 PHP parse_url 함수 간의 파서 불일치(Parser Differential) 및 라우팅 정형화 결함을 이용한 필터링 우회**
+
 * [Simple SQLi](./dreamhack/web/bronze/bronze-3/simple_sqli/simple_sqli.md) - **f-string 기반의 동적 SQL 쿼리 생성 취약점 분석 및 주석을 이용한 인증 우회**
 
 * [What Is My IP](./dreamhack/web/bronze/bronze-3/what-is-my-ip/what-is-my-ip.md) - **HTTP X-Forwarded-For 헤더 변조 및 Flask access_route 구조적 결함을 이용한 Command Injection 공격**
