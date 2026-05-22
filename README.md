@@ -24,6 +24,8 @@
 
 * [MongoBoard](./dreamhack/web/bronze/bronze-3/mongoboard/mongoboard.md) - **MongoDB ObjectID의 구조적 예측 가능성과 단건 조회 API의 인가 검증 미흡(IDOR)을 이용한 비밀글 데이터 열람 및 플래그 탈취**
 
+* [Out of Money](./dreamhack/web/bronze/bronze-3/out-of-money/out-of-money.md) - **기존 부채 검증 누락 비즈니스 로직 결함을 이용한 대출 한도 우회 및 음수 부채 상환을 통한 플래그 획득**
+
 * [Proxy-1](./dreamhack/web/bronze/bronze-3/proxy-1/proxy-1.md) - **SSRF 취약점과 Raw Socket 통신을 이용한 내부망 서비스 접근 및 관리자 인증 우회**
 
 * [Simple PHParse](./dreamhack/web/bronze/bronze-3/simple-phparse/simple-phparse.md) - **웹 서버와 PHP parse_url 함수 간의 파서 불일치(Parser Differential) 및 라우팅 정형화 결함을 이용한 필터링 우회**
