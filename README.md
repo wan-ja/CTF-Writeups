@@ -18,6 +18,8 @@
 <details>
 <summary><h4>Bronze 3</h4></summary>
 
+* [Apache htaccess](./dreamhack/web/bronze/bronze-3/apache-htaccess/apache-htaccess.md) - **AllowOverride 설정 결함과 확장자 필터링 우회를 이용한 .htaccess 변조 및 웹 셸 RCE 공격**
+
 * [BypassIF](./dreamhack/web/bronze/bronze-3/bypassif/bypassif.md) - **입력값 필터링 제약 우회 및 서브프로세스 Timeout 예외 처리 결함을 이용한 비밀 키 유출 및 인증 로직 우회**
 
 * [File Vulnerability Advanced for Linux](./dreamhack/web/bronze/bronze-3/file-vulnerability-advanced-for-linux/file-vulnerability-advanced-for-linux.md) - **LFI를 이용한 환경변수 유출 및 RCE 취약점 연계를 통한 플래그 획득**
