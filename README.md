@@ -26,6 +26,8 @@
 
 * [File Vulnerability Advanced for Linux](./dreamhack/web/bronze/bronze-3/file-vulnerability-advanced-for-linux/file-vulnerability-advanced-for-linux.md) - **LFI를 이용한 환경변수 유출 및 RCE 취약점 연계를 통한 플래그 획득**
 
+* [MD5 Password](./dreamhack/web/bronze/bronze-3/md5-password/md5-password.md) - **PHP md5() 함수의 raw_output 특성과 MySQL 자동 형변환을 이용한 SQL Injection 및 인증 우회**
+
 * [MongoBoard](./dreamhack/web/bronze/bronze-3/mongoboard/mongoboard.md) - **MongoDB ObjectID의 구조적 예측 가능성과 단건 조회 API의 인가 검증 미흡(IDOR)을 이용한 비밀글 데이터 열람 및 플래그 탈취**
 
 * [Out of Money](./dreamhack/web/bronze/bronze-3/out-of-money/out-of-money.md) - **기존 부채 검증 누락 비즈니스 로직 결함을 이용한 대출 한도 우회 및 음수 부채 상환을 통한 플래그 획득**
