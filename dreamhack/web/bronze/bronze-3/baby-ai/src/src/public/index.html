@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Baby AI</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+    <style>
+      body { padding: 1em; }
+      #chat { display: block; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <textarea id="chat" rows="20" cols="80" readonly disabled></textarea>
+      <div>
+        <form id="form">
+          <input id="input" type="text" disabled />
+          <button id="send" type="submit" disabled>Send</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      const ws = new WebSocket('ws://' + window.location.host + '/chat');
+
+      function appendChat(message) {
+        chat.value += message;
+        chat.scrollTop = chat.scrollHeight;
+      }
+
+      function sendMessage(message) {
+        message = message.trim();
+        if (!message && input.disabled) {
+          ws.send('');
+        } else if (message) {
+          appendChat('🤔 You: ' + message + '\n');
+          ws.send(message + '\n');
+        }
+      }
+
+      function lockInput() {
+        input.disabled = true;
+        input.placeholder = 'thinking...';
+        send.textContent = 'Stop';
+      }
+
+      function unlockInput() {
+        chat.disabled = false;
+        send.disabled = false;
+        send.textContent = 'Send';
+        input.disabled = false;
+        input.placeholder = '';
+        input.focus();
+      }
+
+      let initialized = false;
+      ws.onopen = () => {
+        appendChat('* waiting for connection...\n');
+      };
+
+      ws.onmessage = (event) => {
+        try {
+          const message = JSON.parse(event.data);
+          switch (message.type) {
+            case 'ready':
+              unlockInput();
+              if (!initialized) {
+                appendChat('* connected to server!\n');
+                initialized = true;
+              }
+              break;
+            case 'busy':
+              lockInput();
+              break;
+            case 'begin':
+              appendChat('🤖 AI: ');
+              break;
+            case 'typing':
+              appendChat(message.content);
+              break;
+            case 'end':
+              appendChat('\n');
+              break;
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      document.getElementById('form').addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        sendMessage(input.value);
+        input.value = '';
+      });
+    </script>
+  </body>
+</html>
