@@ -18,6 +18,8 @@
 <details>
 <summary><h4>Bronze 3</h4></summary>
 
+* [Already Got](./dreamhack/web/bronze/bronze-3/already-got/already-got.md) - **HTTP 응답 헤더(Response Header) 내 중요 정보 평문 노출 취약점을 이용한 플래그 탈취**
+
 * [Apache htaccess](./dreamhack/web/bronze/bronze-3/apache-htaccess/apache-htaccess.md) - **AllowOverride 설정 결함과 확장자 필터링 우회를 이용한 .htaccess 변조 및 웹 셸 RCE 공격**
 
 * [Baby AI](./dreamhack/web/bronze/bronze-3/baby-ai/baby-ai.md) - **단순 문자열 기반 금지어 필터링 결함과 간접적 지시어를 이용한 LLM 프롬프트 인젝션(Prompt Injection) 공격**
