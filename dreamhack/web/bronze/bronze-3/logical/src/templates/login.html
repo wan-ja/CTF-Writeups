@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="d-flex justify-content-md-center align-items-center vh-100">
+<div>
+    <div style="text-align: center;">
+    <img src="../static/images/logo.png" class="img img-fluid align-items-center" height="200px" width="200px">
+    </div>
+    <br>
+    <p style="text-align: center; color: red;">{{ error }}</p>
+    <form action="/" method="POST" style="text-align: center;">
+        <input type="name" name="uname" placeholder="Username" required style="width: 400px; height: 40px; padding-left: 10px;" class="border border-secondary rounded-0">
+        <br><br>
+        <input type="password" name="password" placeholder="Password" required style="width: 400px; height: 40px; padding-left: 10px;" class="border border-secondary rounded-0">
+        <br><br>
+        <button type="submit" class="btn btn-primary border-0 rounded-0" style="width: 400px; height: 40px">Login</button>
+    </form>
+</div>
+</div>
+
+{% endblock %}
