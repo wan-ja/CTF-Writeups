@@ -141,7 +141,9 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 <details>
 <summary><h4>Season 8 Round #5 (All-Round)</h4></summary>
 
-* `[Web]` [Suggestion Box](./ctf/season8-round5/web/suggestion-box/suggestion-box.md) - **Object Injection을 이용한 DB 검증 로직 우회 및 비공개 데이터 탈취**
+* `[Pwnable]` [Product Manager](./dreamhack/ctf/season8-round5/pwnable/product-manager/product-manager.md) - **Off-by-One 취약점을 이용한 GOT Overwrite 및 셸 획득**
+
+* `[Web]` [Suggestion Box](./dreamhack/ctf/season8-round5/web/suggestion-box/suggestion-box.md) - **Object Injection을 이용한 DB 검증 로직 우회 및 비공개 데이터 탈취**
 
 </details>
 
