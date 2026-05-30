@@ -1,6 +1,6 @@
 # My Security Write-ups
 
-보안 전문가(CERT/Forensic)를 목표로 공부한 기록
+CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기록
 
 <details>
 <summary><h2>🌐 Dreamhack (Web) (클릭하여 펼치기)</h2></summary>
@@ -127,6 +127,23 @@
 * [Simple Web Request](./dreamhack/web/beginner/simple-web-request/simple-web-request.md) - **HTTP GET/POST 요청 메서드 분석 및 단계별 파라미터 조작을 통한 인증 로직 우회**
 
 * [Web Misconf-1](./dreamhack/web/beginner/web-misconf-1/web-misconf-1.md) - **보안 설정 오류(Security Misconfiguration)를 이용한 관리자 권한 탈취 및 민감 정보 노출**
+
+</details>
+
+</details>
+
+<details>
+<summary><h2>🏆 Dreamhack CTF (시즌 대회)</h2></summary>
+
+<details>
+<summary><h3>📅 2026년 시즌</h3></summary>
+
+<details>
+<summary><h4>Season 8 Round #5 (All-Round)</h4></summary>
+
+* `[Web]` [Suggestion Box](./ctf/season8-round5/web/suggestion-box/suggestion-box.md) - **Object Injection을 이용한 DB 검증 로직 우회 및 비공개 데이터 탈취**
+
+</details>
 
 </details>
 
