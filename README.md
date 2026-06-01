@@ -4,9 +4,11 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 <details>
 <summary><h2>🌐 Dreamhack (Web) </h2></summary>
+<ul style="list-style-type: none;">
 
 <details>
 <summary><h3>🥉 Bronze</h3></summary>
+<ul>
 
 <details>
 <summary><h4>Bronze 2</h4></summary>
@@ -102,7 +104,7 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 * [달고나](./dreamhack/web/bronze/bronze-4/dalgona/dalgona.md) - **HTTP 메소드 조작 및 서버사이드 상태 검증 부재를 이용한 게임 로직 우회 및 플래그 탈취**
 
 </details>
-
+</ul>
 </details>
 
 <details>
@@ -130,10 +132,12 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 </details>
 
+</ul>
 </details>
 
 <details>
 <summary><h2>⚙️ Dreamhack (Reversing) </h2></summary>
+<ul style="list-style-type: none;">
 
 <details>
 <summary><h3>🌱 Beginner</h3></summary>
@@ -142,13 +146,16 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 </details>
 
+</ul>
 </details>
 
 <details>
 <summary><h2>🏆 Dreamhack CTF (시즌 대회)</h2></summary>
+<ul style="list-style-type: none;">
 
 <details>
 <summary><h3>📅 2026년 시즌</h3></summary>
+<ul>
 
 <details>
 <summary><h4>Season 8 Round #5 (All-Round)</h4></summary>
@@ -161,6 +168,8 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 </details>
 
+</ul>
 </details>
 
+</ul>
 </details>
