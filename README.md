@@ -146,6 +146,8 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 * [Rev-Basic-1](./dreamhack/reversing/beginner/rev-basic-1/rev-basic-1.md) - **하드코딩된 플래그의 인덱스별 단항 비교 로직 분석 및 탈취**
 
+* [Rev-Basic-2](./dreamhack/reversing/beginner/rev-basic-2/rev-basic-2.md) - **포인터 연산을 활용한 4바이트 배열 구조 분석 및 탈취**
+
 </details>
 
 </ul>
