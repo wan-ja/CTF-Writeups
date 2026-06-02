@@ -2,7 +2,9 @@
 
 ## 1. 문제 개요
 
-* **문제 링크:** Dreamhack CTF Season 8 Round #5 (종료된 대회. 링크 X)
+* **문제 링크:** [Dreamhack CTF - sticks](https://dreamhack.io/wargame/challenges/2990) (Dreamhack CTF Season 8 Round #5 출제)
+
+* **티어:** Gold 1
 
 * **분야:** Reversing
 
