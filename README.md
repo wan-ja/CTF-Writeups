@@ -34,6 +34,8 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 * [DreamDocs](./dreamhack/web/bronze/bronze-3/dreamdocs/dreamdocs.md) - **클라이언트 기반 권한 검증 결함과 HTTP 헤더(X-User, Referer) 변조를 이용한 인가 우회 및 기밀문서 열람**
 
+* [Eval](./dreamhack/web/bronze/bronze-3/eval/eval.md) - **블랙리스트 기반 확장자 필터링 우회와 파이썬 eval() 함수의 동적 실행 취약점을 이용한 플래그 획득**
+
 * [File Vulnerability Advanced for Linux](./dreamhack/web/bronze/bronze-3/file-vulnerability-advanced-for-linux/file-vulnerability-advanced-for-linux.md) - **LFI를 이용한 환경변수 유출 및 RCE 취약점 연계를 통한 플래그 획득**
 
 * [Logical](./dreamhack/web/bronze/bronze-3/logical/logical.md) - **파이썬 논리 연산자(and) 검증 누락과 삼항 연산자 반환 결함을 이용한 인증 로직 우회**
