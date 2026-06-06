@@ -32,6 +32,8 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 * [BypassIF](./dreamhack/web/bronze/bronze-3/bypassif/bypassif.md) - **입력값 필터링 제약 우회 및 서브프로세스 Timeout 예외 처리 결함을 이용한 비밀 키 유출 및 인증 로직 우회**
 
+* [Disgusting Ads](./dreamhack/web/bronze/bronze-3/disgusting-ads/disgusting-ads.md) - **Client-side Session의 구조적 결함과 Session Replay 공격을 이용한 시간 검증 로직 우회**
+
 * [DreamDocs](./dreamhack/web/bronze/bronze-3/dreamdocs/dreamdocs.md) - **클라이언트 기반 권한 검증 결함과 HTTP 헤더(X-User, Referer) 변조를 이용한 인가 우회 및 기밀문서 열람**
 
 * [Eval](./dreamhack/web/bronze/bronze-3/eval/eval.md) - **블랙리스트 기반 확장자 필터링 우회와 파이썬 eval() 함수의 동적 실행 취약점을 이용한 플래그 획득**
