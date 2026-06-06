@@ -154,6 +154,8 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 * [Rev-Basic-3](./dreamhack/reversing/beginner/rev-basic-3/rev-basic-3.md) - **인덱스를 활용한 XOR 및 사칙연산 역연산 로직 분석 및 탈취**
 
+* [Rev-Basic-4](./dreamhack/reversing/beginner/rev-basic-4/rev-basic-4.md) - **비트 시프트 연산(Nibble Swap)을 활용한 데이터 역연산 및 탈취**
+
 </details>
 
 </ul>
