@@ -158,6 +158,8 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 * [Rev-Basic-4](./dreamhack/reversing/beginner/rev-basic-4/rev-basic-4.md) - **비트 시프트 연산(Nibble Swap)을 활용한 데이터 역연산 및 탈취**
 
+* [Simple Operation](./dreamhack/reversing/beginner/simple-operation/simple-operation.md) - **난수 노출 취약점 및 문자열 리버싱, 단순 XOR 역연산을 활용한 검증 우회 및 탈취**
+
 </details>
 
 </ul>
