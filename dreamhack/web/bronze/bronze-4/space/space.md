@@ -1,7 +1,7 @@
-# [Dreamhack] 공백(Space) - Web / Misc
+# [Dreamhack] Space (공백) - Web / Misc
 
 ## 1. 문제 개요
-* **문제 링크:** [Dreamhack - 공백(Space)](https://dreamhack.io/wargame/challenges/2182)
+* **문제 링크:** [Dreamhack - Space (공백)](https://dreamhack.io/wargame/challenges/2182)
 
 * **분야:** Web, Misc
 

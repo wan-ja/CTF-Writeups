@@ -38,7 +38,7 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 * [DreamDocs](./dreamhack/web/bronze/bronze-3/dreamdocs/dreamdocs.md) - **클라이언트 기반 권한 검증 결함과 HTTP 헤더(X-User, Referer) 변조를 이용한 인가 우회 및 기밀문서 열람**
 
-* [Eval](./dreamhack/web/bronze/bronze-3/eval/eval.md) - **블랙리스트 기반 확장자 필터링 우회와 파이썬 eval() 함수의 동적 실행 취약점을 이용한 플래그 획득**
+* [Eval (이발)](./dreamhack/web/bronze/bronze-3/eval/eval.md) - **블랙리스트 기반 확장자 필터링 우회와 파이썬 eval() 함수의 동적 실행 취약점을 이용한 플래그 획득**
 
 * [File Vulnerability Advanced for Linux](./dreamhack/web/bronze/bronze-3/file-vulnerability-advanced-for-linux/file-vulnerability-advanced-for-linux.md) - **LFI를 이용한 환경변수 유출 및 RCE 취약점 연계를 통한 플래그 획득**
 
@@ -73,8 +73,6 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 <details>
 <summary><h4>Bronze 4</h4></summary>
 
-* [(공백)](./dreamhack/web/bronze/bronze-4/space/space.md) - **비가시적 유니코드 제어 문자(LRM) 식별 및 시각적 기만 취약점 우회**
-
 * [403 Forbidden](./dreamhack/web/bronze/bronze-4/403-forbbiden/403-forbbiden.md) - **클라이언트 전송 데이터 검증 미흡을 이용한 403 Forbidden 우회 및 플래그 탈취**
 
 * [Broken Buffalo Wings](./dreamhack/web/bronze/bronze-4/broken-buffalo-wings/broken-buffalo-wings.md) - **PHP 출력 버퍼링(Output Buffering) 취약점을 이용한 CSP 우회 및 XSS 공격**
@@ -86,6 +84,8 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 * [CSRF-2](./dreamhack/web/bronze/bronze-4/csrf-2/csrf-2.md) - **CSRF 취약점을 이용한 관리자 비밀번호 변경 및 계정 탈취**
 
 * [Ctrl-C](./dreamhack/web/bronze/bronze-4/ctrl-c/ctrl-c.md) - **프록시를 이용한 클라이언트 사이드 복사 제한 우회 및 XOR 암호문 복호화**
+
+* [Dalgona (달고나)](./dreamhack/web/bronze/bronze-4/dalgona/dalgona.md) - **HTTP 메소드 조작 및 서버사이드 상태 검증 부재를 이용한 게임 로직 우회 및 플래그 탈취**
 
 * [Dream of glorya](./dreamhack/web/bronze/bronze-4/dream-of-glorya/dream-of-glorya.md) - **대소문자 정규화 로직 결함 우회 및 취약한 난수 패스워드 무차별 대입을 통한 권한 탈취**
 
@@ -107,11 +107,11 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 * [Simple SQLi Chatgpt](./dreamhack/web/bronze/bronze-4/simple_sqli_chatgpt/simple_sqli_chatgpt.md) - **f-string 기반의 SQL 쿼리 주입 및 ORDER BY를 이용한 결과 정렬 조작 취약점 분석**
 
+* [Space (공백)](./dreamhack/web/bronze/bronze-4/space/space.md) - **비가시적 유니코드 제어 문자(LRM) 식별 및 시각적 기만 취약점 우회**
+
 * [Test Your Luck](./dreamhack/web/bronze/bronze-4/test-your-luck/test-your-luck.md) - **검증 로직의 횟수 제한(Rate Limiting) 부재를 이용한 자동화 브루트 포스 공격**
 
 * [Whoami](./dreamhack/web/bronze/bronze-4/whoami/whoami.md) - **HTTP X-Forwarded-For 헤더 변조 및 Express 내부 IP 검증 로직 우회를 통한 관리자 권한 및 플래그 획득**
-
-* [달고나](./dreamhack/web/bronze/bronze-4/dalgona/dalgona.md) - **HTTP 메소드 조작 및 서버사이드 상태 검증 부재를 이용한 게임 로직 우회 및 플래그 탈취**
 
 </details>
 </ul>

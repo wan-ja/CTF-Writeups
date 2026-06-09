@@ -1,4 +1,4 @@
-# [Dreamhack] 달고나 - Web Hacking
+# [Dreamhack] Dalgona (달고나) - Web Hacking
 
 ## 1. 문제 개요
 

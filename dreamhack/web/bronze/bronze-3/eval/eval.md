@@ -1,4 +1,4 @@
-# [Dreamhack] 이발(eval) - Web Hacking
+# [Dreamhack] Eval (이발) - Web Hacking
 
 ## 1. 문제 개요
 

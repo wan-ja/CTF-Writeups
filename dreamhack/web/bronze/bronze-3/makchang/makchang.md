@@ -1,4 +1,4 @@
-# [Dreamhack] 막창 좋아하세요? 🌱 - Web Hacking
+# [Dreamhack] Makchang (막창 좋아하세요? 🌱) - Web Hacking
 
 ## 1. 문제 개요
 
