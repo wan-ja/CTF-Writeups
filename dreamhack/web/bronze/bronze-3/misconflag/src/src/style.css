@@ -1,0 +1,9 @@
+body{font-family:system-ui,Segoe UI,Arial;margin:0;background:#0f1220;color:#eef}
+.container{max-width:720px;margin:40px auto;padding:0 16px}
+.card{background:#161a2e;border:1px solid #2a3050;border-radius:12px;padding:18px}
+h1{margin:0 0 10px;font-size:24px}
+p{margin:8px 0;color:#cdd}
+form{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+input{flex:1;min-width:240px;padding:10px 12px;border-radius:10px;border:1px solid #2a3050;background:#0f1220;color:#eef}
+button,a.btn{padding:10px 12px;border-radius:10px;border:1px solid #2a3050;background:#20264a;color:#eef;cursor:pointer;text-decoration:none}
+small{color:#99a}
