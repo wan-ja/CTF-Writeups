@@ -44,6 +44,8 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 * [Logical](./dreamhack/web/bronze/bronze-3/logical/logical.md) - **파이썬 논리 연산자(and) 검증 누락과 삼항 연산자 반환 결함을 이용한 인증 로직 우회**
 
+* [Makchang (막창 좋아하세요? 🌱)](./dreamhack/web/bronze/bronze-3/makchang/makchang.md) - **PHP 문자열 형변환 결함과 지수 표기법(Scientific Notation)을 이용한 검증 로직 우회 및 플래그 획득**
+
 * [MD5 Password](./dreamhack/web/bronze/bronze-3/md5-password/md5-password.md) - **PHP md5() 함수의 raw_output 특성과 MySQL 자동 형변환을 이용한 SQL Injection 및 인증 우회**
 
 * [MisconFlag](./dreamhack/web/bronze/bronze-3/misconflag/misconflag.md) - **Dockerfile 웹 루트 설정 결함(Misconfiguration)을 이용한 민감 파일 직접 접근 및 검증 로직 우회**
