@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta charset="UTF-8"><title>{{ memo.title }}</title></head>
+<body>
+    <h1>{{ memo.title }}</h1>
+    <p>작성자: {{ memo.owner }}</p>
+    <hr>
+    <p>{{ memo.content }}</p>
+    
+    <br><br>
+    <a href="/view/print/{{ memo_hash }}" style="padding: 10px; background: #ddd; text-decoration: none; color: black; border: 1px solid #999;">인쇄용 버전</a>
+    <br><br>
+    <a href="/dashboard">목록으로</a>
+</body>
+</html>

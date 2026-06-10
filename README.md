@@ -36,6 +36,8 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 
 * [Disgusting Ads](./dreamhack/web/bronze/bronze-3/disgusting-ads/disgusting-ads.md) - **Client-side Session의 구조적 결함과 Session Replay 공격을 이용한 시간 검증 로직 우회**
 
+* [Dream Hospital (드림 병원 🌱)](./dreamhack/web/bronze/bronze-3/dream-hospital/dream-hospital.md) - **인가(Authorization) 검증 누락으로 인한 IDOR(안전하지 않은 직접 객체 참조) 취약점과 해시값 변조를 이용한 관리자 데이터 열람 및 플래그 탈취**
+
 * [DreamDocs](./dreamhack/web/bronze/bronze-3/dreamdocs/dreamdocs.md) - **클라이언트 기반 권한 검증 결함과 HTTP 헤더(X-User, Referer) 변조를 이용한 인가 우회 및 기밀문서 열람**
 
 * [Eval (이발)](./dreamhack/web/bronze/bronze-3/eval/eval.md) - **블랙리스트 기반 확장자 필터링 우회와 파이썬 eval() 함수의 동적 실행 취약점을 이용한 플래그 획득**
