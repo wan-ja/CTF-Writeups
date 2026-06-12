@@ -1,6 +1,6 @@
 # My Security Write-ups
 
-CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기록
+CERT를 목표로 취약점 분석부터 익스플로잇까지의 과정과 대응 방안까지 기록
 
 <details>
 <summary><h2>🌐 Dreamhack (Web) </h2></summary>
@@ -163,6 +163,8 @@ CERT를 목표로, 취약점 분석부터 익스플로잇까지의 과정을 기
 * [Rev-Basic-3](./dreamhack/reversing/beginner/rev-basic-3/rev-basic-3.md) - **인덱스를 활용한 XOR 및 사칙연산 역연산 로직 분석 및 탈취**
 
 * [Rev-Basic-4](./dreamhack/reversing/beginner/rev-basic-4/rev-basic-4.md) - **비트 시프트 연산(Nibble Swap)을 활용한 데이터 역연산 및 탈취**
+
+* [Simple Crack Me](./dreamhack/reversing/beginner/simple-crack-me/simple-crack-me.md) - **정적 컴파일 바이너리 분석 및 하드코딩된 16진수 단순 비교 로직 우회**
 
 * [Simple Operation](./dreamhack/reversing/beginner/simple-operation/simple-operation.md) - **난수 노출 취약점 및 문자열 리버싱, 단순 XOR 역연산을 활용한 검증 우회 및 탈취**
 
