@@ -164,6 +164,8 @@
 
 * [Rev-Basic-7](./dreamhack/reversing/bronze/bronze-4/rev-basic-7/rev-basic-7.md) - **비트 순환 시프트(ROL/ROR) 및 XOR 역연산을 활용한 하드코딩 데이터 복호화**
 
+* [Rev-Basic-8](./dreamhack/reversing/bronze/bronze-4/rev-basic-8/rev-basic-8.md) - **음수 곱셈 기반 1바이트 오버플로우 특성 분석 및 브루트 포스 역산**
+
 </details>
 
 </ul>
