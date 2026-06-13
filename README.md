@@ -162,6 +162,8 @@
 
 * [Rev-Basic-6](./dreamhack/reversing/bronze/bronze-4/rev-basic-6/rev-basic-6.md) - **치환 테이블(S-Box)을 활용한 데이터 매칭 로직 분석 및 역산**
 
+* [Rev-Basic-7](./dreamhack/reversing/bronze/bronze-4/rev-basic-7/rev-basic-7.md) - **비트 순환 시프트(ROL/ROR) 및 XOR 역연산을 활용한 하드코딩 데이터 복호화**
+
 </details>
 
 </ul>
