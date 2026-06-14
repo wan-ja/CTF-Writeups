@@ -158,6 +158,8 @@
 <details>
 <summary><h4>Bronze 4</h4></summary>
 
+* [Check Return Value](./dreamhack/reversing/bronze/bronze-4/check-return-value/check-return-value.md) - **함수 반환값(RAX) 구조 분석 및 동적 디버깅을 활용한 메모리 포인터 추적 및 탈취**
+
 * [Rev-Basic-5](./dreamhack/reversing/bronze/bronze-4/rev-basic-5/rev-basic-5.md) - **연속된 1바이트 덧셈 역연산을 활용한 하드코딩 데이터 복호화 및 플래그 획득**
 
 * [Rev-Basic-6](./dreamhack/reversing/bronze/bronze-4/rev-basic-6/rev-basic-6.md) - **치환 테이블(S-Box)을 활용한 데이터 매칭 로직 분석 및 역산**
