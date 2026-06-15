@@ -160,6 +160,8 @@
 
 * [Check Return Value](./dreamhack/reversing/bronze/bronze-4/check-return-value/check-return-value.md) - **함수 반환값(RAX) 구조 분석 및 동적 디버깅을 활용한 메모리 포인터 추적 및 탈취**
 
+* [Easy Assembly](./dreamhack/reversing/bronze/bronze-4/easy-assembly/easy-assembly.md) - **어셈블리 레지스터 흐름 분석 및 메모리 주소 기반 데이터 크기 유추를 통한 XOR 역연산**
+
 * [Malware L07](./dreamhack/reversing/bronze/bronze-4/malware-l07/malware-l07.md) - **어셈블리 제어 흐름(Control Flow) 분석을 통한 악성 로직 분기점 추적 및 API(Sleep) 인자 역산**
 
 * [Recover](./dreamhack/reversing/bronze/bronze-4/recover/recover.md) - **하드코딩된 4바이트 키 기반의 XOR 및 산술 역연산을 활용한 이미지 파일 복호화 분석**
