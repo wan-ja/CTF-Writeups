@@ -156,6 +156,13 @@
 <ul>
 
 <details>
+<summary><h4>Bronze 3</h4></summary>
+
+* [Simple Crack Me 2](./dreamhack/reversing/bronze/bronze-3/simple-crack-me-2/simple-crack-me-2.md) - **다중 사칙연산 및 XOR 알고리즘 분석과 정방향 함수 대칭성을 활용한 역연산 복호화**
+
+</details>
+
+<details>
 <summary><h4>Bronze 4</h4></summary>
 
 * [Check Return Value](./dreamhack/reversing/bronze/bronze-4/check-return-value/check-return-value.md) - **함수 반환값(RAX) 구조 분석 및 동적 디버깅을 활용한 메모리 포인터 추적 및 탈취**
