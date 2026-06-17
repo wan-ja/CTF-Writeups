@@ -160,6 +160,8 @@
 
 * [Check Function Argument](./dreamhack/reversing/bronze/bronze-3/check-function-argument/check-function-argument.md) - **함수 호출 규약(Calling Convention) 기반 동적 디버깅 및 레지스터(RDI) 인자 메모리 탈취**
 
+* [R-XOR-T](./dreamhack/reversing/bronze/bronze-3/r-xor-t/r-xor-t.md) - **다중 암호화(비트 마스킹, 배열 역순, XOR) 로직 정적 분석 및 하드코딩된 타겟 기반의 파이썬 역연산 복호화**
+
 * [Simple Crack Me 2](./dreamhack/reversing/bronze/bronze-3/simple-crack-me-2/simple-crack-me-2.md) - **다중 사칙연산 및 XOR 알고리즘 분석과 정방향 함수 대칭성을 활용한 역연산 복호화**
 
 </details>
