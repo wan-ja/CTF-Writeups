@@ -164,6 +164,8 @@
 
 * [Checkflag](./dreamhack/reversing/bronze/bronze-3/checkflag/checkflag.md) - **Stack BOF 취약점과 strcmp 특성을 활용한 역방향 블라인드 브루트 포스(Blind Brute-force) 공격 자동화**
 
+* [Malware L06](./dreamhack/reversing/bronze/bronze-3/malware-l06/malware-l06.md) - **어셈블리 제어 흐름 분석을 통한 악성코드 다중 뮤텍스(Mutex) 생성 로직 파악 및 API 인자 역산**
+
 * [R-XOR-T](./dreamhack/reversing/bronze/bronze-3/r-xor-t/r-xor-t.md) - **다중 암호화(비트 마스킹, 배열 역순, XOR) 로직 정적 분석 및 하드코딩된 타겟 기반의 파이썬 역연산 복호화**
 
 * [Simple Crack Me 2](./dreamhack/reversing/bronze/bronze-3/simple-crack-me-2/simple-crack-me-2.md) - **다중 사칙연산 및 XOR 알고리즘 분석과 정방향 함수 대칭성을 활용한 역연산 복호화**
