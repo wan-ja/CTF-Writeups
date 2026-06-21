@@ -170,6 +170,8 @@
 
 * [Simple Crack Me 2](./dreamhack/reversing/bronze/bronze-3/simple-crack-me-2/simple-crack-me-2.md) - **다중 사칙연산 및 XOR 알고리즘 분석과 정방향 함수 대칭성을 활용한 역연산 복호화**
 
+* [Summer Fan](./dreamhack/reversing/bronze/bronze-3/summer-fan/summer-fan.md) - **안드로이드 APK 디컴파일(JADX)을 통한 하드코딩 배열 추출 및 다중 연산(거듭제곱, 모듈러, XOR) 로직 정적 분석과 파이썬 역연산 복호화**
+
 </details>
 
 <details>
