@@ -13,6 +13,8 @@
 <details>
 <summary><h4>Bronze 2</h4></summary>
 
+* [Blind Command](./dreamhack/web/bronze/bronze-2/blind-command/blind-command.md) - **HTTP 메소드 검증 우회 및 OOB(Out-of-Band) 기법을 활용한 Command Injection 공격**
+
 * [Dream Badge](./dreamhack/web/bronze/bronze-2/dream-badge/dream-badge.md) - **Nginx 웹 캐시 기만(Web Cache Deception) 설계 결함 및 Dockerfile 노출을 이용한 배포 환경 정보 유출 파훼**
 
 * [XSS-1](./dreamhack/web/bronze/bronze-2/xss-1/xss-1.md) - **입력값 필터링 누락에 의한 Reflected XSS 취약점과 관리자 봇(Bot) 조종을 이용한 세션 탈취**
