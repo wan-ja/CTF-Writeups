@@ -166,6 +166,8 @@
 
 * [Malware L06](./dreamhack/reversing/bronze/bronze-3/malware-l06/malware-l06.md) - **어셈블리 제어 흐름 분석을 통한 악성코드 다중 뮤텍스(Mutex) 생성 로직 파악 및 API 인자 역산**
 
+* [MobileApp L01](./dreamhack/reversing/bronze/bronze-3/mobileapp-l01/mobileapp-l01.md) - **변조된 APK 파일 구조 수동 복구(리패키징) 및 클라우드 물리 기기를 활용한 ARM 환경 동적 분석**
+
 * [R-XOR-T](./dreamhack/reversing/bronze/bronze-3/r-xor-t/r-xor-t.md) - **다중 암호화(비트 마스킹, 배열 역순, XOR) 로직 정적 분석 및 하드코딩된 타겟 기반의 파이썬 역연산 복호화**
 
 * [Simple and Swap](./dreamhack/reversing/bronze/bronze-3/simple-and-swap/simple-and-swap.md) - **비트 스왑(Nibble Swap) 및 다중 연산(XOR, 인덱스 덧셈) 로직 정적 분석과 파이썬 역연산 복호화**
