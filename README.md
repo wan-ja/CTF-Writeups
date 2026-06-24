@@ -178,6 +178,8 @@
 
 * [Summer Fan](./dreamhack/reversing/bronze/bronze-3/summer-fan/summer-fan.md) - **안드로이드 APK 디컴파일(JADX)을 통한 하드코딩 배열 추출 및 다중 연산(거듭제곱, 모듈러, XOR) 로직 정적 분석과 파이썬 역연산 복호화**
 
+* [Tiny Ouroboroi](./dreamhack/reversing/bronze/bronze-3/tiny-ouroboroi/tiny-ouroboroi.md) - **원형 연결 리스트 기반 동적 할당 및 다중 비트 연산(Shift, NOT) 로직 정적 분석과 파이썬 역연산 복호화**
+
 </details>
 
 <details>
