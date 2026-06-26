@@ -166,6 +166,8 @@
 
 * [Checkflag](./dreamhack/reversing/bronze/bronze-3/checkflag/checkflag.md) - **Stack BOF 취약점과 strcmp 특성을 활용한 역방향 블라인드 브루트 포스(Blind Brute-force) 공격 자동화**
 
+* [Custom Encoding](./dreamhack/reversing/bronze/bronze-3/custom-encoding/custom-encoding.md) - **모듈러(Modulo) 기반 커스텀 암호화 수식 정적 분석 및 이항 정리를 활용한 파이썬 역연산 복호화**
+
 * [Malware L06](./dreamhack/reversing/bronze/bronze-3/malware-l06/malware-l06.md) - **어셈블리 제어 흐름 분석을 통한 악성코드 다중 뮤텍스(Mutex) 생성 로직 파악 및 API 인자 역산**
 
 * [MobileApp L01](./dreamhack/reversing/bronze/bronze-3/mobileapp-l01/mobileapp-l01.md) - **변조된 APK 파일 구조 수동 복구(리패키징) 및 클라우드 물리 기기를 활용한 ARM 환경 동적 분석**
