@@ -160,6 +160,13 @@
 <ul>
 
 <details>
+<summary><h4>Bronze 2</h4></summary>
+
+* [Rev-Basic-9](./dreamhack/reversing/bronze/bronze-2/rev-basic-9/rev-basic-9.md) - **커스텀 S-box 치환 및 다중 비트 연산(Shift, XOR) 기반 블록 암호화 로직 정적 분석과 파이썬 역연산 복호화**
+
+</details>
+
+<details>
 <summary><h4>Bronze 3</h4></summary>
 
 * [Check Function Argument](./dreamhack/reversing/bronze/bronze-3/check-function-argument/check-function-argument.md) - **함수 호출 규약(Calling Convention) 기반 동적 디버깅 및 레지스터(RDI) 인자 메모리 탈취**
