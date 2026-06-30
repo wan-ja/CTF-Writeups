@@ -168,6 +168,8 @@
 
 * [Rev-Basic-9](./dreamhack/reversing/bronze/bronze-2/rev-basic-9/rev-basic-9.md) - **커스텀 S-box 치환 및 다중 비트 연산(Shift, XOR) 기반 블록 암호화 로직 정적 분석과 파이썬 역연산 복호화**
 
+* [Simple Patch Me](./dreamhack/reversing/bronze/bronze-2/simple-patch-me/simple-patch-me.md) - **바이너리 패치(Binary Patching)를 통한 시간 지연(sleep) 루프 무력화 및 플래그 복호화**
+
 </details>
 
 <details>
