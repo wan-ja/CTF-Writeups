@@ -166,6 +166,8 @@
 <details>
 <summary><h4>Bronze 2</h4></summary>
 
+* [Batch Checker](./dreamhack/reversing/bronze/bronze-2/batch-checker/batch-checker.md) - **배치 스크립트 환경 변수 치환(Substring) 문법을 악용한 텍스트 난독화 정적 분석 및 파이썬 파싱 자동화**
+
 * [Collect Me](./dreamhack/reversing/bronze/bronze-2/collect-me/collect-me.md) - **수백 개의 더미 함수 구조 파악 및 pwntools를 활용한 기계어 바이트(Opcode) 패턴 추출 자동화**
 
 * [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
