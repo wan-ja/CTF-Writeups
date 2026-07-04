@@ -2,6 +2,28 @@
 
 리버싱 및 웹 취약점 분석 역량 강화를 위해 익스플로잇부터 대응 방안까지의 과정을 기록
 
+<br>
+
+## Selected Write-ups (주요 분석 사례)
+> 개인 학습 과정에서 분야별 주요 분석 케이스와 핵심 페이로드를 정돈한 요약 노트
+
+### ⚙️ System & Reverse Engineering (시스템 분석 및 리버싱)
+* [Check Function Argument](./dreamhack/reversing/bronze/bronze-3/check-function-argument/check-function-argument.md) - **함수 호출 규약(Calling Convention) 기반 동적 디버깅 및 레지스터(RDI) 인자 메모리 탈취**
+
+* [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
+
+* [Custom Encoding](./dreamhack/reversing/bronze/bronze-3/custom-encoding/custom-encoding.md) - **모듈러(Modulo) 기반 커스텀 암호화 수식 정적 분석 및 이항 정리를 활용한 파이썬 역연산 복호화**
+
+### 🌐 Web Application & Log Analysis (웹 보안 및 로그 분석)
+* [Blind Command](./dreamhack/web/bronze/bronze-2/blind-command/blind-command.md) - **HTTP 메소드 검증 우회 및 OOB(Out-of-Band) 기법을 활용한 Command Injection 공격**
+
+* [Proxy-1](./dreamhack/web/bronze/bronze-3/proxy-1/proxy-1.md) - **SSRF 취약점과 Raw Socket 통신을 이용한 내부망 서비스 접근 및 관리자 인증 우회**
+
+* [What Is My IP](./dreamhack/web/bronze/bronze-3/what-is-my-ip/what-is-my-ip.md) - **HTTP X-Forwarded-For 헤더 변조 및 Flask access_route 구조적 결함을 이용한 Command Injection 공격**
+
+---
+<br>
+
 <details>
 <summary><h2>🌐 Dreamhack (Web) </h2></summary>
 <ul style="list-style-type: none;">
