@@ -14,6 +14,8 @@
 
 * [Custom Encoding](./dreamhack/reversing/bronze/bronze-3/custom-encoding/custom-encoding.md) - **모듈러(Modulo) 기반 커스텀 암호화 수식 정적 분석 및 이항 정리를 활용한 파이썬 역연산 복호화**
 
+* [Checkflag](./dreamhack/reversing/bronze/bronze-3/checkflag/checkflag.md) - **Stack BOF 취약점과 strcmp 특성을 활용한 역방향 블라인드 브루트 포스(Blind Brute-force) 공격 자동화**
+
 ### 🌐 Web Application & Log Analysis (웹 보안 및 로그 분석)
 * [Blind Command](./dreamhack/web/bronze/bronze-2/blind-command/blind-command.md) - **HTTP 메소드 검증 우회 및 OOB(Out-of-Band) 기법을 활용한 Command Injection 공격**
 

