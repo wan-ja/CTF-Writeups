@@ -198,6 +198,8 @@
 
 * [LegacyOpt](./dreamhack/reversing/bronze/bronze-2/legacyopt/legacyopt.md) - **더프의 장치(Duff's Device) 제어 흐름 분석 및 패턴 기반 반복 XOR 역연산 스크립팅**
 
+* [Malware L08](./dreamhack/reversing/bronze/bronze-2/malware-l08/malware-l08.md) - **정적 제어 흐름 그래프(CFG) 분석을 통한 외부 프로세스 실행 API(ShellExecuteExA) 호출 분기점 식별**
+
 * [My Favorite Fruit](./dreamhack/reversing/bronze/bronze-2/my-favorite-fruit/my-favorite-fruit.md) - **scanf 포맷 스트링 제한(Off-by-one) 함정 분석 및 하드코딩된 암호문 다중 XOR 오프라인 복호화**
 
 * [Rev-Basic-9](./dreamhack/reversing/bronze/bronze-2/rev-basic-9/rev-basic-9.md) - **커스텀 S-box 치환 및 다중 비트 연산(Shift, XOR) 기반 블록 암호화 로직 정적 분석과 파이썬 역연산 복호화**
