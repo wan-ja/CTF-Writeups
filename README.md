@@ -194,6 +194,8 @@
 
 * [Collect Me](./dreamhack/reversing/bronze/bronze-2/collect-me/collect-me.md) - **수백 개의 더미 함수 구조 파악 및 pwntools를 활용한 기계어 바이트(Opcode) 패턴 추출 자동화**
 
+* [Flag Printer](./dreamhack/reversing/bronze/bronze-2/flag-printer/flag-printer.md) - **C언어 strtok 함수 특성을 활용한 파싱 로직 분석 및 하드코딩된 XOR 백도어 복호화**
+
 * [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
 
 * [LegacyOpt](./dreamhack/reversing/bronze/bronze-2/legacyopt/legacyopt.md) - **더프의 장치(Duff's Device) 제어 흐름 분석 및 패턴 기반 반복 XOR 역연산 스크립팅**
