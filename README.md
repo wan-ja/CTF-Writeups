@@ -206,6 +206,8 @@
 
 * [My Favorite Fruit](./dreamhack/reversing/bronze/bronze-2/my-favorite-fruit/my-favorite-fruit.md) - **scanf 포맷 스트링 제한(Off-by-one) 함정 분석 및 하드코딩된 암호문 다중 XOR 오프라인 복호화**
 
+* [My Rand](./dreamhack/reversing/bronze/bronze-2/my-rand/my-rand.md) - **하드코딩된 시드 배열과 커스텀 난수 연산(XOR, 비트 스왑) 로직 분석 및 파이썬 정방향 알고리즘 포팅 기반 상태 예측 자동화**
+
 * [Rev-Basic-9](./dreamhack/reversing/bronze/bronze-2/rev-basic-9/rev-basic-9.md) - **커스텀 S-box 치환 및 다중 비트 연산(Shift, XOR) 기반 블록 암호화 로직 정적 분석과 파이썬 역연산 복호화**
 
 * [Simple Patch Me](./dreamhack/reversing/bronze/bronze-2/simple-patch-me/simple-patch-me.md) - **바이너리 패치(Binary Patching)를 통한 시간 지연(sleep) 루프 무력화 및 플래그 복호화**
