@@ -204,6 +204,8 @@
 
 * [Malware L08](./dreamhack/reversing/bronze/bronze-2/malware-l08/malware-l08.md) - **정적 제어 흐름 그래프(CFG) 분석을 통한 외부 프로세스 실행 API(ShellExecuteExA) 호출 분기점 식별**
 
+* [Many Shuffle](./dreamhack/reversing/bronze/bronze-2/many-shuffle/many-shuffle.md) - **시간(time) 기반 난수 생성기 취약점 분석 및 ctypes를 활용한 libc 난수 포팅, 더미 셔플 로직 우회를 통한 상태 예측 자동화**
+
 * [My Favorite Fruit](./dreamhack/reversing/bronze/bronze-2/my-favorite-fruit/my-favorite-fruit.md) - **scanf 포맷 스트링 제한(Off-by-one) 함정 분석 및 하드코딩된 암호문 다중 XOR 오프라인 복호화**
 
 * [My Rand](./dreamhack/reversing/bronze/bronze-2/my-rand/my-rand.md) - **하드코딩된 시드 배열과 커스텀 난수 연산(XOR, 비트 스왑) 로직 분석 및 파이썬 정방향 알고리즘 포팅 기반 상태 예측 자동화**
