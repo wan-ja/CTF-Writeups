@@ -200,6 +200,8 @@
 
 * [Flag Printer](./dreamhack/reversing/bronze/bronze-2/flag-printer/flag-printer.md) - **C언어 strtok 함수 특성을 활용한 파싱 로직 분석 및 하드코딩된 XOR 백도어 복호화**
 
+* [Gyul Brix Calculator](./dreamhack/reversing/bronze/bronze-2/gyul-brix-calculator/gyul-brix-calculator.md) - **단일 검증 변수 취약점 정적 분석 및 동적 디버깅 기반 조건 분기(ZF) 조작**
+
 * [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
 
 * [LegacyOpt](./dreamhack/reversing/bronze/bronze-2/legacyopt/legacyopt.md) - **더프의 장치(Duff's Device) 제어 흐름 분석 및 패턴 기반 반복 XOR 역연산 스크립팅**
