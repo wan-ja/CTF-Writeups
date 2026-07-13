@@ -218,6 +218,8 @@
 
 * [Rev-Basic-9](./dreamhack/reversing/bronze/bronze-2/rev-basic-9/rev-basic-9.md) - **커스텀 S-box 치환 및 다중 비트 연산(Shift, XOR) 기반 블록 암호화 로직 정적 분석과 파이썬 역연산 복호화**
 
+* [SelfStatus](./dreamhack/reversing/bronze/bronze-2/selfstatus/selfstatus.md) - **안티 디버깅 로직 분석 및 동적 디버깅(GDB)을 통한 레지스터 변조 우회 및 인자(RDI) 메모리 탈취**
+
 * [Simple Patch Me](./dreamhack/reversing/bronze/bronze-2/simple-patch-me/simple-patch-me.md) - **바이너리 패치(Binary Patching)를 통한 시간 지연(sleep) 루프 무력화 및 플래그 복호화**
 
 * [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
