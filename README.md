@@ -204,6 +204,8 @@
 
 * [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
 
+* [Labyrinth](./dreamhack/reversing/bronze/bronze-2/labyrinth/labyrinth.md) - **ptrace 안티 디버깅 우회 및 동적 디버깅을 활용한 레지스터(RBP) 내 동적 생성 평문 키(Key) 메모리 탈취**
+
 * [LegacyOpt](./dreamhack/reversing/bronze/bronze-2/legacyopt/legacyopt.md) - **더프의 장치(Duff's Device) 제어 흐름 분석 및 패턴 기반 반복 XOR 역연산 스크립팅**
 
 * [Malware L08](./dreamhack/reversing/bronze/bronze-2/malware-l08/malware-l08.md) - **정적 제어 흐름 그래프(CFG) 분석을 통한 외부 프로세스 실행 API(ShellExecuteExA) 호출 분기점 식별**
