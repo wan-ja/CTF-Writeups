@@ -224,6 +224,8 @@
 
 * [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
 
+* [Tiny Maze](./dreamhack/reversing/bronze/bronze-2/tiny-maze/tiny-maze.md) - **사용자 입력 함수(read) 및 2D 좌표 이동 로직 분석을 통한 미로 탈출**
+
 </details>
 
 <details>
