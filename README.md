@@ -228,6 +228,8 @@
 
 * [Tiny Maze](./dreamhack/reversing/bronze/bronze-2/tiny-maze/tiny-maze.md) - **사용자 입력 함수(read) 및 2D 좌표 이동 로직 분석을 통한 미로 탈출**
 
+* [ToyPacked](./dreamhack/reversing/bronze/bronze-2/toypacked/toypacked.md) - **동적 디버깅을 통한 1차 파일리스(Fileless) 언패킹 및 XOR 연산 대칭성 기반 암호 키 역산**
+
 </details>
 
 <details>
