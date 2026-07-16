@@ -14,9 +14,7 @@
 
 * [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
 
-* [Checkflag](./dreamhack/reversing/bronze/bronze-3/checkflag/checkflag.md) - **Stack BOF 취약점과 strcmp 특성을 활용한 역방향 블라인드 브루트 포스(Blind Brute-force) 공격 자동화**
-
-* [ToyPacked](./dreamhack/reversing/bronze/bronze-2/toypacked/toypacked.md) - **동적 디버깅을 통한 1차 파일리스(Fileless) 언패킹 및 XOR 연산 대칭성 기반 암호 키 역산**
+* [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
 
 * [MobileApp L01](./dreamhack/reversing/bronze/bronze-3/mobileapp-l01/mobileapp-l01.md) - **변조된 APK 파일 구조 수동 복구(리패키징) 및 클라우드 물리 기기를 활용한 ARM 환경 동적 분석**
 
@@ -186,6 +184,20 @@
 <details>
 <summary><h2>⚙️ Dreamhack (Reversing) </h2></summary>
 <ul style="list-style-type: none;">
+
+<details>
+<summary><h3>🥈 Silver</h3></summary>
+<ul>
+
+<details>
+<summary><h4>Silver 4</h4></summary>
+
+* [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
+
+</details>
+
+</ul>
+</details>
 
 <details>
 <summary><h3>🥉 Bronze</h3></summary>
