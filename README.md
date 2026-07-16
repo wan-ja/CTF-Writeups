@@ -8,13 +8,17 @@
 > 개인 학습 과정에서 분야별 주요 분석 케이스와 핵심 페이로드를 정돈한 요약 노트
 
 ### ⚙️ System & Reverse Engineering (시스템 분석 및 리버싱)
-* [Check Function Argument](./dreamhack/reversing/bronze/bronze-3/check-function-argument/check-function-argument.md) - **함수 호출 규약(Calling Convention) 기반 동적 디버깅 및 레지스터(RDI) 인자 메모리 탈취**
+* [Labyrinth](./dreamhack/reversing/bronze/bronze-2/labyrinth/labyrinth.md) - **ptrace 안티 디버깅 우회 및 동적 디버깅을 활용한 레지스터(RBP) 내 동적 생성 평문 키(Key) 메모리 탈취**
 
 * [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
 
-* [Custom Encoding](./dreamhack/reversing/bronze/bronze-3/custom-encoding/custom-encoding.md) - **모듈러(Modulo) 기반 커스텀 암호화 수식 정적 분석 및 이항 정리를 활용한 파이썬 역연산 복호화**
+* [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
 
 * [Checkflag](./dreamhack/reversing/bronze/bronze-3/checkflag/checkflag.md) - **Stack BOF 취약점과 strcmp 특성을 활용한 역방향 블라인드 브루트 포스(Blind Brute-force) 공격 자동화**
+
+* [ToyPacked](./dreamhack/reversing/bronze/bronze-2/toypacked/toypacked.md) - **동적 디버깅을 통한 1차 파일리스(Fileless) 언패킹 및 XOR 연산 대칭성 기반 암호 키 역산**
+
+* [MobileApp L01](./dreamhack/reversing/bronze/bronze-3/mobileapp-l01/mobileapp-l01.md) - **변조된 APK 파일 구조 수동 복구(리패키징) 및 클라우드 물리 기기를 활용한 ARM 환경 동적 분석**
 
 ### 🌐 Web Application & Log Analysis (웹 보안 및 로그 분석)
 * [Blind Command](./dreamhack/web/bronze/bronze-2/blind-command/blind-command.md) - **HTTP 메소드 검증 우회 및 OOB(Out-of-Band) 기법을 활용한 Command Injection 공격**
