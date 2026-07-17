@@ -8,15 +8,15 @@
 > 개인 학습 과정에서 분야별 주요 분석 케이스와 핵심 페이로드를 정돈한 요약 노트
 
 ### ⚙️ System & Reverse Engineering (시스템 분석 및 리버싱)
-* [Labyrinth](./dreamhack/reversing/bronze/bronze-2/labyrinth/labyrinth.md) - **ptrace 안티 디버깅 우회 및 동적 디버깅을 활용한 레지스터(RBP) 내 동적 생성 평문 키(Key) 메모리 탈취**
+* [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
+
+* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
 
 * [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
 
 * [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
 
-* [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
-
-* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
+* [Labyrinth](./dreamhack/reversing/bronze/bronze-2/labyrinth/labyrinth.md) - **ptrace 안티 디버깅 우회 및 동적 디버깅을 활용한 레지스터(RBP) 내 동적 생성 평문 키(Key) 메모리 탈취**
 
 ### 🌐 Web Application & Log Analysis (웹 보안 및 로그 분석)
 * [Blind Command](./dreamhack/web/bronze/bronze-2/blind-command/blind-command.md) - **HTTP 메소드 검증 우회 및 OOB(Out-of-Band) 기법을 활용한 Command Injection 공격**
@@ -211,6 +211,13 @@
 <details>
 <summary><h3>🥉 Bronze</h3></summary>
 <ul>
+
+<details>
+<summary><h4>Bronze 1</h4></summary>
+
+* [Small Counter](./dreamhack/reversing/bronze/bronze-1/small-counter/small-counter.md) - **디컴파일러 최적화(데드 코드 제거) 맹점 분석 및 동적 디버깅 기반 스택 메모리 조작**
+
+</details>
 
 <details>
 <summary><h4>Bronze 2</h4></summary>
