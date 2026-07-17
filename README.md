@@ -192,6 +192,8 @@
 <details>
 <summary><h4>Silver 4</h4></summary>
 
+* [Gyul Order v2](./dreamhack/reversing/silver/silver-4/gyul-order-v2/gyul-order-v2.md) - **안드로이드 앱 디컴파일 기반 정적 분석 및 하드코딩된 객체 변수(price)를 활용한 동적 XOR 키 추출**
+
 * [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
 
 </details>
