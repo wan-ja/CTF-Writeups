@@ -16,7 +16,7 @@
 
 * [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
 
-* [MobileApp L01](./dreamhack/reversing/bronze/bronze-3/mobileapp-l01/mobileapp-l01.md) - **변조된 APK 파일 구조 수동 복구(리패키징) 및 클라우드 물리 기기를 활용한 ARM 환경 동적 분석**
+* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
 
 ### 🌐 Web Application & Log Analysis (웹 보안 및 로그 분석)
 * [Blind Command](./dreamhack/web/bronze/bronze-2/blind-command/blind-command.md) - **HTTP 메소드 검증 우회 및 OOB(Out-of-Band) 기법을 활용한 Command Injection 공격**
@@ -188,6 +188,13 @@
 <details>
 <summary><h3>🥈 Silver</h3></summary>
 <ul>
+
+<details>
+<summary><h4>Silver 3</h4></summary>
+
+* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
+
+</details>
 
 <details>
 <summary><h4>Silver 4</h4></summary>
