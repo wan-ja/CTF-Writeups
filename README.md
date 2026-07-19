@@ -10,13 +10,13 @@
 ### ⚙️ System & Reverse Engineering (시스템 분석 및 리버싱)
 * [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
 
-* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
+* [BitChanger](./dreamhack/reversing/silver/silver-4/bitchanger/bitchanger.md) - **Heaven's Gate(64비트 전환) 및 SYSCALL 안티 디버깅 정적 우회와 4원 1차 연립방정식 역산 스크립팅**
 
-* [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
+* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
 
 * [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
 
-* [Labyrinth](./dreamhack/reversing/bronze/bronze-2/labyrinth/labyrinth.md) - **ptrace 안티 디버깅 우회 및 동적 디버깅을 활용한 레지스터(RBP) 내 동적 생성 평문 키(Key) 메모리 탈취**
+* [Patch](./dreamhack/reversing/silver/silver-4/patch/patch.md) - **윈도우 프로시저(WM_PAINT) 분석 및 GDI+ 렌더링 방해 함수 어셈블리 변조(ret)를 통한 화면 덮어쓰기 무력화**
 
 ### 🌐 Web Application & Log Analysis (웹 보안 및 로그 분석)
 * [Blind Command](./dreamhack/web/bronze/bronze-2/blind-command/blind-command.md) - **HTTP 메소드 검증 우회 및 OOB(Out-of-Band) 기법을 활용한 Command Injection 공격**
@@ -198,6 +198,8 @@
 
 <details>
 <summary><h4>Silver 4</h4></summary>
+
+* [BitChanger](./dreamhack/reversing/silver/silver-4/bitchanger/bitchanger.md) - **Heaven's Gate(64비트 전환) 및 SYSCALL 안티 디버깅 정적 우회와 4원 1차 연립방정식 역산 스크립팅**
 
 * [Gyul Order v2](./dreamhack/reversing/silver/silver-4/gyul-order-v2/gyul-order-v2.md) - **안드로이드 앱 디컴파일 기반 정적 분석 및 하드코딩된 객체 변수(price)를 활용한 동적 XOR 키 추출**
 
