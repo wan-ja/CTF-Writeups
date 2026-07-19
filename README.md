@@ -219,6 +219,8 @@
 <details>
 <summary><h4>Bronze 1</h4></summary>
 
+* [Secret Message](./dreamhack/reversing/bronze/bronze-1/secret-message/secret-message.md) - **RLE 기반 자체 인코딩 알고리즘 분석 및 파이썬 역산 스크립팅**
+
 * [Small Counter](./dreamhack/reversing/bronze/bronze-1/small-counter/small-counter.md) - **디컴파일러 최적화(데드 코드 제거) 맹점 분석 및 동적 디버깅 기반 스택 메모리 조작**
 
 </details>
