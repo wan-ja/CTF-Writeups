@@ -29,6 +29,168 @@
 <br>
 
 <details>
+<summary><h2>⚙️ Dreamhack (Reversing) </h2></summary>
+<ul style="list-style-type: none;">
+
+<details>
+<summary><h3>🥈 Silver</h3></summary>
+<ul>
+
+<details>
+<summary><h4>Silver 3</h4></summary>
+
+* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
+
+</details>
+
+<details>
+<summary><h4>Silver 4</h4></summary>
+
+* [BitChanger](./dreamhack/reversing/silver/silver-4/bitchanger/bitchanger.md) - **Heaven's Gate(64비트 전환) 및 SYSCALL 안티 디버깅 정적 우회와 4원 1차 연립방정식 역산 스크립팅**
+
+* [Gyul Order v2](./dreamhack/reversing/silver/silver-4/gyul-order-v2/gyul-order-v2.md) - **안드로이드 앱 디컴파일 기반 정적 분석 및 하드코딩된 객체 변수(price)를 활용한 동적 XOR 키 추출**
+
+* [Patch](./dreamhack/reversing/silver/silver-4/patch/patch.md) - **윈도우 프로시저(WM_PAINT) 분석 및 GDI+ 렌더링 방해 함수 어셈블리 변조(ret)를 통한 화면 덮어쓰기 무력화**
+
+* [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
+
+</details>
+
+</ul>
+</details>
+
+<details>
+<summary><h3>🥉 Bronze</h3></summary>
+<ul>
+
+<details>
+<summary><h4>Bronze 1</h4></summary>
+
+* [Public](./dreamhack/reversing/bronze/bronze-1/public-wargame/public-wargame.md) - **자체 구현 RSA 암호화 로직 분석 및 취약한 모듈러스(N) 소인수분해를 통한 개인키 복원**
+
+* [Secret Message](./dreamhack/reversing/bronze/bronze-1/secret-message/secret-message.md) - **RLE 기반 자체 인코딩 알고리즘 분석 및 파이썬 역산 스크립팅**
+
+* [Small Counter](./dreamhack/reversing/bronze/bronze-1/small-counter/small-counter.md) - **디컴파일러 최적화(데드 코드 제거) 맹점 분석 및 동적 디버깅 기반 스택 메모리 조작**
+
+</details>
+
+<details>
+<summary><h4>Bronze 2</h4></summary>
+
+* [Batch Checker](./dreamhack/reversing/bronze/bronze-2/batch-checker/batch-checker.md) - **배치 스크립트 환경 변수 치환(Substring) 문법을 악용한 텍스트 난독화 정적 분석 및 파이썬 파싱 자동화**
+
+* [Collect Me](./dreamhack/reversing/bronze/bronze-2/collect-me/collect-me.md) - **수백 개의 더미 함수 구조 파악 및 pwntools를 활용한 기계어 바이트(Opcode) 패턴 추출 자동화**
+
+* [DLL with Notepad](./dreamhack/reversing/bronze/bronze-2/dll-with-notepad/dll-with-notepad.md) - **호스트 프로세스 검증 버그(FindWindow) 분석 및 동적 디버깅을 통한 전역 변수 메모리 탈취**
+
+* [Dungeon In 1983](./dreamhack/reversing/bronze/bronze-2/dungeon-in-1983/dungeon-in-1983.md) - **비트 시프트를 활용한 64비트 난수 시드 복원 및 홀짝 분기 역연산 기반 Pwntools 통신 자동화**
+
+* [Flag Printer](./dreamhack/reversing/bronze/bronze-2/flag-printer/flag-printer.md) - **C언어 strtok 함수 특성을 활용한 파싱 로직 분석 및 하드코딩된 XOR 백도어 복호화**
+
+* [Gyul Brix Calculator](./dreamhack/reversing/bronze/bronze-2/gyul-brix-calculator/gyul-brix-calculator.md) - **단일 검증 변수 취약점 정적 분석 및 동적 디버깅 기반 조건 분기(ZF) 조작**
+
+* [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
+
+* [Labyrinth](./dreamhack/reversing/bronze/bronze-2/labyrinth/labyrinth.md) - **ptrace 안티 디버깅 우회 및 동적 디버깅을 활용한 레지스터(RBP) 내 동적 생성 평문 키(Key) 메모리 탈취**
+
+* [LegacyOpt](./dreamhack/reversing/bronze/bronze-2/legacyopt/legacyopt.md) - **더프의 장치(Duff's Device) 제어 흐름 분석 및 패턴 기반 반복 XOR 역연산 스크립팅**
+
+* [Malware L08](./dreamhack/reversing/bronze/bronze-2/malware-l08/malware-l08.md) - **정적 제어 흐름 그래프(CFG) 분석을 통한 외부 프로세스 실행 API(ShellExecuteExA) 호출 분기점 식별**
+
+* [Many Shuffle](./dreamhack/reversing/bronze/bronze-2/many-shuffle/many-shuffle.md) - **시간(time) 기반 난수 생성기 취약점 분석 및 ctypes를 활용한 libc 난수 포팅, 더미 셔플 로직 우회를 통한 상태 예측 자동화**
+
+* [My Favorite Fruit](./dreamhack/reversing/bronze/bronze-2/my-favorite-fruit/my-favorite-fruit.md) - **scanf 포맷 스트링 제한(Off-by-one) 함정 분석 및 하드코딩된 암호문 다중 XOR 오프라인 복호화**
+
+* [My Rand](./dreamhack/reversing/bronze/bronze-2/my-rand/my-rand.md) - **하드코딩된 시드 배열과 커스텀 난수 연산(XOR, 비트 스왑) 로직 분석 및 파이썬 정방향 알고리즘 포팅 기반 상태 예측 자동화**
+
+* [No Problem (아 문제 이름 뭘로하지)](./dreamhack/reversing/bronze/bronze-2/no_problem/no_problem.md) - **대칭형 검증 로직 취약점 정적 분석 및 하드코딩된 타겟 배열 XOR 복호화**
+
+* [Rev-Basic-9](./dreamhack/reversing/bronze/bronze-2/rev-basic-9/rev-basic-9.md) - **커스텀 S-box 치환 및 다중 비트 연산(Shift, XOR) 기반 블록 암호화 로직 정적 분석과 파이썬 역연산 복호화**
+
+* [SelfStatus](./dreamhack/reversing/bronze/bronze-2/selfstatus/selfstatus.md) - **안티 디버깅 로직 분석 및 동적 디버깅(GDB)을 통한 레지스터 변조 우회 및 인자(RDI) 메모리 탈취**
+
+* [Simple Patch Me](./dreamhack/reversing/bronze/bronze-2/simple-patch-me/simple-patch-me.md) - **바이너리 패치(Binary Patching)를 통한 시간 지연(sleep) 루프 무력화 및 플래그 복호화**
+
+* [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
+
+* [Tiny Maze](./dreamhack/reversing/bronze/bronze-2/tiny-maze/tiny-maze.md) - **사용자 입력 함수(read) 및 2D 좌표 이동 로직 분석을 통한 미로 탈출**
+
+* [ToyPacked](./dreamhack/reversing/bronze/bronze-2/toypacked/toypacked.md) - **동적 디버깅을 통한 1차 파일리스(Fileless) 언패킹 및 XOR 연산 대칭성 기반 암호 키 역산**
+
+</details>
+
+<details>
+<summary><h4>Bronze 3</h4></summary>
+
+* [Check Function Argument](./dreamhack/reversing/bronze/bronze-3/check-function-argument/check-function-argument.md) - **함수 호출 규약(Calling Convention) 기반 동적 디버깅 및 레지스터(RDI) 인자 메모리 탈취**
+
+* [Checkflag](./dreamhack/reversing/bronze/bronze-3/checkflag/checkflag.md) - **Stack BOF 취약점과 strcmp 특성을 활용한 역방향 블라인드 브루트 포스(Blind Brute-force) 공격 자동화**
+
+* [Custom Encoding](./dreamhack/reversing/bronze/bronze-3/custom-encoding/custom-encoding.md) - **모듈러(Modulo) 기반 커스텀 암호화 수식 정적 분석 및 이항 정리를 활용한 파이썬 역연산 복호화**
+
+* [Malware L06](./dreamhack/reversing/bronze/bronze-3/malware-l06/malware-l06.md) - **어셈블리 제어 흐름 분석을 통한 악성코드 다중 뮤텍스(Mutex) 생성 로직 파악 및 API 인자 역산**
+
+* [MobileApp L01](./dreamhack/reversing/bronze/bronze-3/mobileapp-l01/mobileapp-l01.md) - **변조된 APK 파일 구조 수동 복구(리패키징) 및 클라우드 물리 기기를 활용한 ARM 환경 동적 분석**
+
+* [R-XOR-T](./dreamhack/reversing/bronze/bronze-3/r-xor-t/r-xor-t.md) - **다중 암호화(비트 마스킹, 배열 역순, XOR) 로직 정적 분석 및 하드코딩된 타겟 기반의 파이썬 역연산 복호화**
+
+* [Simple and Swap](./dreamhack/reversing/bronze/bronze-3/simple-and-swap/simple-and-swap.md) - **비트 스왑(Nibble Swap) 및 다중 연산(XOR, 인덱스 덧셈) 로직 정적 분석과 파이썬 역연산 복호화**
+
+* [Simple Crack Me 2](./dreamhack/reversing/bronze/bronze-3/simple-crack-me-2/simple-crack-me-2.md) - **다중 사칙연산 및 XOR 알고리즘 분석과 정방향 함수 대칭성을 활용한 역연산 복호화**
+
+* [Summer Fan](./dreamhack/reversing/bronze/bronze-3/summer-fan/summer-fan.md) - **안드로이드 APK 디컴파일(JADX)을 통한 하드코딩 배열 추출 및 다중 연산(거듭제곱, 모듈러, XOR) 로직 정적 분석과 파이썬 역연산 복호화**
+
+* [Tiny Ouroboroi](./dreamhack/reversing/bronze/bronze-3/tiny-ouroboroi/tiny-ouroboroi.md) - **원형 연결 리스트 기반 동적 할당 및 다중 비트 연산(Shift, NOT) 로직 정적 분석과 파이썬 역연산 복호화**
+
+</details>
+
+<details>
+<summary><h4>Bronze 4</h4></summary>
+
+* [Check Return Value](./dreamhack/reversing/bronze/bronze-4/check-return-value/check-return-value.md) - **함수 반환값(RAX) 구조 분석 및 동적 디버깅을 활용한 메모리 포인터 추적 및 탈취**
+
+* [Easy Assembly](./dreamhack/reversing/bronze/bronze-4/easy-assembly/easy-assembly.md) - **어셈블리 레지스터 흐름 분석 및 메모리 주소 기반 데이터 크기 유추를 통한 XOR 역연산**
+
+* [Malware L07](./dreamhack/reversing/bronze/bronze-4/malware-l07/malware-l07.md) - **어셈블리 제어 흐름(Control Flow) 분석을 통한 악성 로직 분기점 추적 및 API(Sleep) 인자 역산**
+
+* [Recover](./dreamhack/reversing/bronze/bronze-4/recover/recover.md) - **하드코딩된 4바이트 키 기반의 XOR 및 산술 역연산을 활용한 이미지 파일 복호화 분석**
+
+* [Rev-Basic-5](./dreamhack/reversing/bronze/bronze-4/rev-basic-5/rev-basic-5.md) - **연속된 1바이트 덧셈 역연산을 활용한 하드코딩 데이터 복호화 및 플래그 획득**
+
+* [Rev-Basic-6](./dreamhack/reversing/bronze/bronze-4/rev-basic-6/rev-basic-6.md) - **치환 테이블(S-Box)을 활용한 데이터 매칭 로직 분석 및 역산**
+
+* [Rev-Basic-7](./dreamhack/reversing/bronze/bronze-4/rev-basic-7/rev-basic-7.md) - **비트 순환 시프트(ROL/ROR) 및 XOR 역연산을 활용한 하드코딩 데이터 복호화**
+
+* [Rev-Basic-8](./dreamhack/reversing/bronze/bronze-4/rev-basic-8/rev-basic-8.md) - **음수 곱셈 기반 1바이트 오버플로우 특성 분석 및 브루트 포스 역산**
+
+</details>
+
+</ul>
+</details>
+
+<details>
+<summary><h3>🌱 Beginner</h3></summary>
+
+* [Rev-Basic-0](./dreamhack/reversing/beginner/rev-basic-0/rev-basic-0.md) - **하드코딩된 플래그 문자열 평문 검증 로직 분석 및 탈취**
+
+* [Rev-Basic-1](./dreamhack/reversing/beginner/rev-basic-1/rev-basic-1.md) - **하드코딩된 플래그의 인덱스별 단항 비교 로직 분석 및 탈취**
+
+* [Rev-Basic-2](./dreamhack/reversing/beginner/rev-basic-2/rev-basic-2.md) - **포인터 연산을 활용한 4바이트 배열 구조 분석 및 탈취**
+
+* [Rev-Basic-3](./dreamhack/reversing/beginner/rev-basic-3/rev-basic-3.md) - **인덱스를 활용한 XOR 및 사칙연산 역연산 로직 분석 및 탈취**
+
+* [Rev-Basic-4](./dreamhack/reversing/beginner/rev-basic-4/rev-basic-4.md) - **비트 시프트 연산(Nibble Swap)을 활용한 데이터 역연산 및 탈취**
+
+* [Simple Crack Me](./dreamhack/reversing/beginner/simple-crack-me/simple-crack-me.md) - **정적 컴파일 바이너리 분석 및 하드코딩된 16진수 단순 비교 로직 우회**
+
+* [Simple Operation](./dreamhack/reversing/beginner/simple-operation/simple-operation.md) - **난수 노출 취약점 및 문자열 리버싱, 단순 XOR 역연산을 활용한 검증 우회 및 탈취**
+
+</details>
+
+</ul>
+</details>
+
+<details>
 <summary><h2>🌐 Dreamhack (Web) </h2></summary>
 <ul style="list-style-type: none;">
 
@@ -175,166 +337,6 @@
 * [Simple Web Request](./dreamhack/web/beginner/simple-web-request/simple-web-request.md) - **HTTP GET/POST 요청 메서드 분석 및 단계별 파라미터 조작을 통한 인증 로직 우회**
 
 * [Web Misconf-1](./dreamhack/web/beginner/web-misconf-1/web-misconf-1.md) - **보안 설정 오류(Security Misconfiguration)를 이용한 관리자 권한 탈취 및 민감 정보 노출**
-
-</details>
-
-</ul>
-</details>
-
-<details>
-<summary><h2>⚙️ Dreamhack (Reversing) </h2></summary>
-<ul style="list-style-type: none;">
-
-<details>
-<summary><h3>🥈 Silver</h3></summary>
-<ul>
-
-<details>
-<summary><h4>Silver 3</h4></summary>
-
-* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
-
-</details>
-
-<details>
-<summary><h4>Silver 4</h4></summary>
-
-* [BitChanger](./dreamhack/reversing/silver/silver-4/bitchanger/bitchanger.md) - **Heaven's Gate(64비트 전환) 및 SYSCALL 안티 디버깅 정적 우회와 4원 1차 연립방정식 역산 스크립팅**
-
-* [Gyul Order v2](./dreamhack/reversing/silver/silver-4/gyul-order-v2/gyul-order-v2.md) - **안드로이드 앱 디컴파일 기반 정적 분석 및 하드코딩된 객체 변수(price)를 활용한 동적 XOR 키 추출**
-
-* [Patch](./dreamhack/reversing/silver/silver-4/patch/patch.md) - **윈도우 프로시저(WM_PAINT) 분석 및 GDI+ 렌더링 방해 함수 어셈블리 변조(ret)를 통한 화면 덮어쓰기 무력화**
-
-* [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
-
-</details>
-
-</ul>
-</details>
-
-<details>
-<summary><h3>🥉 Bronze</h3></summary>
-<ul>
-
-<details>
-<summary><h4>Bronze 1</h4></summary>
-
-* [Secret Message](./dreamhack/reversing/bronze/bronze-1/secret-message/secret-message.md) - **RLE 기반 자체 인코딩 알고리즘 분석 및 파이썬 역산 스크립팅**
-
-* [Small Counter](./dreamhack/reversing/bronze/bronze-1/small-counter/small-counter.md) - **디컴파일러 최적화(데드 코드 제거) 맹점 분석 및 동적 디버깅 기반 스택 메모리 조작**
-
-</details>
-
-<details>
-<summary><h4>Bronze 2</h4></summary>
-
-* [Batch Checker](./dreamhack/reversing/bronze/bronze-2/batch-checker/batch-checker.md) - **배치 스크립트 환경 변수 치환(Substring) 문법을 악용한 텍스트 난독화 정적 분석 및 파이썬 파싱 자동화**
-
-* [Collect Me](./dreamhack/reversing/bronze/bronze-2/collect-me/collect-me.md) - **수백 개의 더미 함수 구조 파악 및 pwntools를 활용한 기계어 바이트(Opcode) 패턴 추출 자동화**
-
-* [DLL with Notepad](./dreamhack/reversing/bronze/bronze-2/dll-with-notepad/dll-with-notepad.md) - **호스트 프로세스 검증 버그(FindWindow) 분석 및 동적 디버깅을 통한 전역 변수 메모리 탈취**
-
-* [Dungeon In 1983](./dreamhack/reversing/bronze/bronze-2/dungeon-in-1983/dungeon-in-1983.md) - **비트 시프트를 활용한 64비트 난수 시드 복원 및 홀짝 분기 역연산 기반 Pwntools 통신 자동화**
-
-* [Flag Printer](./dreamhack/reversing/bronze/bronze-2/flag-printer/flag-printer.md) - **C언어 strtok 함수 특성을 활용한 파싱 로직 분석 및 하드코딩된 XOR 백도어 복호화**
-
-* [Gyul Brix Calculator](./dreamhack/reversing/bronze/bronze-2/gyul-brix-calculator/gyul-brix-calculator.md) - **단일 검증 변수 취약점 정적 분석 및 동적 디버깅 기반 조건 분기(ZF) 조작**
-
-* [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
-
-* [Labyrinth](./dreamhack/reversing/bronze/bronze-2/labyrinth/labyrinth.md) - **ptrace 안티 디버깅 우회 및 동적 디버깅을 활용한 레지스터(RBP) 내 동적 생성 평문 키(Key) 메모리 탈취**
-
-* [LegacyOpt](./dreamhack/reversing/bronze/bronze-2/legacyopt/legacyopt.md) - **더프의 장치(Duff's Device) 제어 흐름 분석 및 패턴 기반 반복 XOR 역연산 스크립팅**
-
-* [Malware L08](./dreamhack/reversing/bronze/bronze-2/malware-l08/malware-l08.md) - **정적 제어 흐름 그래프(CFG) 분석을 통한 외부 프로세스 실행 API(ShellExecuteExA) 호출 분기점 식별**
-
-* [Many Shuffle](./dreamhack/reversing/bronze/bronze-2/many-shuffle/many-shuffle.md) - **시간(time) 기반 난수 생성기 취약점 분석 및 ctypes를 활용한 libc 난수 포팅, 더미 셔플 로직 우회를 통한 상태 예측 자동화**
-
-* [My Favorite Fruit](./dreamhack/reversing/bronze/bronze-2/my-favorite-fruit/my-favorite-fruit.md) - **scanf 포맷 스트링 제한(Off-by-one) 함정 분석 및 하드코딩된 암호문 다중 XOR 오프라인 복호화**
-
-* [My Rand](./dreamhack/reversing/bronze/bronze-2/my-rand/my-rand.md) - **하드코딩된 시드 배열과 커스텀 난수 연산(XOR, 비트 스왑) 로직 분석 및 파이썬 정방향 알고리즘 포팅 기반 상태 예측 자동화**
-
-* [No Problem (아 문제 이름 뭘로하지)](./dreamhack/reversing/bronze/bronze-2/no_problem/no_problem.md) - **대칭형 검증 로직 취약점 정적 분석 및 하드코딩된 타겟 배열 XOR 복호화**
-
-* [Rev-Basic-9](./dreamhack/reversing/bronze/bronze-2/rev-basic-9/rev-basic-9.md) - **커스텀 S-box 치환 및 다중 비트 연산(Shift, XOR) 기반 블록 암호화 로직 정적 분석과 파이썬 역연산 복호화**
-
-* [SelfStatus](./dreamhack/reversing/bronze/bronze-2/selfstatus/selfstatus.md) - **안티 디버깅 로직 분석 및 동적 디버깅(GDB)을 통한 레지스터 변조 우회 및 인자(RDI) 메모리 탈취**
-
-* [Simple Patch Me](./dreamhack/reversing/bronze/bronze-2/simple-patch-me/simple-patch-me.md) - **바이너리 패치(Binary Patching)를 통한 시간 지연(sleep) 루프 무력화 및 플래그 복호화**
-
-* [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
-
-* [Tiny Maze](./dreamhack/reversing/bronze/bronze-2/tiny-maze/tiny-maze.md) - **사용자 입력 함수(read) 및 2D 좌표 이동 로직 분석을 통한 미로 탈출**
-
-* [ToyPacked](./dreamhack/reversing/bronze/bronze-2/toypacked/toypacked.md) - **동적 디버깅을 통한 1차 파일리스(Fileless) 언패킹 및 XOR 연산 대칭성 기반 암호 키 역산**
-
-</details>
-
-<details>
-<summary><h4>Bronze 3</h4></summary>
-
-* [Check Function Argument](./dreamhack/reversing/bronze/bronze-3/check-function-argument/check-function-argument.md) - **함수 호출 규약(Calling Convention) 기반 동적 디버깅 및 레지스터(RDI) 인자 메모리 탈취**
-
-* [Checkflag](./dreamhack/reversing/bronze/bronze-3/checkflag/checkflag.md) - **Stack BOF 취약점과 strcmp 특성을 활용한 역방향 블라인드 브루트 포스(Blind Brute-force) 공격 자동화**
-
-* [Custom Encoding](./dreamhack/reversing/bronze/bronze-3/custom-encoding/custom-encoding.md) - **모듈러(Modulo) 기반 커스텀 암호화 수식 정적 분석 및 이항 정리를 활용한 파이썬 역연산 복호화**
-
-* [Malware L06](./dreamhack/reversing/bronze/bronze-3/malware-l06/malware-l06.md) - **어셈블리 제어 흐름 분석을 통한 악성코드 다중 뮤텍스(Mutex) 생성 로직 파악 및 API 인자 역산**
-
-* [MobileApp L01](./dreamhack/reversing/bronze/bronze-3/mobileapp-l01/mobileapp-l01.md) - **변조된 APK 파일 구조 수동 복구(리패키징) 및 클라우드 물리 기기를 활용한 ARM 환경 동적 분석**
-
-* [R-XOR-T](./dreamhack/reversing/bronze/bronze-3/r-xor-t/r-xor-t.md) - **다중 암호화(비트 마스킹, 배열 역순, XOR) 로직 정적 분석 및 하드코딩된 타겟 기반의 파이썬 역연산 복호화**
-
-* [Simple and Swap](./dreamhack/reversing/bronze/bronze-3/simple-and-swap/simple-and-swap.md) - **비트 스왑(Nibble Swap) 및 다중 연산(XOR, 인덱스 덧셈) 로직 정적 분석과 파이썬 역연산 복호화**
-
-* [Simple Crack Me 2](./dreamhack/reversing/bronze/bronze-3/simple-crack-me-2/simple-crack-me-2.md) - **다중 사칙연산 및 XOR 알고리즘 분석과 정방향 함수 대칭성을 활용한 역연산 복호화**
-
-* [Summer Fan](./dreamhack/reversing/bronze/bronze-3/summer-fan/summer-fan.md) - **안드로이드 APK 디컴파일(JADX)을 통한 하드코딩 배열 추출 및 다중 연산(거듭제곱, 모듈러, XOR) 로직 정적 분석과 파이썬 역연산 복호화**
-
-* [Tiny Ouroboroi](./dreamhack/reversing/bronze/bronze-3/tiny-ouroboroi/tiny-ouroboroi.md) - **원형 연결 리스트 기반 동적 할당 및 다중 비트 연산(Shift, NOT) 로직 정적 분석과 파이썬 역연산 복호화**
-
-</details>
-
-<details>
-<summary><h4>Bronze 4</h4></summary>
-
-* [Check Return Value](./dreamhack/reversing/bronze/bronze-4/check-return-value/check-return-value.md) - **함수 반환값(RAX) 구조 분석 및 동적 디버깅을 활용한 메모리 포인터 추적 및 탈취**
-
-* [Easy Assembly](./dreamhack/reversing/bronze/bronze-4/easy-assembly/easy-assembly.md) - **어셈블리 레지스터 흐름 분석 및 메모리 주소 기반 데이터 크기 유추를 통한 XOR 역연산**
-
-* [Malware L07](./dreamhack/reversing/bronze/bronze-4/malware-l07/malware-l07.md) - **어셈블리 제어 흐름(Control Flow) 분석을 통한 악성 로직 분기점 추적 및 API(Sleep) 인자 역산**
-
-* [Recover](./dreamhack/reversing/bronze/bronze-4/recover/recover.md) - **하드코딩된 4바이트 키 기반의 XOR 및 산술 역연산을 활용한 이미지 파일 복호화 분석**
-
-* [Rev-Basic-5](./dreamhack/reversing/bronze/bronze-4/rev-basic-5/rev-basic-5.md) - **연속된 1바이트 덧셈 역연산을 활용한 하드코딩 데이터 복호화 및 플래그 획득**
-
-* [Rev-Basic-6](./dreamhack/reversing/bronze/bronze-4/rev-basic-6/rev-basic-6.md) - **치환 테이블(S-Box)을 활용한 데이터 매칭 로직 분석 및 역산**
-
-* [Rev-Basic-7](./dreamhack/reversing/bronze/bronze-4/rev-basic-7/rev-basic-7.md) - **비트 순환 시프트(ROL/ROR) 및 XOR 역연산을 활용한 하드코딩 데이터 복호화**
-
-* [Rev-Basic-8](./dreamhack/reversing/bronze/bronze-4/rev-basic-8/rev-basic-8.md) - **음수 곱셈 기반 1바이트 오버플로우 특성 분석 및 브루트 포스 역산**
-
-</details>
-
-</ul>
-</details>
-
-<details>
-<summary><h3>🌱 Beginner</h3></summary>
-
-* [Rev-Basic-0](./dreamhack/reversing/beginner/rev-basic-0/rev-basic-0.md) - **하드코딩된 플래그 문자열 평문 검증 로직 분석 및 탈취**
-
-* [Rev-Basic-1](./dreamhack/reversing/beginner/rev-basic-1/rev-basic-1.md) - **하드코딩된 플래그의 인덱스별 단항 비교 로직 분석 및 탈취**
-
-* [Rev-Basic-2](./dreamhack/reversing/beginner/rev-basic-2/rev-basic-2.md) - **포인터 연산을 활용한 4바이트 배열 구조 분석 및 탈취**
-
-* [Rev-Basic-3](./dreamhack/reversing/beginner/rev-basic-3/rev-basic-3.md) - **인덱스를 활용한 XOR 및 사칙연산 역연산 로직 분석 및 탈취**
-
-* [Rev-Basic-4](./dreamhack/reversing/beginner/rev-basic-4/rev-basic-4.md) - **비트 시프트 연산(Nibble Swap)을 활용한 데이터 역연산 및 탈취**
-
-* [Simple Crack Me](./dreamhack/reversing/beginner/simple-crack-me/simple-crack-me.md) - **정적 컴파일 바이너리 분석 및 하드코딩된 16진수 단순 비교 로직 우회**
-
-* [Simple Operation](./dreamhack/reversing/beginner/simple-operation/simple-operation.md) - **난수 노출 취약점 및 문자열 리버싱, 단순 XOR 역연산을 활용한 검증 우회 및 탈취**
 
 </details>
 
