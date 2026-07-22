@@ -215,6 +215,8 @@
 
 * [Login Filtering](./dreamhack/web/bronze/bronze-2/login-filtering/login-filtering.md) - **MySQL과 PHP의 대소문자 처리 방식(Case Sensitivity) 차이를 악용한 계정 검증 필터링 우회**
 
+* [StrCmp](./dreamhack/web/bronze/bronze-2/strcmp/strcmp.md) - **PHP strcmp 함수의 배열 반환 결함과 느슨한 비교(Type Juggling)를 악용한 패스워드 검증 우회**
+
 * [XSS-1](./dreamhack/web/bronze/bronze-2/xss-1/xss-1.md) - **입력값 필터링 누락에 의한 Reflected XSS 취약점과 관리자 봇(Bot) 조종을 이용한 세션 탈취**
 
 </details>
