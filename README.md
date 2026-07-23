@@ -25,7 +25,7 @@
 
 * [MD5 Password](./dreamhack/web/bronze/bronze-3/md5-password/md5-password.md) - **PHP md5() 함수의 raw_output 특성과 MySQL 자동 형변환을 이용한 SQL Injection 및 인증 우회**
 
-* [XSS-1](./dreamhack/web/bronze/bronze-2/xss-1/xss-1.md) - **입력값 필터링 누락에 의한 Reflected XSS 취약점과 관리자 봇(Bot) 조종을 이용한 세션 탈취**
+* [XSS-1](./dreamhack/web/bronze/bronze-2/xss-1/xss-1.md) - **입력값 필터링 누락에 의한 Reflected XSS 취약점과 관리자 봇(Bot) 조종을 이용한 쿠키 탈취**
 
 * [CSRF-2](./dreamhack/web/bronze/bronze-4/csrf-2/csrf-2.md) - **CSRF 취약점을 이용한 관리자 비밀번호 변경 및 계정 탈취**
 

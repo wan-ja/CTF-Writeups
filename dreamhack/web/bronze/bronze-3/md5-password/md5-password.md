@@ -57,5 +57,19 @@ SQL 쿼리에 입력값이나 특정 함수의 결과값을 직접 결합하는 
 
 * **보안 해시 함수 도입:** 충돌 취약점이 존재하고 예측 불가능한 결과를 낳을 수 있는 `md5` 대신, 패스워드 전용 단방향 해시 알고리즘(예: `bcrypt`) 사용.
 
+## 6. 블루팀 관점 요약
+
+보안관제 및 침해사고 대응(IR) 관점에서 Raw Hash 특성을 악용한 SQL Injection 인증 우회 시도 탐지.
+
+* **WAF 및 웹 서버 로그 분석:** 로그인 엔드포인트(`index.php`)의 POST 요청 본문(`ps` 파라미터) 모니터링 시, 알려진 매직 해시(Magic Hash) 문자열(`ffifdyop` 등)이 입력값으로 전송되는 트래픽 식별. 정상적인 비밀번호 입력 패턴과 달리 짧고 특이한 고정 문자열이 반복 전송되는 경우 자동화된 우회 시도로 판단.
+
+* **침해사고 대응 (IR) 시나리오:** 동일 IP에서 매직 해시 후보 문자열을 순차적으로 대입하는 시도가 탐지될 경우, 해당 계정(`admin`)의 이후 로그인 성공 여부와 접근 IP를 추적하여 실제 인증 우회 성공 여부 검증. 성공이 확인되면 해당 계정 비밀번호 강제 초기화 및 세션 전체 무효화.
+
+* **네트워크 기반 탐지 룰 제안 (Snort):** 로그인 POST 요청 본문에서 알려진 매직 해시 문자열 패턴 탐지.
+
+```snort
+alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS (msg:"[Web] MD5 Magic Hash SQLi Attempt"; flow:to_server,established; http_method; content:"POST"; http_client_body; content:"ffifdyop"; sid:1000007; rev:1;)
+```
+
 ## 참고 자료
 * **HackTricks:** [SQL Injection - Raw Hash Injection](https://hacktricks.wiki/ko/pentesting-web/sql-injection/index.html?highlight=md5%20raw%20out#raw-hash-authentication-bypass)

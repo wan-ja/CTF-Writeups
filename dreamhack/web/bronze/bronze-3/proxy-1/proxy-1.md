@@ -107,3 +107,17 @@ userid=admin
 * **입력값 검증:** 허용된 도메인이나 IP 목록(Whitelist)을 정의하고, 사용자의 입력값이 해당 목록에 포함되는지 확인.
 
 * **내부 IP 접근 차단:** `127.0.0.1`, `localhost`, `10.x.x.x`, `192.168.x.x` 등 내부 통신망이나 사설 IP 대역으로의 요청을 코드 레벨에서 명시적으로 차단 조치.
+
+## 6. 블루팀 관점 요약
+
+보안관제 및 침해사고 대응(IR) 관점에서 SSRF를 이용한 내부 인증 우회 공격 모니터링 및 방어.
+
+* **WAF 및 웹 서버 로그 분석:** `/socket` 엔드포인트의 POST 요청 본문 모니터링 시, `host` 파라미터에 `127.0.0.1`, `localhost`, `0.0.0.0` 또는 사설 IP 대역(`10.x.x.x`, `192.168.x.x`)이 입력되는 트래픽을 SSRF 시도로 우선 식별. 특히 `port` 값이 서비스 자신의 포트(예: `8000`)와 일치하는 경우 자기 자신을 대상으로 한 공격 정황으로 판단.
+
+* **침해사고 대응 (IR) 시나리오:** `/socket`을 통해 내부 루프백 주소로 향하는 요청이 탐지되고, 직후 `/admin` 엔드포인트에서 정상 응답(플래그 반환 등)이 발생할 경우 인증 우회 성공으로 간주. 해당 세션 및 발신 IP를 즉시 차단하고, `/admin`에서 요구하는 검증 값(헤더, 쿠키, Form 데이터)이 실제로 외부에 노출되었는지 전수 조사.
+
+* **네트워크 기반 탐지 룰 제안 (Snort):** SSRF를 통해 내부로 전달되는 raw 페이로드 본문에 관리자 인증 우회용 하드코딩 헤더 문자열이 포함된 패턴 탐지.
+
+```snort
+alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS (msg:"[Web] SSRF via /socket - Internal Admin Bypass Attempt"; flow:to_server,established; http_method; content:"POST"; http_uri; content:"/socket"; http_client_body; content:"127.0.0.1"; content:"DreamhackUser"; distance:0; sid:1000009; rev:1;)
+```
