@@ -1,4 +1,4 @@
-# [wargame.kr] StrCmp - Web Hacking
+# [Dreamhack] StrCmp - Web Hacking
 
 ## 1. 문제 개요
 
