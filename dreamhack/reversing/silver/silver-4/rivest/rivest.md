@@ -77,11 +77,11 @@ else
 
 ![더미 인자 세팅](./images/07-set_args.png)
 
-6. `memcmp` 비교 지점(`0x1411`)에 브레이크포인트를 설정하고 실행(Continue) 시 네트워크 타임아웃으로 인해 프로세스가 에러 코드(01)와 함께 비정상 종료됨을 확인.
+6. `memcmp` 비교 지점(`0x1411`)에 브레이크포인트를 설정하고 실행(Continue). libcurl이 `curl_easy_perform` 내부에서 원격 서버 연결을 위해 생성한 워커 스레드가 연결 실패로 예기치 않게 종료되는 것을 확인. 이때 메인 스레드는 `curl_easy_perform` 호출 내부에서 계속 블로킹 대기 상태에 머무르며, `0x1411` 브레이크포인트까지는 도달하지 못함.
 
 ![네트워크 에러로 인한 종료](./images/08-bp_error.png)
 
-7. 페이로드를 다운로드하는 대상 URL을 확보하기 위해 `curl_easy_setopt` 호출 시점에 브레이크포인트 설정.
+7. 페이로드를 다운로드하는 대상 URL을 확보하기 위해 `curl_easy_setopt`의 함수 진입점(`0x7ffff7f29f80`)에 브레이크포인트 설정. 소스 코드상 `curl_easy_setopt`는 총 5회 호출되며(91~95번줄), `c`(continue)로 각 호출 지점을 순차적으로 확인. 첫 번째 히트(91번줄)에서 두 번째 인자인 RSI 레지스터 값이 `0x2712`(10진수 10002)로 확인되었고, 이는 libcurl의 `CURLOPT_URL` 옵션 상수값과 일치하므로 세 번째 인자인 RDX 레지스터가 요청 대상 URL 문자열을 담고 있음을 특정.
 
 ![curl 옵션 설정 중단점](./images/09-curl_setopt.png)
 
@@ -93,7 +93,7 @@ else
 
 ![접속 차단 확인](./images/11-connect_fail.png)
 
-10. archive.org의 정식 다운로드 경로(`https://archive.org/download/kikTXNL6MvX6ZpRXM/kikTXNL6MvX6ZpRXM.mp4`)로 재구성하여 원본 페이로드(`.mp4`) 다운로드 수행.
+10. `ia숫자.us.archive.org` 형태는 Internet Archive의 개별 스토리지 노드 직접 주소로, 노드별 상태에 따라 비활성화될 수 있음을 확인. URL 경로에 이미 노출된 identifier(`kikTXNL6MvX6ZpRXM`)와 파일명을 archive.org의 공식 안정 경로(`https://archive.org/download/{identifier}/{filename}`)에 재조립하여 원본 페이로드(.mp4) 다운로드 수행.
 
 ![우회 다운로드](./images/12-domain_check.png)
 
@@ -109,21 +109,25 @@ else
 
 ![네트워크 대기 현상](./images/15-error.png)
 
-14. 무한 대기 스레드를 강제 인터럽트한 뒤, return (int)0 명령어로 네트워크 통신이 성공한 것처럼 강제 우회함. 이로 인해 실제 파일 다운로드가 생략되었으므로, 다음 단계인 해시 연산(EVP_DigestFinal_ex)이 비정상적인 쓰레기 값을 뱉어낼 것임을 인지하고 해당 지점으로 진행.
+14. `Ctrl+C`로 강제 인터럽트 후 `bt`(backtrace)로 콜스택을 확인. `curl_easy_perform`은 컴파일러의 꼬리 호출 최적화(tail-call optimization)로 인해 별도 프레임 없이 사라져 있으며, libcurl 내부 함수(`#7`)가 사실상 그 역할을 대신하고 있음을 확인. 메인 바이너리(`chall`)의 호출 지점(`#8`, `0x555...` 주소로 식별 가능)으로 잘못 진입하지 않도록, `frame 7`로 명시적으로 프레임을 선택.
 
-![return 0 우회 및 해시 함수 이동](./images/16-return0.png)
+![콜스택 확인 및 프레임 선택](images/16-bt_frame_select.png)
 
-15. `EVP_DigestFinal_ex` 호출 시 2번째 인자인 `RSI` 레지스터 조회를 통해 해시 결과물이 적재될 메모리 버퍼 주소(`0x7fffffffda70`) 확인 후 함수 리턴 처리.
+15. 선택된 프레임(`#7`)에서 `return (int)0` 명령어를 실행하여 libcurl의 통신 성공 코드인 `CURLE_OK`(0)를 강제로 반환값으로 위조. 이로 인해 실제 파일 다운로드는 생략되었으므로, 다음 단계인 해시 연산(`EVP_DigestFinal_ex`)이 빈 컨텍스트에 대한 비정상적인 쓰레기 값을 뱉어낼 것임을 인지하고 해당 지점으로 진행.
 
-![저장 버퍼 주소 확인](./images/17-rsi_check.png)
+![return 0 우회 및 해시 함수 이동](./images/17-return0.png)
 
-16. 사전에 외부에서 연산해 둔 실제 페이로드의 16바이트 MD5 해시 배열을 해당 버퍼 주소에 강제로 덮어쓰기(Memory Patch)하여 완전한 암호 키 구성 완료. 이후 최종 비교 지점(`0x1411`)까지 계속 실행(Continue).
+16. `EVP_DigestFinal_ex` 호출 시 2번째 인자인 `RSI` 레지스터 조회를 통해 해시 결과물이 적재될 메모리 버퍼 주소(`0x7fffffffda70`) 확인 후 함수 리턴 처리.
 
-![메모리 조작 및 비교 지점 도달](./images/18-memory_patch.png)
+![저장 버퍼 주소 확인](./images/18-rsi_check.png)
 
-17. 최종 `memcmp` 검증 단계 정지 시점, `RDI` 레지스터 문자열 덤프를 통해 프로그램 내부 연산으로 완벽히 복호화된 원본 플래그 도출.
+17. 사전에 외부에서 연산해 둔 실제 페이로드의 16바이트 MD5 해시 배열을 해당 버퍼 주소에 강제로 덮어쓰기(Memory Patch)하여 완전한 암호 키 구성 완료. 이후 최종 비교 지점(`0x1411`)까지 계속 실행(Continue).
 
-![플래그 메모리 덤프](./images/19-flag.png)
+![메모리 조작 및 비교 지점 도달](./images/19-memory_patch.png)
+
+18. 최종 `memcmp` 검증 단계 정지 시점, `RDI` 레지스터 문자열 덤프를 통해 프로그램 내부 연산으로 완벽히 복호화된 원본 플래그 도출.
+
+![플래그 메모리 덤프](./images/20-flag.png)
 
 ## 4. 획득 결과
 

@@ -10,8 +10,8 @@
 
 
 ## 2. 취약점 분석
-제공된 APK 파일(`GyulVault.apk`)을 디컴파일하여 `MainActivity`를 확인한 결과, 네이티브 라이브러리를 로드하여 핵심 로직을 처리하는 구조 확인.
-C 라이브러리 내부의 `dumpForAuthor` 함수에서 배경 패턴을 생성한 후 `resolve_secret` 함수가 생성한 실제 플래그와 단순 XOR 연산을 수행하여 메모리 덤프 파일(`memdump.bin`)에 기록하는 취약한 설계 파악.
+제공된 APK 파일(`GyulVault.apk`)을 디컴파일하여 `MainActivity`를 확인한 결과, 네이티브 라이브러리를 로드하여 핵심 로직을 처리하는 구조 확인. C 라이브러리 내부의 `dumpForAuthor` 함수에서 배경 패턴을 생성한 후 `resolve_secret` 함수가 생성한 실제 플래그와 단순 XOR 연산을 수행하여 메모리 덤프 파일(`memdump.bin`)에 기록하는 취약한 설계 파악.
+
 
 ```java
 // [MainActivity.java] 네이티브 라이브러리 로드 및 JNI 함수 선언
@@ -55,6 +55,7 @@ public final class MainActivity extends AppCompatActivity {
 // ... (중략) ...
 ```
 
+* **분석 결론:** `dumpForAuthor`는 `MainActivity.java` 내에서 어떤 UI 이벤트와도 연결되지 않은 채 `native` 함수로만 선언되어 있어, 사용자 동작으로는 호출될 수 없는 개발자 전용 디버그 함수로 판단됨. 이 함수는 하드코딩된 데이터를 XOR 및 회전 연산으로 조합해 실제 플래그를 생성하는 `resolve_secret`을 호출한 뒤, 그 결과를 배경 패턴 데이터와 단순 XOR 연산하여 `memdump.bin`(4096바이트)에 기록함. 즉 상용 배포 시 제거됐어야 할 디버그 전용 함수가 남아있어, 정상적인 검증 경로(`runVaultCheck`)를 거치지 않고도 정적 분석만으로 플래그를 복구할 수 있는 논리적 취약점이 존재함.
 
 ## 3. 공격 수행
 
@@ -70,11 +71,11 @@ public final class MainActivity extends AppCompatActivity {
 
 ![라이브러리 내부 주요 함수 도출](./images/03-runvault_check.png)
 
-4. 다운로드했던 `memdump.bin` 파일의 단서를 찾기 위해 `dumpForAuthor` 함수 내부 진입. `fwrite` 함수가 존재하는 것을 확인하고, 속성 상 파일 크기인 4096(0x1000) 바이트와 코드의 반복문 조건이 일치함을 바탕으로 해당 함수가 플래그 생성과 직접적인 연관이 있음을 파악.
+4. 문제 파일에 함께 제공된 `memdump.bin`(`dumpForAuthor`가 생성하는 디버그 덤프 결과물로 추정)의 단서를 찾기 위해 `dumpForAuthor` 함수 내부 진입. `__fwrite_chk`(스택 보호가 추가된 `fwrite`의 안전 버전으로 기능은 동일) 호출에서 크기 인자가 `0x1000`(4096바이트)로, `memdump.bin`의 실제 파일 크기와 정확히 일치함을 확인. 이를 근거로 해당 함수가 플래그 생성과 직접적인 연관이 있음을 파악.
 
 ![dumpForAuthor 함수의 파일 쓰기 로직 확인](./images/04-dump_for_author.png)
 
-5. 연관된 함수인 `resolve_secret` 내부를 분석. 특정 하드코딩된 데이터들을 활용해 복잡한 연산을 수행하고, 그 결과값을 다시 버퍼로 가져와 원본 덤프 데이터와 XOR 연산을 하는 흐름을 확인. 이 하드코딩된 데이터의 조합이 최종 플래그(Flag)임을 짐작.
+5. 연관된 함수인 `resolve_secret` 내부를 분석. `local_70` 변수를 이용한 반복 연산에서 사용되는 상수(`0x19660d`, `0x3c6ef35f`)가 선형 합동 생성기(LCG, Linear Congruential Generator)에서 흔히 쓰이는 표준 상수임을 확인. 즉 이 함수는 하드코딩된 배경 패턴 데이터를 시드(seed)로 삼아 XOR 키 스트림을 생성하는 역할을 하며, 입력값(배경 패턴)이 이미 정적으로 확보되어 있으므로 이 연산을 역산할 필요 없이 동일한 로직을 그대로 재현하는 방식으로 접근. 생성된 키 스트림이 원본 덤프 데이터와 XOR 연산되어 최종 플래그를 구성함을 확인.
 
 ![resolve_secret 함수의 하드코딩 데이터 연산 확인](./images/05-resolve_secret.png)
 

@@ -24,6 +24,7 @@ if ( strlen(argv[1]) == 24 && (unsigned __int8)std::operator==<char>(&vlkjbkldsa
 }
 // ... (중략) ...
 ```
+이때 비교 대상인 `vlkjbkldsajfksdkfl2`(사용자 입력값과 24자 일치 여부만 검사하는 더미성 검증 변수)와, 실제로 화면에 출력되는 `lkjasvhkjsldhkl`(진짜 플래그 본문)은 서로 다른 전역 변수로, 둘 다 `__static_initialization_and_destruction_0`에서 각각 별도로 초기화됨. 즉 `argv[1]` 비교는 단순 게이트 조건일 뿐이며, 실제 플래그 값은 이 비교와 무관하게 이미 메모리에 복호화되어 존재함.
 
 * **분석 결론:** 사용자의 입력값과 특정 조건 로직을 통과하지 않아도, `main` 함수 실행 전 전역 변수 초기화 단계에서 플래그가 메모리에 조립 및 복호화됨. GDB를 활용해 `main` 진입 시점에 멈춘 후, 해당 전역 변수 메모리를 직접 읽어 들이는 동적 분석 방식으로 조건문 검증 우회 가능.
 
@@ -37,11 +38,11 @@ if ( strlen(argv[1]) == 24 && (unsigned __int8)std::operator==<char>(&vlkjbkldsa
 
 ![bss 영역 확인](./images/02-bss_section.png)
 
-3. 해당 변수에 교차 참조(XREF)를 수행하여, `main` 함수 실행 이전에 데이터를 조립하는 `__static_initialization_and_destruction_0` 함수 로직 확인.
+3. 해당 변수에 교차 참조(XREF)를 수행하여, `main` 함수 실행 이전에 데이터를 조립하는 `__static_initialization_and_destruction_0` 함수 로직 확인. C의 단순 전역변수는 `.bss`/`.data` 섹션에 값만 채워두면 끝나지만, C++는 생성자가 있는 전역 객체(`std::string` 등)를 초기화하려면 실제 생성자 코드를 실행해야 하므로, 컴파일러가 이 초기화 코드를 모아 `__static_initialization_and_destruction_0`이라는 별도 함수로 만들고, `main` 호출 전에 런타임이 자동 실행함.
 
 ![XREF 팝업창 확인](./images/03-xref.png)
 
-4. 데이터를 생성하는 내부 조각 함수 진입 시, 하드코딩된 바이트 배열을 XOR 연산(`87 - i` 등)으로 복호화하는 로직 확인.
+4. 데이터를 생성하는 내부 조각 함수 진입 시, 하드코딩된 바이트 배열을 XOR 연산(`87 - i` 등)으로 복호화하는 로직 확인. `isEncrypted`는 함수 내부 static 변수(local static)로, 최초 1회만 `true` 상태를 가짐. 이를 이용해 XOR 복호화 로직이 프로그램 실행 중 단 한 번만 수행되도록 보장하며, 실행 후 `false`로 전환해 재호출 시 이미 복호화된 데이터가 다시 XOR되어 손상되는 것을 방지함.
 
 ![전역 변수 초기화 함수 내부](./images/04-xref_in.png)
 
@@ -51,7 +52,7 @@ if ( strlen(argv[1]) == 24 && (unsigned __int8)std::operator==<char>(&vlkjbkldsa
 
 ![실행 권한 부여 및 GDB 실행](./images/06-gdb_chmod.png)
 
-6. `main` 함수 도달 시 이미 전역 변수 복호화가 완료되었으므로, C++ `std::string` 객체의 메모리 구조 특징을 활용해 직접 포인터 캐스팅(`x/s *(char**)&lkjasvhkjsldhkl`)하여 최종 플래그 획득.
+6. `main` 함수 도달 시 이미 전역 변수 복호화가 완료되었으므로, C++ `std::string` 객체의 메모리 구조 특징을 활용해 직접 포인터 캐스팅(`x/s *(char**)&lkjasvhkjsldhkl`)하여 최종 플래그 획득. `std::string` 객체는 내부적으로 [데이터 포인터(8바이트), 길이(8바이트), capacity/SSO버퍼]로 구성된 헤더 구조를 가지며, 객체의 시작 주소가 곧 이 헤더의 시작 주소와 같음. `(char**)&lkjasvhkjsldhkl`로 이 객체 주소를 "char 포인터가 저장된 자리"로 캐스팅한 뒤 `*`로 한 번 역참조하면, 헤더의 첫 8바이트에 저장된 실제 문자 데이터의 포인터를 얻을 수 있음. `x/s`로 그 주소를 조회하면 원본 플래그 문자열이 그대로 노출됨.
 
 ![플래그 메모리 덤프](./images/07-flag.png)
 
