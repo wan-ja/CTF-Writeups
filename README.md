@@ -70,6 +70,8 @@
 <details>
 <summary><h4>Bronze 1</h4></summary>
 
+* [Ez_rev](./dreamhack/reversing/bronze/bronze-1/ez_rev/ez_rev.md) - **다단계 가역 연산(Shift, XOR) 암호화 로직 분석 및 파이썬 역연산 스크립팅**
+
 * [Ezmix](./dreamhack/reversing/bronze/bronze-1/ezmix/ezmix.md) - **커스텀 VM(Opcode) 기반 가역 연산 로직 분석 및 파이썬 역산 스크립팅**
 
 * [Mix-Compare](./dreamhack/reversing/bronze/bronze-1/mix-compare/mix-compare.md) - **하드코딩 데이터 기반 다단계 수식 검증 정적 분석 및 Z3 Solver를 활용한 역산 스크립팅**
