@@ -105,6 +105,8 @@
 
 * [Gyul Brix Calculator](./dreamhack/reversing/bronze/bronze-2/gyul-brix-calculator/gyul-brix-calculator.md) - **단일 검증 변수 취약점 정적 분석 및 동적 디버깅 기반 조건 분기(ZF) 조작**
 
+* [Gyul Order](./dreamhack/reversing/bronze/bronze-2/gyul-order/gyul-order.md) - **안드로이드 앱 디컴파일 기반 정적 분석 및 하드코딩된 디버그 데이터(requestNote) 내 Base64 인코딩 플래그 복호화**
+
 * [Inject ME!!!](./dreamhack/reversing/bronze/bronze-2/inject-me/inject-me.md) - **DLL DllMain 진입점 분석 및 호스트 프로세스명 검증 로직 우회용 전용 로더(Loader) 제작**
 
 * [Labyrinth](./dreamhack/reversing/bronze/bronze-2/labyrinth/labyrinth.md) - **ptrace 안티 디버깅 우회 및 동적 디버깅을 활용한 레지스터(RBP) 내 동적 생성 평문 키(Key) 메모리 탈취**
