@@ -54,6 +54,8 @@
 
 * [Gyul Order v2](./dreamhack/reversing/silver/silver-4/gyul-order-v2/gyul-order-v2.md) - **안드로이드 앱 디컴파일 기반 정적 분석 및 하드코딩된 객체 변수(price)를 활용한 동적 XOR 키 추출**
 
+* [Gyul Cam v1.14](./dreamhack/reversing/silver/silver-4/gyulcam-v1.14/gyulcam-v1.14.md) - **IoT 펌웨어(binwalk) 파일시스템 추출 및 디컴파일러 상수 조작(svc 부작용 미반영) 탐지, ARM 어셈블리 직접 대조를 통해 `/etc/shadow` 파일 크기 기반 동적 XOR 키 복원 및 평문 플래그 추출**
+
 * [Patch](./dreamhack/reversing/silver/silver-4/patch/patch.md) - **윈도우 프로시저(WM_PAINT) 분석 및 GDI+ 렌더링 방해 함수 어셈블리 변조(ret)를 통한 화면 덮어쓰기 무력화**
 
 * [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2형 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
