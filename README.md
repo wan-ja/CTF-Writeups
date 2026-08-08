@@ -74,6 +74,8 @@
 
 * [Basic_CrackMe](./dreamhack/reversing/bronze/bronze-1/basic_crackme/basic_crackme.md) - **32비트 분할 연산 및 문자열 포맷팅(%#llX) 특성 분석을 활용한 파이썬 역연산 스크립팅**
 
+* [Breaking Bad](./dreamhack/reversing/bronze/bronze-1/breaking-bad/breaking-bad.md) - **외부 파일 공백 오프셋 기반 키 파생 및 XOR·니블 스왑 역산 스크립팅, CRLF/LF 인코딩 불일치 원인 규명을 통한 플래그 복원**
+
 * [Ez_rev](./dreamhack/reversing/bronze/bronze-1/ez_rev/ez_rev.md) - **다단계 가역 연산(Shift, XOR) 암호화 로직 분석 및 파이썬 역연산 스크립팅**
 
 * [Ezmix](./dreamhack/reversing/bronze/bronze-1/ezmix/ezmix.md) - **커스텀 VM(Opcode) 기반 가역 연산 로직 분석 및 파이썬 역산 스크립팅**
