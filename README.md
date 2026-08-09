@@ -60,6 +60,8 @@
 
 * [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2형 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
 
+* [Secure Mail](./dreamhack/reversing/silver/silver-4/secure-mail/secure-mail.md) - **난독화 JS 검증 로직 분석 및 alert/document.write 오버라이드 기반 생년월일 브루트포스**
+
 </details>
 
 </ul>
