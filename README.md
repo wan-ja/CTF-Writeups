@@ -397,3 +397,17 @@
 
 </ul>
 </details>
+
+<details>
+<summary><h2>🛡️ Vulnerable Apps (취약 앱 실습)</h2></summary>
+<ul style="list-style-type: none;">
+
+<details>
+<summary><h3>Allsafe (Android)</h3></summary>
+
+* [Smali Patching](./vulnerable-apps/allsafe/smali-patching/smali-patching.md) - **안드로이드 APK 디컴파일(apktool) 기반 Smali 코드 정적 패치를 통한 클라이언트 하드코딩 인증 로직 우회**
+
+</details>
+
+</ul>
+</details>
