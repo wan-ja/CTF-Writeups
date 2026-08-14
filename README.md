@@ -12,11 +12,16 @@
 
 * [BitChanger](./dreamhack/reversing/silver/silver-4/bitchanger/bitchanger.md) - **Heaven's Gate(64비트 전환) 및 SYSCALL 안티 디버깅 정적 우회와 4원 1차 연립방정식 역산 스크립팅**
 
+* [Randzzz](./dreamhack/reversing/silver/silver-4/randzzz/randzzz.md) - **시드 없는 rand() 이중 분기 검증, GDB return 기반 sleep 우회 및 스택 메모리 직접 패치로 분할 복호화 조각 조합**
+
+* [Breaking Bad](./dreamhack/reversing/bronze/bronze-1/breaking-bad/breaking-bad.md) - **외부 파일 공백 오프셋 기반 키 파생 및 XOR·니블 스왑 역산 스크립팅, CRLF/LF 인코딩 불일치 원인 규명을 통한 플래그 복원**
+
+* [Patch](./dreamhack/reversing/silver/silver-4/patch/patch.md) - **윈도우 프로시저(WM_PAINT) 분석 및 GDI+ 렌더링 방해 함수 어셈블리 변조(ret)를 통한 화면 덮어쓰기 무력화**
+
 * [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
 
 * [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
 
-* [Patch](./dreamhack/reversing/silver/silver-4/patch/patch.md) - **윈도우 프로시저(WM_PAINT) 분석 및 GDI+ 렌더링 방해 함수 어셈블리 변조(ret)를 통한 화면 덮어쓰기 무력화**
 
 ### 🌐 Web Application & Log Analysis (웹 보안 및 로그 분석)
 * [Proxy-1](./dreamhack/web/bronze/bronze-3/proxy-1/proxy-1.md) - **SSRF 취약점과 Raw Socket 통신을 이용한 내부망 서비스 접근 및 관리자 인증 우회**
