@@ -412,6 +412,8 @@
 
 * [Smali Patching](./vulnerable-apps/allsafe/smali-patching/smali-patching.md) - **안드로이드 APK 디컴파일(apktool) 기반 Smali 코드 정적 패치를 통한 클라이언트 하드코딩 인증 로직 우회**
 
+* [Native Library](./vulnerable-apps/allsafe/native-library/native-library.md) - **JNI 네이티브 라이브러리(.so) 정적 분석 및 Frida 런타임 리턴값 조작을 통한 패스워드 검증 로직 우회**
+
 </details>
 
 </ul>
