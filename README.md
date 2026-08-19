@@ -410,6 +410,8 @@
 <details>
 <summary><h3>Allsafe (Android)</h3></summary>
 
+* [Deep Link Exploitation](./vulnerable-apps/allsafe/deep-link-exploitation/deep-link-exploitation.md) - **매니페스트(Manifest) 정적 분석을 통한 노출된 URI 스키마 식별 및 하드코딩 키 조합 기반 ADB 딥링크 트리거**
+
 * [Native Library](./vulnerable-apps/allsafe/native-library/native-library.md) - **JNI 네이티브 라이브러리(.so) 정적 분석 및 Frida 런타임 리턴값 조작을 통한 패스워드 검증 로직 우회**
 
 * [Root Detection](./vulnerable-apps/allsafe/root-detection/root-detection.md) - **루팅 탐지 라이브러리 정적 분석 및 Frida 런타임 리턴값 조작을 통한 탐지 로직 우회**
