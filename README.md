@@ -410,6 +410,8 @@
 <details>
 <summary><h3>Allsafe (Android)</h3></summary>
 
+* [Certificate Pinning Bypass](./vulnerable-apps/allsafe/certificate-pinning-bypass/certificate-pinning-bypass.md) - **OkHttp 인증서 피닝(Certificate Pinning) 검증 로직 분석 및 Frida 런타임 후킹을 통한 MITM 프록시 검증 우회**
+
 * [Deep Link Exploitation](./vulnerable-apps/allsafe/deep-link-exploitation/deep-link-exploitation.md) - **매니페스트(Manifest) 정적 분석을 통한 노출된 URI 스키마 식별 및 하드코딩 키 조합 기반 ADB 딥링크 트리거**
 
 * [Native Library](./vulnerable-apps/allsafe/native-library/native-library.md) - **JNI 네이티브 라이브러리(.so) 정적 분석 및 Frida 런타임 리턴값 조작을 통한 패스워드 검증 로직 우회**
