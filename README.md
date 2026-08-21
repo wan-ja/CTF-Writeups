@@ -422,5 +422,12 @@
 
 </details>
 
+<details>
+<summary><h3>OWASP MASTG Crackmes (Android)</h3></summary>
+
+* [UnCrackable Level 3](./vulnerable-apps/owasp-crackmes/uncrackable-level3/uncrackable-level3.md) - **JNI 네이티브 XOR 검증 로직 분석 및 Smali 정적 패칭 기반 Root/Tampering 우회**
+
+</details>
+
 </ul>
 </details>
