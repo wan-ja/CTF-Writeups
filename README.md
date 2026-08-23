@@ -18,10 +18,20 @@
 
 * [Patch](./dreamhack/reversing/silver/silver-4/patch/patch.md) - **윈도우 프로시저(WM_PAINT) 분석 및 GDI+ 렌더링 방해 함수 어셈블리 변조(ret)를 통한 화면 덮어쓰기 무력화**
 
-* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
-
 * [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
 
+<br>
+
+### 📱 Mobile Security (안드로이드 앱 분석)
+* [UnCrackable Level 3](./vulnerable-apps/owasp-crackmes/uncrackable-level3/uncrackable-level3.md) - **JNI 네이티브 XOR 검증 로직 분석 및 Smali 정적 패칭 기반 Root/Tampering 우회**
+
+* [Certificate Pinning Bypass](./vulnerable-apps/allsafe/certificate-pinning-bypass/certificate-pinning-bypass.md) - **OkHttp 인증서 피닝(Certificate Pinning) 검증 로직 분석 및 Frida 런타임 후킹을 통한 MITM 프록시 검증 우회**
+
+* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
+
+* [Deep Link Exploitation](./vulnerable-apps/allsafe/deep-link-exploitation/deep-link-exploitation.md) - **매니페스트(Manifest) 정적 분석을 통한 노출된 URI 스키마 식별 및 하드코딩 키 조합 기반 ADB 딥링크 트리거**
+
+<br>
 
 ### 🌐 Web Application & Log Analysis (웹 보안 및 로그 분석)
 * [Proxy-1](./dreamhack/web/bronze/bronze-3/proxy-1/proxy-1.md) - **SSRF 취약점과 Raw Socket 통신을 이용한 내부망 서비스 접근 및 관리자 인증 우회**
