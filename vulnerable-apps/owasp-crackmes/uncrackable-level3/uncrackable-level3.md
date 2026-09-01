@@ -58,7 +58,7 @@ void Java_sg_vantagepoint_uncrackable3_CodeCheck_bar(...) {
 
 ```c
 // [libfoo.so] FUN_001010e0 - local_68에 실제 대입되는 상수
-// 함수 앞부분은 난수 생성 패턴을 반복하며 링크드리스트를 채우지만, 그 결과값이
+// 함수 앞부분은 난수 생성 패턴을 반복하는데, 그 결과값이
 // 이후 어디에도 사용되지 않는 안티 리버싱용 쓰레기 코드로 판단, 분석에서 제외
 if (_1_sub_doit__opaque_list1_1 != (uint *)0x0) {
     param_1[1] = 0x15131d5a1903000d;
@@ -143,7 +143,7 @@ Java.perform(function () {
 });
 ```
 
-9. `frida -U -f <package> -l hook.js` 실행 시 삼성 Knox 환경의 SELinux 정책(`selinux_android_setcontext`) 및 ART 계층 충돌로 spawn 반복 실패 확인. `magiskpolicy`를 통한 SELinux 정책 예외 추가로도 근본 해결 불가, 기기 환경 한계로 판단하여 동적 후킹 방식 포기.
+9. `frida -U -f <package> -l hook.js` 실행 시 삼성 Knox 환경의 SELinux 정책 및 ART 계층 충돌로 spawn 반복 실패 확인. `magiskpolicy`를 통한 SELinux 정책 예외 추가로도 근본 해결 불가, 기기 환경 한계로 판단하여 동적 후킹 방식 포기.
 
 ![Frida spawn 타임아웃/크래시 재현](./images/11-frida_err.png)
 
@@ -155,11 +155,11 @@ Java.perform(function () {
 
 ![smali 원본 - 5개 분기 조건](./images/13-smali_origin.png)
 
-11. 각 조건문 직전에 `const/4 v0, 0x0`을 삽입, 판단에 쓰이는 레지스터 값을 강제로 `false`(0)로 고정하여 실제 체크 함수의 부수효과(로그 등)는 유지한 채 분기 로직만 무력화.
+11. 각 조건문 직전에 `const/4 v0, 0x0`을 삽입, 판단에 쓰이는 레지스터 값을 강제로 `false`(0)로 고정하여 분기 로직만 무력화.
 
 ![smali 패치 후 - const/4 v0, 0x0 5줄 삽입](./images/14-smali_edit.png)
 
-12. `apktool b`로 재조립, `uber-apk-signer`로 재서명 후 재조립 과정에서 발생하는 CRC 불일치가 `tampered` 강제 고정 패치로 무력화됨을 확인.
+12. `apktool b`로 재조립, `uber-apk-signer`로 재서명. 패치 대상인 `classes.dex`는 재조립 시 바이트가 변경되어 `verifyLibs()`의 CRC 무결성 체크(`entry3.getCrc() != baz()`)가 항상 불일치, `tampered` 필드가 31337로 세팅됨을 확인.
 
 ![apktool b 재조립 실행](./images/15-apktool_b.png)
 

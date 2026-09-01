@@ -71,11 +71,11 @@ public final class MainActivity extends AppCompatActivity {
 
 ![라이브러리 내부 주요 함수 도출](./images/03-runvault_check.png)
 
-4. 문제 파일에 함께 제공된 `memdump.bin`(`dumpForAuthor`가 생성하는 디버그 덤프 결과물로 추정)의 단서를 찾기 위해 `dumpForAuthor` 함수 내부 진입. `__fwrite_chk`(스택 보호가 추가된 `fwrite`의 안전 버전으로 기능은 동일) 호출에서 크기 인자가 `0x1000`(4096바이트)로, `memdump.bin`의 실제 파일 크기와 정확히 일치함을 확인. 이를 근거로 해당 함수가 플래그 생성과 직접적인 연관이 있음을 파악.
+4. 문제 파일에 함께 제공된 `memdump.bin`(`dumpForAuthor`가 생성하는 디버그 덤프 결과물로 추정)의 단서를 찾기 위해 `dumpForAuthor` 함수 내부 진입. `__fwrite_chk` 호출에서 크기 인자가 `0x1000`(4096바이트)로, `memdump.bin`의 실제 파일 크기와 정확히 일치함을 확인. 이를 근거로 해당 함수가 플래그 생성과 직접적인 연관이 있음을 파악.
 
 ![dumpForAuthor 함수의 파일 쓰기 로직 확인](./images/04-dump_for_author.png)
 
-5. 연관된 함수인 `resolve_secret` 내부를 분석. `local_70` 변수를 이용한 반복 연산에서 사용되는 상수(`0x19660d`, `0x3c6ef35f`)가 선형 합동 생성기(LCG, Linear Congruential Generator)에서 흔히 쓰이는 표준 상수임을 확인. 즉 이 함수는 하드코딩된 배경 패턴 데이터를 시드(seed)로 삼아 XOR 키 스트림을 생성하는 역할을 하며, 입력값(배경 패턴)이 이미 정적으로 확보되어 있으므로 이 연산을 역산할 필요 없이 동일한 로직을 그대로 재현하는 방식으로 접근. 생성된 키 스트림이 원본 덤프 데이터와 XOR 연산되어 최종 플래그를 구성함을 확인.
+5. 연관된 함수인 resolve_secret 내부 분석. 전달받은 param_1(플래그 버퍼)에 대해 하드코딩된 데이터(DAT_00104320, DAT_0010433f, DAT_0010435e)만을 XOR 및 치환 연산으로 조합해 값을 채우는 구조임을 확인. 외부 입력이나 가변 요소 없이 정적 데이터로만 결정되므로, 별도의 역산 없이 동일 로직을 그대로 재현해 플래그 도출 가능함을 파악.
 
 ![resolve_secret 함수의 하드코딩 데이터 연산 확인](./images/05-resolve_secret.png)
 
@@ -88,10 +88,10 @@ with open("memdump.bin", "rb") as f:
 flag = ""
 for i in range(31):
     idx = 1280 + i
-    
-    prev_data = ((idx * 73) + 19) & 0xff
-    
-    flag += chr(data[idx] ^ prev_data) 
+
+    prev_data = ((idx * ord('I')) + 0x13) & 0xff 
+
+    flag += chr(data[idx] ^ prev_data)  # flag = 최종 bin ^ 이전 bin
 
 print(flag)
 ```

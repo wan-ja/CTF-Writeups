@@ -89,28 +89,38 @@ public final void check$okhttp(String hostname, Function0<? extends List<? exten
 
 ![Burp Proxy Listener 바인딩 설정](./images/06-burp_proxy.png)
 
-4. 루팅된 테스트 단말(Galaxy A31)의 Wi-Fi 프록시를 Burp 리스너 주소로 수동 설정.
+`ipconfig`로 분석 PC의 실제 IPv4 주소(192.168.0.28) 확인.
 
-![단말 프록시 수동 설정](./images/07-wifi_proxy.png)
+![분석 PC IP 확인](./images/07-ipconfig.png)
 
-5. Burp CA 인증서를 단말에 설치 후 Magisk `AlwaysTrustUserCerts` 모듈로 user store 인증서를 신뢰 대상으로 격상. 인증서 신뢰 등록 상태 확인.
+4. 확인한 PC IP를 기준으로, 루팅된 테스트 단말(Galaxy A31)의 Wi-Fi 프록시 호스트/포트를 Burp 리스너 주소(192.168.0.28:8080)로 수동 설정.
 
-![CA 인증서 신뢰 등록 확인](./images/08-ca_cert.png)
+![단말 프록시 수동 설정](./images/08-wifi_proxy.png)
+
+5. Burp CA 인증서를 단말에 설치 후 Magisk `AlwaysTrustUserCerts` 모듈로 user store 인증서를 신뢰 대상으로 지정. 인증서 신뢰 등록 상태 확인.
+
+![CA 인증서 신뢰 등록 확인](./images/09-ca_cert.png)
 
 6. 프록시 활성화 상태로 `SEND REQUEST` 버튼 재실행. 하드코딩된 진짜 pin 값과 Burp의 위조 인증서 해시가 불일치하여 `Certificate pinning failure!` 예외 발생, 피닝 로직이 정상 작동 중임을 확인.
 
-![프록시 개입 시 피닝 실패 화면](./images/09-pinning_failure.png)
+![프록시 개입 시 피닝 실패 화면](./images/10-pinning_failure.png)
 
-7. `okhttp3.CertificatePinner` 클래스 분석을 토대로, 겉보기 시그니처(`check(String, List)`)가 아닌 실제 호출 대상(`check$okhttp(String, Function0)`)을 대상으로 Frida 후킹 스크립트 작성.
+7. `CertificatePinning.java` 자체에는 해당 예외 메시지를 생성하는 로직이 없어, 화면에 노출된 예외 문구("Peer certificate chain")를 JADX Text Search로 코드 전체에서 역추적. 검색 결과 `okhttp3.CertificatePinner.check$okhttp()` 함수 내부에서 해당 문자열이 조립됨을 확인, 실제 pin 검증 로직의 위치를 특정.
 
-![OkHttp CertificatePinner의 check/check$okhttp 관계 확인](./images/10-certificatepinner.png)
+![JADX 문구 검색으로 검증 로직 위치 특정](./images/11-string_search.png)
+
+8. 특정된 `check$okhttp()` 함수 코드 확인. `Intrinsics.areEqual(pin.getHash(), sha256)`으로 실제 pin 비교가 이루어지며, 불일치 시 `Certificate pinning failure!` 예외 메시지가 조립되어 던져지는 구조임을 확인.
+
+![check$okhttp 내부 실제 검증 로직 확인](./images/12-okhttp.png)
+
+9. `check$okhttp(String, Function0)`를 후킹 대상으로 Frida 스크립트 작성.
 
 ```javascript
 // [hook.js] Certificate Pinning 우회 스크립트
 Java.perform(function () {
     var CertificatePinner = Java.use("okhttp3.CertificatePinner");
 
-    CertificatePinner["check$okhttp"].overload('java.lang.String', 'kotlin.jvm.functions.Function0').implementation = function (hostname, certChainFn) {
+    CertificatePinner["check$okhttp"].overload('java.lang.String', 'kotlin.jvm.functions.Function0').implementation = function (hostname, cleanedPeerCertificatesFn) {
         console.log("[*] bypassed : " + hostname);
         return;
     };
@@ -119,17 +129,17 @@ Java.perform(function () {
 });
 ```
 
-![Frida 후킹 설치 확인](./images/11-frida_hook.png)
+![Frida 후킹 설치 확인](./images/13-frida_hook.png)
 
-8. 후킹이 적용된 상태로 `SEND REQUEST` 버튼 재실행. 콘솔에 우회 로그 출력과 동시에 단말 화면에 성공 메시지 확인.
+10. 후킹이 적용된 상태로 `SEND REQUEST` 버튼 재실행. 콘솔에 우회 로그 출력과 동시에 단말 화면에 성공 메시지 확인.
 
-![Frida 우회 로그 출력 확인](./images/12-frida_success.png)
+![Frida 우회 로그 출력 확인](./images/14-frida_success.png)
 
-![후킹 적용 상태 우회 성공 화면](./images/13-pinning_success.png)
+![후킹 적용 상태 우회 성공 화면](./images/15-pinning_success.png)
 
-9. Burp HTTP history에서 해당 요청의 응답 본문이 평문 JSON으로 정상 캡처된 것을 최종 확인, 프록시가 실제로 트래픽을 복호화하여 가로챈 상태에서 우회가 성립했음을 검증.
+11. Burp HTTP history에서 해당 요청의 응답 본문이 평문 JSON으로 정상 캡처된 것을 최종 확인, 프록시가 실제로 트래픽을 복호화하여 가로챈 상태에서 우회가 성립했음을 검증.
 
-![Burp HTTP history 트래픽 캡처 확인](./images/14-http_history.png)
+![Burp HTTP history 트래픽 캡처 확인](./images/16-http_history.png)
 
 ## 4. 획득 결과
 Frida 후킹 적용 후 `SEND REQUEST` 버튼 실행 시 프록시가 개입된 상태에서도 인증서 피닝 검증이 무력화되어 정상 응답 수신 확인.
