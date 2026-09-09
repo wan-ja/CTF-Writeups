@@ -5,3 +5,4 @@
 allsafe-decompiled/
 *.apk
 *.apk.idsig
+**/ios/

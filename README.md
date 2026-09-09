@@ -435,6 +435,8 @@
 <details>
 <summary><h3>OWASP MASTG Crackmes (Android)</h3></summary>
 
+* [UnCrackable Level 1](./vulnerable-apps/owasp-crackmes/uncrackable-level1/uncrackable-level1.md) - **Smali 정적 패칭 기반 Root/Debug 탐지 우회 및 Frida 런타임 후킹을 통한 하드코딩 AES 시크릿 추출**
+
 * [UnCrackable Level 3](./vulnerable-apps/owasp-crackmes/uncrackable-level3/uncrackable-level3.md) - **JNI 네이티브 XOR 검증 로직 분석 및 Smali 정적 패칭 기반 Root/Tampering 우회**
 
 </details>
