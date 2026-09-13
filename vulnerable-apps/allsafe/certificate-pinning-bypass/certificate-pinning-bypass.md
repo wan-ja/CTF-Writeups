@@ -67,7 +67,7 @@ public final void check$okhttp(String hostname, Function0<? extends List<? exten
 }
 ```
 
-* **분석 결론:** `CertificatePinning.java` 자체에는 pin 값을 비교하는 로직이 없고, `OkHttpClient`에 장착된 `okhttp3.CertificatePinner` 객체(`.certificatePinner(...)`)로 검증이 위임되는 구조. 해당 라이브러리 클래스를 직접 디컴파일하여 대조한 결과, 소스상의 `check(String, List)`는 내부적으로 `check$okhttp(String, Function0)`를 호출하는 껍데기 함수이며, 실제 pin 비교(`Intrinsics.areEqual`) 로직은 `check$okhttp` 안에 위치함을 확인. 이는 OkHttp 4.x가 Kotlin inline 함수로 컴파일되며 발생하는 특성으로, 소스코드 상의 메서드명과 런타임에 실제 호출되는 심볼명이 다를 수 있음을 의미하며, 검증 로직 자체가 앱 코드가 아닌 라이브러리 내부에 있어 Frida를 이용한 런타임 후킹으로 무력화 가능.
+* **분석 결론:** `CertificatePinning.java` 자체에는 pin 값을 비교하는 로직이 없고, `OkHttpClient`에 장착된 `okhttp3.CertificatePinner` 객체(`.certificatePinner(...)`)로 검증이 위임되는 구조. 프록시 개입 시 발생한 예외 메시지("Peer certificate chain")를 JADX Text Search로 코드 전체에서 역추적한 결과, 실제 pin 비교(`Intrinsics.areEqual`) 로직이 `okhttp3.CertificatePinner.check$okhttp()` 내부에 위치함을 확인. 검증 로직 자체가 앱 코드가 아닌 서드파티 라이브러리 내부에 있어 Frida를 이용한 런타임 후킹으로 무력화 가능.
 
 ## 3. 공격 수행
 
