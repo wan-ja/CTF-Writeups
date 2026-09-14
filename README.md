@@ -240,6 +240,13 @@
 <ul>
 
 <details>
+<summary><h4>Bronze 1</h4></summary>
+
+* [XSS-2](./dreamhack/web/bronze/bronze-1/xss-2/xss-2.md) - **innerHTML 기반 DOM XSS 취약점과 이벤트 핸들러(onerror) 우회를 이용한 관리자 봇(Bot) 쿠키 탈취**
+
+</details>
+
+<details>
 <summary><h4>Bronze 2</h4></summary>
 
 * [Blind Command](./dreamhack/web/bronze/bronze-2/blind-command/blind-command.md) - **HTTP 메소드 검증 우회 및 OOB(Out-of-Band) 기법을 활용한 Command Injection 공격**
