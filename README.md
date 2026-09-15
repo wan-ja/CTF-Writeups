@@ -244,6 +244,8 @@
 
 * [CSRF-1](./dreamhack/web/bronze/bronze-1/csrf-1/csrf-1.md) - **블랙리스트 필터링(frame/script/on) 우회 및 CSS `<style>@import` 구문을 이용한 IP 기반 인증 관리자 라우트 트리거와 전역 변수 저장소를 통한 플래그 탈취**
 
+* [PHP-1](./dreamhack/web/bronze/bronze-1/php-1/php-1.md) - **필터 없는 include 구문과 PHP 스트림 래퍼(php://filter)를 이용한 비실행 방식의 소스코드 유출 및 블랙리스트(flag/콜론) 필터 우회를 통한 플래그 획득**
+
 * [XSS-2](./dreamhack/web/bronze/bronze-1/xss-2/xss-2.md) - **innerHTML 기반 DOM XSS 취약점과 이벤트 핸들러(onerror) 우회를 이용한 관리자 봇(Bot) 쿠키 탈취**
 
 </details>
