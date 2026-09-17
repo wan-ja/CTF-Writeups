@@ -236,6 +236,35 @@
 <ul style="list-style-type: none;">
 
 <details>
+<summary><h3>🥈 Silver</h3></summary>
+<ul>
+
+<details>
+<summary><h4>Silver 1</h4></summary>
+
+</details>
+
+<details>
+<summary><h4>Silver 2</h4></summary>
+
+* [Web-SSRF](./dreamhack/web/silver/silver-2/web-ssrf/web-ssrf.md) - **필터의 대소문자 미구분 문자열 매칭 결함을 이용한 SSRF netloc 검증 우회 및 Burp Intruder 기반 랜덤 포트 브루트포스를 통한 내부 파일 서버 접근**
+
+</details>
+
+<details>
+<summary><h4>Silver 3</h4></summary>
+
+</details>
+
+<details>
+<summary><h4>Silver 4</h4></summary>
+
+</details>
+
+</ul>
+</details>
+
+<details>
 <summary><h3>🥉 Bronze</h3></summary>
 <ul>
 
