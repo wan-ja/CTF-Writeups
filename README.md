@@ -247,6 +247,8 @@
 <details>
 <summary><h4>Silver 2</h4></summary>
 
+* [CSP Bypass](./dreamhack/web/silver/silver-2/csp-bypass/csp-bypass.md) - **CSP `script-src 'self'` 조건을 이용한 동일 오리진 스크립트 재호출 및 이스케이프 없는 반사형 엔드포인트를 이용한 XSS 우회, 관리자 봇(Bot) 쿠키 탈취**
+
 * [Web-SSRF](./dreamhack/web/silver/silver-2/web-ssrf/web-ssrf.md) - **필터의 대소문자 미구분 문자열 매칭 결함을 이용한 SSRF netloc 검증 우회 및 Burp Intruder 기반 랜덤 포트 브루트포스를 통한 내부 파일 서버 접근**
 
 </details>
