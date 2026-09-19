@@ -451,6 +451,13 @@
 
 </details>
 
+<details>
+<summary><h4>Season 8 Round #6 (All-Round)</h4></summary>
+
+* `[Web]` [Style Board](./dreamhack/ctf/season8-round6/web/style-board/style-board.md) - **CSRF 토큰 미분리 및 autoescape 해제로 인한 Stored XSS를 결합한 관리자 봇 세션 탈취**
+
+</details>
+
 </ul>
 </details>
 
