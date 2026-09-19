@@ -8,41 +8,21 @@
 > 개인 학습 과정에서 분야별 주요 분석 케이스와 핵심 페이로드를 정돈한 요약 노트
 
 ### ⚙️ System & Reverse Engineering (시스템 분석 및 리버싱)
-* [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2형 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
-
-* [BitChanger](./dreamhack/reversing/silver/silver-4/bitchanger/bitchanger.md) - **Heaven's Gate(64비트 전환) 및 SYSCALL 안티 디버깅 정적 우회와 4원 1차 연립방정식 역산 스크립팅**
-
-* [Randzzz](./dreamhack/reversing/silver/silver-4/randzzz/randzzz.md) - **시드 없는 rand() 이중 분기 검증, GDB return 기반 sleep 우회 및 스택 메모리 직접 패치로 분할 복호화 조각 조합**
-
-* [Breaking Bad](./dreamhack/reversing/bronze/bronze-1/breaking-bad/breaking-bad.md) - **외부 파일 공백 오프셋 기반 키 파생 및 XOR·니블 스왑 역산 스크립팅, CRLF/LF 인코딩 불일치 원인 규명을 통한 플래그 복원**
-
-* [Patch](./dreamhack/reversing/silver/silver-4/patch/patch.md) - **윈도우 프로시저(WM_PAINT) 분석 및 GDI+ 렌더링 방해 함수 어셈블리 변조(ret)를 통한 화면 덮어쓰기 무력화**
-
-* [Stop before stops!](./dreamhack/reversing/bronze/bronze-2/stop-before-stops/stop_before_stops.md) - **C++ 전역 변수 초기화(.bss) 로직 정적 분석 및 GDB 동적 디버깅을 활용한 플래그 메모리 덤프**
+* [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 다운로더형 네트워크 통신 검증 강제 우회(GDB return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 평문 플래그 추출**
 
 <br>
 
 ### 📱 Mobile Security (안드로이드 앱 분석)
-* [UnCrackable Level 3](./vulnerable-apps/owasp-crackmes/uncrackable-level3/uncrackable-level3.md) - **JNI 네이티브 XOR 검증 로직 분석 및 Smali 정적 패칭 기반 Root/Tampering 우회**
+* [UnCrackable Level 3](./vulnerable-apps/owasp-crackmes/uncrackable-level3/uncrackable-level3.md) - **Frida 차단 환경에서의 Smali 정적 패칭 우회 및 JNI 네이티브 XOR 검증 로직 역산**
 
 * [Certificate Pinning Bypass](./vulnerable-apps/allsafe/certificate-pinning-bypass/certificate-pinning-bypass.md) - **OkHttp 인증서 피닝(Certificate Pinning) 검증 로직 분석 및 Frida 런타임 후킹을 통한 MITM 프록시 검증 우회**
-
-* [GyulVault](./dreamhack/reversing/silver/silver-3/gyulvault/gyulvault.md) - **JNI 네이티브 라이브러리 정적 분석 및 XOR 대칭성을 활용한 메모리 덤프 역연산**
-
-* [Deep Link Exploitation](./vulnerable-apps/allsafe/deep-link-exploitation/deep-link-exploitation.md) - **매니페스트(Manifest) 정적 분석을 통한 노출된 URI 스키마 식별 및 하드코딩 키 조합 기반 ADB 딥링크 트리거**
 
 <br>
 
 ### 🌐 Web Application & Log Analysis (웹 보안 및 로그 분석)
-* [Proxy-1](./dreamhack/web/bronze/bronze-3/proxy-1/proxy-1.md) - **SSRF 취약점과 Raw Socket 통신을 이용한 내부망 서비스 접근 및 관리자 인증 우회**
+* [Style Board](./dreamhack/ctf/season8-round6/web/style-board/style-board.md) - **CSRF 토큰 미분리 및 autoescape 해제로 인한 Stored XSS를 결합한 관리자 봇 세션 탈취**
 
-* [Dream Hospital (드림 병원 🌱)](./dreamhack/web/bronze/bronze-3/dream-hospital/dream-hospital.md) - **인가(Authorization) 검증 누락으로 인한 IDOR(안전하지 않은 직접 객체 참조) 취약점과 해시값 변조를 이용한 관리자 데이터 열람 및 플래그 탈취**
-
-* [MD5 Password](./dreamhack/web/bronze/bronze-3/md5-password/md5-password.md) - **PHP md5() 함수의 raw_output 특성과 MySQL 자동 형변환을 이용한 SQL Injection 및 인증 우회**
-
-* [XSS-1](./dreamhack/web/bronze/bronze-2/xss-1/xss-1.md) - **입력값 필터링 누락에 의한 Reflected XSS 취약점과 관리자 봇(Bot) 조종을 이용한 쿠키 탈취**
-
-* [CSRF-2](./dreamhack/web/bronze/bronze-4/csrf-2/csrf-2.md) - **CSRF 취약점을 이용한 관리자 비밀번호 변경 및 계정 탈취**
+* [Suggestion Box](./dreamhack/ctf/season8-round5/web/suggestion-box/suggestion-box.md) - **mysql2 쿼리 바인딩 결함을 이용한 Object Injection 및 DB 검증 로직 우회**
 
 ---
 <br>
@@ -77,7 +57,7 @@
 
 * [Randzzz](./dreamhack/reversing/silver/silver-4/randzzz/randzzz.md) - **시드 없는 rand() 이중 분기 검증, GDB return 기반 sleep 우회 및 스택 메모리 직접 패치로 분할 복호화 조각 조합**
 
-* [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 GDB를 이용한 C2형 네트워크 통신 검증 강제 우회(return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 RC4 복호화 평문 플래그 추출**
+* [Rivest](./dreamhack/reversing/silver/silver-4/rivest/rivest.md) - **UPX 언패킹 및 다운로더형 네트워크 통신 검증 강제 우회(GDB return 조작)와 메모리 상의 MD5 암호 키 직접 패치를 통한 평문 플래그 추출**
 
 * [Secure Mail](./dreamhack/reversing/silver/silver-4/secure-mail/secure-mail.md) - **난독화 JS 검증 로직 분석 및 alert/document.write 오버라이드 기반 생년월일 브루트포스**
 
@@ -447,7 +427,7 @@
 
 * `[Reversing]` `[Gold 1]` [Sticks](./dreamhack/ctf/season8-round5/reversing/sticks/sticks.md) - **바이너리 역공학을 통한 하노이의 탑 알고리즘 분석 및 자동화 스크립트 구현**
 
-* `[Web]` `[Silver 1]` [Suggestion Box](./dreamhack/ctf/season8-round5/web/suggestion-box/suggestion-box.md) - **Object Injection을 이용한 DB 검증 로직 우회 및 비공개 데이터 탈취**
+* `[Web]` `[Silver 1]` [Suggestion Box](./dreamhack/ctf/season8-round5/web/suggestion-box/suggestion-box.md) - **mysql2 쿼리 바인딩 결함을 이용한 Object Injection 및 DB 검증 로직 우회**
 
 </details>
 
@@ -492,7 +472,7 @@
 
 * [UnCrackable Level 1](./vulnerable-apps/owasp-crackmes/uncrackable-level1/uncrackable-level1.md) - **Smali 정적 패칭 기반 Root/Debug 탐지 우회 및 Frida 런타임 후킹을 통한 하드코딩 AES 시크릿 추출**
 
-* [UnCrackable Level 3](./vulnerable-apps/owasp-crackmes/uncrackable-level3/uncrackable-level3.md) - **JNI 네이티브 XOR 검증 로직 분석 및 Smali 정적 패칭 기반 Root/Tampering 우회**
+* [UnCrackable Level 3](./vulnerable-apps/owasp-crackmes/uncrackable-level3/uncrackable-level3.md) - **Frida 차단 환경에서의 Smali 정적 패칭 우회 및 JNI 네이티브 XOR 검증 로직 역산**
 
 </details>
 

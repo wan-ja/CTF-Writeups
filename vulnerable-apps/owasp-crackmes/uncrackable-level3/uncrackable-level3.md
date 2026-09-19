@@ -6,7 +6,7 @@
 
 * **분야:** Reversing, Mobile
 
-* **목표:** JNI 네이티브 라이브러리(`libfoo.so`) 내 XOR 비교 검증 로직을 분석하여 정답 문자열 도출, Root/Tampering/Anti-Debug 탐지 로직을 smali 정적 패칭으로 무력화하여 최종 검증 성공
+* **목표:** Root/Tampering/Anti-Debug 방어를 동적으로 우회할 수 없는 환경에서 Smali 정적 패칭으로 진입한 뒤, JNI 네이티브 라이브러리(`libfoo.so`) 내 XOR 비교 검증 로직을 정적으로 역산해 최종 검증 성공
 
 ## 2. 취약점 분석
 제공된 APK(`UnCrackable-Level3`)를 JADX로 디컴파일한 결과, 정답 검증 로직 자체는 Java 계층에 존재하지 않고 native(`libfoo.so`) 계층에 전적으로 위임되어 있으며, Java 계층은 root/tampering/anti-debug 탐지 후 조건부로 진입을 차단하는 다중 방어선 구조로 확인.
@@ -71,61 +71,29 @@ if (_1_sub_doit__opaque_list1_1 != (uint *)0x0) {
 
 ## 3. 공격 수행
 
-### 3.1. 정적분석: JNI 함수 및 XOR 로직 파악
+### 3.1. 앱 실행 및 차단 로직 확인
 
-1. JADX-GUI로 APK 디컴파일 후 `MainActivity` 클래스의 `verifyLibs()`, `init()`, `onCreate()` 내 root/tampering 검사 로직 및 `System.loadLibrary("foo")` 확인.
+1. 원본 APK를 rooted 테스트 단말(Galaxy A31)에 설치, root 탐지 로직에 의해 즉시 차단되는 것을 확인.
 
-![MainActivity - TAG/tampered/xorkey 필드 및 showDialog/verifyLibs](./images/01-jadx.png)
+![원본 APK 설치 후 Rooting 다이얼로그](./images/01-rooting_dialog.png)
 
-![MainActivity - onCreate/verify 전체 및 loadLibrary](./images/02-jadx2.png)
+2. JADX-GUI로 APK 디컴파일 후 `MainActivity` 클래스의 `verifyLibs()`, `init()`, `onCreate()` 내 root/tampering 검사 로직 및 `System.loadLibrary("foo")` 확인, 위 다이얼로그를 띄우는 분기 조건의 위치를 코드상에서 특정.
 
-2. `res/layout/activity_main.xml`에서 `verify` 버튼의 `android:onClick="verify"` 속성 확인, xref 없이 존재하는 `verify(View)` 메서드의 호출 경로 특정.
+![MainActivity - TAG/tampered/xorkey 필드 및 showDialog/verifyLibs](./images/02-jadx.png)
 
-![activity_main.xml - verify 버튼 onClick 연결](./images/03-xml_verify.png)
+![MainActivity - onCreate/verify 전체 및 loadLibrary](./images/03-jadx2.png)
 
-3. `CodeCheck.java`에서 `check_code()`가 정답 비교 없이 `bar()` native 함수로 그대로 위임하는 구조 확인.
+3. `res/layout/activity_main.xml`에서 `verify` 버튼의 `android:onClick="verify"` 속성 확인, xref 없이 존재하는 `verify(View)` 메서드의 호출 경로 특정.
 
-![CodeCheck.java - bar() native 위임](./images/04-codecheck.png)
+![activity_main.xml - verify 버튼 onClick 연결](./images/04-xml_verify.png)
 
-4. Ghidra로 `lib/arm64-v8a/libfoo.so` 로드, `baz()`, `init()`, `bar()` 세 개 export 함수 디컴파일.
+4. `CodeCheck.java`에서 `check_code()`가 정답 비교 없이 `bar()` native 함수로 그대로 위임하는 구조 확인.
 
-![Ghidra - baz() 디컴파일](./images/05-ghidra_baz.png)
+![CodeCheck.java - bar() native 위임](./images/05-codecheck.png)
 
-![Ghidra - init() 디컴파일](./images/06-ghidra_init.png)
+### 3.2. 동적 우회 시도: Frida 후킹 (실패)
 
-![Ghidra - bar() 디컴파일](./images/07-ghidra_var.png)
-
-5. `bar()` 내부에서 호출되는 `FUN_001010e0()`의 최후단 코드에서 `local_68`에 대입되는 세 개의 64비트 상수(정답 도출용 실질 재료) 확인.
-
-![Ghidra - FUN_001010e0 최후단, local_68 상수 3개](./images/08-bar_in_fun.png)
-
-6. Python으로 `xorkey`와 `local_68`(리틀엔디안 바이트 재배열)을 XOR하는 스크립트 작성 및 실행.
-
-```python
-import struct
-
-key = "pizzapizzapizzapizzapizz"
-xor_key = key.encode('ascii')
-
-local_68 = (
-    struct.pack('<Q', 0x1549170f1311081d) +
-    struct.pack('<Q', 0x15131d5a1903000d) +
-    struct.pack('<Q', 0x14130817005a0e08)
-)
-
-flag = bytes([xor_key[i] ^ local_68[i] for i in range(len(xor_key))])
-print(flag)
-```
-
-![exploit.py 실행 결과](./images/09-exploit_py.png)
-
-### 3.2. 동적 검증 시도: Frida 후킹 (실패)
-
-7. 원본 APK를 rooted 테스트 단말(Galaxy A31)에 설치, root 탐지 로직에 의해 즉시 차단되는 것을 확인.
-
-![원본 APK 설치 후 Rooting 다이얼로그](./images/10-rooting_dialog.png)
-
-8. `RootDetection`, `IntegrityCheck`, `Debug.isDebuggerConnected` 세 지점을 무력화하는 Frida 스크립트 작성, `spawn` 모드로 후킹 시도.
+5. `RootDetection`, `IntegrityCheck`, `Debug.isDebuggerConnected` 세 지점을 무력화하는 Frida 스크립트 작성, `spawn` 모드로 후킹 시도.
 
 ```javascript
 // [hook.js] Root/Anti-Debug 탐지 3개 지점 후킹 스크립트
@@ -143,36 +111,70 @@ Java.perform(function () {
 });
 ```
 
-9. `frida -U -f <package> -l hook.js` 실행 시 삼성 Knox 환경의 SELinux 정책 및 ART 계층 충돌로 spawn 반복 실패 확인. `magiskpolicy`를 통한 SELinux 정책 예외 추가로도 근본 해결 불가, 기기 환경 한계로 판단하여 동적 후킹 방식 포기.
+6. `frida -U -f <package> -l hook.js` 실행 시 삼성 Knox 환경의 SELinux 정책 및 ART 계층 충돌로 spawn 반복 실패 확인. `magiskpolicy`를 통한 SELinux 정책 예외 추가로도 근본 해결 불가, 기기 환경 한계로 판단하여 동적 후킹 방식 포기.
 
-![Frida spawn 타임아웃/크래시 재현](./images/11-frida_err.png)
+![Frida spawn 타임아웃/크래시 재현](./images/06-frida_err.png)
 
-### 3.3. 우회 전환: smali 정적 패칭
+### 3.3. 우회 전환: Smali 정적 패칭
 
-10. Frida 대신 apktool을 이용한 정적 바이너리 패칭으로 방향 전환. APK 디컴파일 후 `MainActivity.smali`의 `onCreate()` 내 root/tampering 분기 조건 5개 지점(`checkRoot1/2/3`, `isDebuggable`, `tampered`) 특정.
+7. Frida 대신 apktool을 이용한 정적 바이너리 패칭으로 방향 전환. APK 디컴파일 후 `MainActivity.smali`의 `onCreate()` 내 root/tampering 분기 조건 5개 지점(`checkRoot1/2/3`, `isDebuggable`, `tampered`) 특정.
 
-![apktool d 디컴파일 실행](./images/12-apktool_d.png)
+![apktool d 디컴파일 실행](./images/07-apktool_d.png)
 
-![smali 원본 - 5개 분기 조건](./images/13-smali_origin.png)
+![smali 원본 - 5개 분기 조건](./images/08-smali_origin.png)
 
-11. 각 조건문 직전에 `const/4 v0, 0x0`을 삽입, 판단에 쓰이는 레지스터 값을 강제로 `false`(0)로 고정하여 분기 로직만 무력화.
+8. 각 조건문 직전에 `const/4 v0, 0x0`을 삽입, 판단에 쓰이는 레지스터 값을 강제로 `false`(0)로 고정하여 분기 로직만 무력화.
 
-![smali 패치 후 - const/4 v0, 0x0 5줄 삽입](./images/14-smali_edit.png)
+![smali 패치 후 - const/4 v0, 0x0 5줄 삽입](./images/09-smali_edit.png)
 
-12. `apktool b`로 재조립, `uber-apk-signer`로 재서명. 패치 대상인 `classes.dex`는 재조립 시 바이트가 변경되어 `verifyLibs()`의 CRC 무결성 체크(`entry3.getCrc() != baz()`)가 항상 불일치, `tampered` 필드가 31337로 세팅됨을 확인.
+9. `apktool b`로 재조립, `uber-apk-signer`로 재서명. 패치 대상인 `classes.dex`는 재조립 시 바이트가 변경되어 `verifyLibs()`의 CRC 무결성 체크(`entry3.getCrc() != baz()`)가 항상 불일치, `tampered` 필드가 31337로 세팅됨을 확인.
 
-![apktool b 재조립 실행](./images/15-apktool_b.png)
+![apktool b 재조립 실행](./images/10-apktool_b.png)
 
-![uber-apk-signer 서명 성공 로그](./images/16-apk_signer.png)
+![uber-apk-signer 서명 성공 로그](./images/11-apk_signer.png)
 
-13. 패치된 APK를 재설치, 정답 문자열 입력 후 root 다이얼로그 없이 `Success!` 확인.
+### 3.4. 진입 후 정적 분석: JNI XOR 검증 로직 역산
+
+10. 차단 다이얼로그를 우회해 앱에 진입할 수 있게 되었으나, 정답 문자열 자체는 아직 알 수 없는 상태. Ghidra로 `lib/arm64-v8a/libfoo.so` 로드, `baz()`, `init()`, `bar()` 세 개 export 함수 디컴파일.
+
+![Ghidra - baz() 디컴파일](./images/12-ghidra_baz.png)
+
+![Ghidra - init() 디컴파일](./images/13-ghidra_init.png)
+
+![Ghidra - bar() 디컴파일](./images/14-ghidra_var.png)
+
+11. `bar()` 내부에서 호출되는 `FUN_001010e0()`의 최후단 코드에서 `local_68`에 대입되는 세 개의 64비트 상수(정답 도출용 실질 재료) 확인.
+
+![Ghidra - FUN_001010e0 최후단, local_68 상수 3개](./images/15-bar_in_fun.png)
+
+12. Python으로 `xorkey`와 `local_68`(리틀엔디안 바이트 재배열)을 XOR하는 스크립트 작성 및 실행.
+
+```python
+import struct
+
+key = "pizzapizzapizzapizzapizz"
+xor_key = key.encode('ascii')
+
+local_68 = (
+    struct.pack('<Q', 0x1549170f1311081d) +
+    struct.pack('<Q', 0x15131d5a1903000d) +
+    struct.pack('<Q', 0x14130817005a0e08)
+)
+
+flag = bytes([xor_key[i] ^ local_68[i] for i in range(len(xor_key))])
+print(flag)
+```
+
+![exploit.py 실행 결과](./images/16-exploit_py.png)
+
+13. 패치된 APK를 재설치, 위에서 역산한 정답 문자열 입력 후 root 다이얼로그 없이 `Success!` 확인.
 
 ![adb install 성공](./images/17-adb_install.png)
 
 ![Success 다이얼로그 최종 확인](./images/18-final_success.png)
 
 ## 4. 획득 결과
-Frida 동적 후킹이 기기 환경(Knox RKP/SELinux) 이슈로 차단되었으나, smali 정적 패칭으로 우회 방식을 전환하여 최종 검증 성공.
+Frida 동적 후킹이 기기 환경(Knox RKP/SELinux) 이슈로 차단되었으나, smali 정적 패칭으로 우회 방식을 전환해 앱 진입에 성공했고, 이후 native 계층을 정적으로 역산해 최종 검증까지 성공.
 
 * **정답 문자열 (FLAG):** `making owasp great again`
 
