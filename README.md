@@ -454,6 +454,8 @@
 <details>
 <summary><h4>Season 8 Round #6 (All-Round)</h4></summary>
 
+* `[Reversing]` [3asy Drone Reversing](./dreamhack/ctf/season8-round6/reversing/3asy-drone-reversing/3asy-drone-reversing.md) - **펌웨어 테스트 백도어(uplink) 경로를 통한 command uplink packet 통신 포맷 복원 및 하드코딩 인증 상수 기반 프레임 위조**
+
 * `[Crypto]` [Contrarianism](./dreamhack/ctf/season8-round6/crypto/contrarianism/contrarianism.md) - **Agrawal-Biswas 소수판별 테스트의 이항정리 성질 분석 및 Chernick's formula 기반 캐마이클 수 구성을 통한 합성수의 소수 위장 및 소인수 노출**
 
 * `[Web]` [Style Board](./dreamhack/ctf/season8-round6/web/style-board/style-board.md) - **CSRF 토큰 미분리 및 autoescape 해제로 인한 Stored XSS를 결합한 관리자 봇 세션 탈취**
