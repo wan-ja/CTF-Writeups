@@ -111,7 +111,7 @@ else
 
 14. `Ctrl+C`로 강제 인터럽트 후 `bt`(backtrace)로 콜스택을 확인. `curl_easy_perform`은 컴파일러의 꼬리 호출 최적화(tail-call optimization)로 인해 별도 프레임 없이 사라져 있으며, libcurl 내부 함수(`#7`)가 사실상 그 역할을 대신하고 있음을 확인. 메인 바이너리(`chall`)의 호출 지점(`#8`, `0x555...` 주소로 식별 가능)으로 잘못 진입하지 않도록, `frame 7`로 명시적으로 프레임을 선택.
 
-![콜스택 확인 및 프레임 선택](images/16-bt_frame_select.png)
+![콜스택 확인 및 프레임 선택](./images/16-bt_frame_select.png)
 
 15. 선택된 프레임(`#7`)에서 `return (int)0` 명령어를 실행하여 libcurl의 통신 성공 코드인 `CURLE_OK`(0)를 강제로 반환값으로 위조. 이로 인해 실제 파일 다운로드는 생략되었으므로, 다음 단계인 해시 연산(`EVP_DigestFinal_ex`)이 빈 컨텍스트에 대한 비정상적인 쓰레기 값을 뱉어낼 것임을 인지하고 해당 지점으로 진행.
 

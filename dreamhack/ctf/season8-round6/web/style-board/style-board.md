@@ -86,11 +86,11 @@ fetch('/mypage')
 
 ![Write Post 화면 - payload 입력](./images/01-write_post.png)
 
-2. Burp Suite HTTP History에서 저장된 게시글(`GET /board/<id>`) 요청을 확인, Response Raw 탭에서 스크립트 태그가 이스케이프 없이 그대로 반영됨을 확인해 `autoescape false` 구조를 wire 레벨에서 검증.
+2. Burp Suite HTTP History에서 저장된 게시글(`GET /board/2`) 요청을 확인, Response Raw 탭에서 스크립트 태그가 이스케이프 없이 그대로 반영됨을 확인해 `autoescape false` 구조를 wire 레벨에서 검증.
 
 ![Burp Raw Response - autoescape 미적용으로 script 태그 그대로 노출](./images/02-burp_script.png)
 
-3. `/report`에 `path=board/<id>` 제출, 관리자 봇이 admin 세션으로 해당 게시글을 열람해 XSS가 실행됨을 Success alert로 확인.
+3. 3. `check_url()`의 봇 유도 경로를 이용해 `/report`에 `path=board/2` 제출, 관리자 봇이 admin 세션으로 해당 게시글을 열람해 XSS가 실행됨을 Success alert로 확인.
 
 ![Report 제출 후 Success alert 확인](./images/03-report_success.png)
 
