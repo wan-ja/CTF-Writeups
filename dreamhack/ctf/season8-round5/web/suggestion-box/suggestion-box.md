@@ -11,7 +11,40 @@
 * **목표:** Object Injection을 통한 비밀번호 검증 로직 우회 및 비공개 게시글 탈취
 
 ## 2. 취약점 분석
-제공된 `app.js` 분석 결과, `express.json()` 미들웨어가 `password` 필드에 문자열이 아닌 중첩된 객체를 검증 없이 허용하며, 이 값이 `mysql2`의 `execute()`가 아닌 `query()`를 통해 바인딩되는 구조로 확인. `query()`는 값을 DB 서버로 안전하게 별도 전달하는 방식이 아니라, mysql2가 값을 문자열로 바꿔 SQL 문장 자체에 직접 이어붙이는 방식이라, 객체 타입 값이 들어오면 `` `key` = value `` 형태로 풀어써지는 동작이 최종 쿼리에 그대로 반영되는 구조로 확인.
+제공된 `app.js` 분석 결과, 비공개 게시글은 GET 요청만으로는 `content`가 응답에 포함되지 않아 반드시 비밀번호 검증 쿼리를 통과해야 하는 구조로 확인.
+
+```javascript
+// [app.js] GET /article/:id - 비공개 글은 content 필드 자체를 응답에서 제외
+if (article.is_private) {
+  return res.render('article', { article: { id: article.id, title: article.title, author: article.author }, showPasswordForm: true, error: null });
+} else {
+  const contentHtml = escapeAndFormat(article.content);
+  return res.render('article', { article: { id: article.id, title: article.title, author: article.author, contentHtml }, showPasswordForm: false, error: null });
+}
+```
+
+DB 드라이버로 `mysql2`를 사용하며, 해당 검증은 `execute()`가 아닌 `query()`를 통해 이루어지는 구조로 확인. `query()`는 파라미터를 DB 서버로 별도 전달하는 방식이 아니라 mysql2가 클라이언트 단에서 직접 SQL 텍스트를 조립하는 방식이며, 이 조립 과정에서 문자열·숫자 타입 값은 안전하게 이스케이프되어 값으로만 삽입되나 객체 타입 값이 들어오면 `` `key` = value `` 형태(SET절 포맷)로 직렬화되는 동작이 확인됨.
+
+```javascript
+// [app.js] mysql2 드라이버 연결 및 db.query() 사용 - 서버 사이드 Prepared Statement 미적용
+const mysql = require('mysql2');
+const db = mysql.createConnection({ host: 'db', user: 'chall', password: 'password', database: 'post_db' });
+const dbQuery = util.promisify(db.query).bind(db);
+```
+
+```javascript
+// [app.js] POST /article/:id - 비밀번호 검증 쿼리
+app.post('/article/:id', async (req, res) => {
+  const id = req.params.id;
+  const { password } = req.body;
+
+  const q = 'SELECT id, title, author, content FROM articles WHERE id = ? AND is_private = 1 AND password = ? LIMIT 1';
+  try {
+    const rows = await dbQuery(q, [id, password]);
+    // ... (중략) ...
+```
+
+이 자리에 문자열이 아닌 값을 전달할 경로가 있는지 확인한 결과, `express.urlencoded({ extended: false })`는 중첩된 객체 형태의 값을 생성할 수 없으나 `express.json()`은 `Content-Type: application/json` 요청에 대해 임의 깊이의 중첩 객체를 그대로 `req.body`에 파싱하는 구조로 확인, 비밀번호 검증 쿼리는 이 값의 타입을 검증하지 않고 그대로 바인딩에 사용함을 확인.
 
 ```javascript
 // [app.js] JSON 파싱 미들웨어 - 중첩 객체(Nested Object) 형태의 요청 바디 허용
@@ -19,19 +52,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 ```
 
-```javascript
-// [app.js] db.query 사용 - 서버 사이드 Prepared Statement 미적용
-const dbQuery = util.promisify(db.query).bind(db);
-```
-
-```javascript
-// [app.js] 비밀번호 검증 쿼리 - 파라미터 타입 검증 없이 객체를 그대로 바인딩
-const { password } = req.body;
-const q = 'SELECT id, title, author, content FROM articles WHERE id = ? AND is_private = 1 AND password = ? LIMIT 1';
-const rows = await dbQuery(q, [id, password]);
-```
-
-* **분석 결론:** `password`에 `{"password": 1}`과 같은 중첩 객체가 전달될 경우 mysql2가 이를 `` `password` = 1 ``로 풀어써 최종 쿼리가 `password = `password` = 1`로 조립됨. 백틱으로 감싼 `` `password` ``는 문자열이 아닌 컬럼 이름으로 해석되어 "password 컬럼이 자기 자신과 같은가"라는 항상 참인 비교가 성립, 이 결과가 다시 `= 1`과 비교되며 실제 비밀번호 값과 무관하게 조건문 전체가 참으로 평가.
+* **분석 결론:** `password`에 `{"password": 1}`과 같은 중첩 객체가 전달될 경우 mysql2가 이를 `` `password` = 1 ``로 직렬화해 최종 쿼리가 `password = `password` = 1`로 조립됨. 백틱으로 감싼 `` `password` ``는 문자열이 아닌 컬럼 이름으로 해석되어 "password 컬럼이 자기 자신과 같은가"라는 항상 참인 비교가 성립, 이 결과가 다시 `= 1`과 비교되며 실제 비밀번호 값과 무관하게 조건문 전체가 참으로 평가.
 
 ## 3. 공격 수행
 

