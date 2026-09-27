@@ -2,7 +2,10 @@
 
 ## 1. 문제 개요
 
-* **문제 링크:** 
+* **문제 링크:** [Dreamhack CTF - 3asy Drone Reversing](https://dreamhack.io/wargame/challenges/3160)
+(Dreamhack CTF Season 8 Round #6 출제)
+
+* **티어:** Silver 2
 
 * **분야:** Reversing
 
