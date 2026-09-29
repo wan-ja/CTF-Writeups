@@ -253,6 +253,8 @@
 <details>
 <summary><h4>Bronze 1</h4></summary>
 
+* [Are you admin?](./dreamhack/web/bronze/bronze-1/are-you-admin/are-you-admin.md) - **CDP `Network.setExtraHTTPHeaders`를 통한 Authorization 헤더 전역 주입 결함과 `safe` 필터 오용으로 인한 Reflected XSS를 결합한 관리자 봇(Bot) 자격증명 탈취**
+
 * [CSRF-1](./dreamhack/web/bronze/bronze-1/csrf-1/csrf-1.md) - **블랙리스트 필터링(frame/script/on) 우회 및 CSS `<style>@import` 구문을 이용한 IP 기반 인증 관리자 라우트 트리거와 전역 변수 저장소를 통한 플래그 탈취**
 
 * [FunJS](./dreamhack/web/bronze/bronze-1/funjs/funjs.md) - **자동 난독화 도구(obfuscator.io류)로 가려진 클라이언트 사이드 JS 검증 로직 분석 및 breakpoint·콘솔을 이용한 flag 계산**
