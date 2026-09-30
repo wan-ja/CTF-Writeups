@@ -261,6 +261,8 @@
 
 * [PHP-1](./dreamhack/web/bronze/bronze-1/php-1/php-1.md) - **필터 없는 include 구문과 PHP 스트림 래퍼(php://filter)를 이용한 비실행 방식의 소스코드 유출 및 블랙리스트(flag/콜론) 필터 우회를 통한 플래그 획득**
 
+* [Tomcat Manager](./dreamhack/web/bronze/bronze-1/tomcat-manager/tomcat-manager.md) - **`image.jsp`의 검증 없는 파일 경로 처리로 인한 LFI(Path Traversal)를 통한 Tomcat Manager 평문 자격증명 탈취 및 war 배포를 이용한 RCE 공격**
+
 * [XSS-2](./dreamhack/web/bronze/bronze-1/xss-2/xss-2.md) - **innerHTML 기반 DOM XSS 취약점과 이벤트 핸들러(onerror) 우회를 이용한 관리자 봇(Bot) 쿠키 탈취**
 
 </details>
