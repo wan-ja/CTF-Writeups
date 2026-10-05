@@ -257,6 +257,8 @@
 
 * [CSRF-1](./dreamhack/web/bronze/bronze-1/csrf-1/csrf-1.md) - **블랙리스트 필터링(frame/script/on) 우회 및 CSS `<style>@import` 구문을 이용한 IP 기반 인증 관리자 라우트 트리거와 전역 변수 저장소를 통한 플래그 탈취**
 
+* [Easy-Login](./dreamhack/web/bronze/bronze-1/easy-login/easy-login.md) - **느슨한 비교(Type Juggling)를 이용한 boolean-string 형변환 OTP 검증 우회와 strcmp() 배열 반환 결함을 결합한 다단계 로그인 인증 우회**
+
 * [FunJS](./dreamhack/web/bronze/bronze-1/funjs/funjs.md) - **자동 난독화 도구(obfuscator.io류)로 가려진 클라이언트 사이드 JS 검증 로직 분석 및 breakpoint·콘솔을 이용한 flag 계산**
 
 * [PHP-1](./dreamhack/web/bronze/bronze-1/php-1/php-1.md) - **필터 없는 include 구문과 PHP 스트림 래퍼(php://filter)를 이용한 비실행 방식의 소스코드 유출 및 블랙리스트(flag/콜론) 필터 우회를 통한 플래그 획득**

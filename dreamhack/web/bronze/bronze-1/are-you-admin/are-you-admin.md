@@ -1,8 +1,8 @@
-# [Dreamhack CTF] Are you admin? - Web Hacking
+# [Dreamhack] Are you admin? - Web Hacking
 
 ## 1. 문제 개요
 
-* **문제 링크:** [Dreamhack CTF - Are you admin?](https://dreamhack.io/wargame/challenges/1922)
+* **문제 링크:** [Dreamhack - Are you admin?](https://dreamhack.io/wargame/challenges/1922)
 
 * **분야:** Web
 
