@@ -486,3 +486,24 @@
 
 </ul>
 </details>
+
+<details>
+<summary><h2>🔐 PortSwigger (Web Security Academy)</h2></summary>
+<ul style="list-style-type: none;">
+
+<details>
+<summary><h3>Authentication</h3></summary>
+<ul>
+
+<details>
+<summary><h4>Apprentice</h4></summary>
+
+* [Username Enumeration via Different Responses](./portswigger/authentication/username-enumeration-via-different-responses/username-enumeration-via-different-responses.md) - **로그인 응답 길이 차이를 이용한 유효 사용자명 열거 및 횟수 제한 부재를 악용한 비밀번호 무차별 대입 인증 우회**
+
+</details>
+
+</ul>
+</details>
+
+</ul>
+</details>
