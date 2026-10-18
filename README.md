@@ -505,5 +505,19 @@
 </ul>
 </details>
 
+<details>
+<summary><h3>Business Logic Vulnerabilities</h3></summary>
+<ul>
+
+<details>
+<summary><h4>Apprentice</h4></summary>
+
+* [Excessive Trust in Client-Side Controls](./portswigger/business-logic-vulnerabilities/excessive-trust-in-client-side-controls/excessive-trust-in-client-side-controls.md) - **클라이언트 요청 파라미터(price)에 대한 서버 측 재검증 부재를 이용한 상품 가격 변조 및 임의 금액 결제**
+
+</details>
+
+</ul>
+</details>
+
 </ul>
 </details>
