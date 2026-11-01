@@ -514,6 +514,8 @@
 
 * [Excessive Trust in Client-Side Controls](./portswigger/business-logic-vulnerabilities/excessive-trust-in-client-side-controls/excessive-trust-in-client-side-controls.md) - **클라이언트 요청 파라미터(price)에 대한 서버 측 재검증 부재를 이용한 상품 가격 변조 및 임의 금액 결제**
 
+* [High-Level Logic Vulnerability](./portswigger/business-logic-vulnerabilities/high-level-logic-vulnerability/high-level-logic-vulnerability.md) - **장바구니 수량(quantity) 파라미터의 음수 입력 검증 부재를 악용한 주문 총액 조작 및 잔액 초과 상품의 우회 결제**
+
 </details>
 
 </ul>
