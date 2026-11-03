@@ -61,6 +61,8 @@
 
 * [Secure Mail](./dreamhack/reversing/silver/silver-4/secure-mail/secure-mail.md) - **난독화 JS 검증 로직 분석 및 alert/document.write 오버라이드 기반 생년월일 브루트포스**
 
+* [What is your name?](./dreamhack/reversing/silver/silver-4/what-is-your-name/what-is-your-name.md) - **MSVC CRT 패턴 기반 main 식별 및 GetModuleFileNameA 자기 파일명 참조 로직 분석, 파일별 하드코딩 인덱스·치환 상수 정적 추출을 통한 11개 분할 플래그 조각 복원**
+
 </details>
 
 </ul>
