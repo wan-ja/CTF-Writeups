@@ -1,4 +1,4 @@
-# [PortSwigger] Inconsistent security controls - Web Hacking
+# [PortSwigger] Inconsistent Security Controls - Web Hacking
 
 ## 1. 문제 개요
 

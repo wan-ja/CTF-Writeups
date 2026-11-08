@@ -516,6 +516,8 @@
 
 * [Excessive Trust in Client-Side Controls](./portswigger/business-logic-vulnerabilities/excessive-trust-in-client-side-controls/excessive-trust-in-client-side-controls.md) - **클라이언트 요청 파라미터(price)에 대한 서버 측 재검증 부재를 이용한 상품 가격 변조 및 임의 금액 결제**
 
+* [Flawed Enforcement of Business Rules](./portswigger/business-logic-vulnerabilities/flawed-enforcement-of-business-rules/flawed-enforcement-of-business-rules.md) - **쿠폰 중복 적용 검사 로직(직전 코드만 비교)의 결함을 악용한 할인 무제한 누적 및 총액 우회 결제**
+
 * [High-Level Logic Vulnerability](./portswigger/business-logic-vulnerabilities/high-level-logic-vulnerability/high-level-logic-vulnerability.md) - **장바구니 수량(quantity) 파라미터의 음수 입력 검증 부재를 악용한 주문 총액 조작 및 잔액 초과 상품의 우회 결제**
 
 * [Inconsistent Security Controls](./portswigger/business-logic-vulnerabilities/inconsistent-security-controls/inconsistent-security-controls.md) - **이메일 변경 기능의 도메인 검증 부재를 악용한 직원 권한 획득 및 관리자 패널 접근**
