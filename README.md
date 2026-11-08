@@ -527,5 +527,19 @@
 </ul>
 </details>
 
+<details>
+<summary><h3>File Upload Vulnerabilities</h3></summary>
+<ul>
+
+<details>
+<summary><h4>Apprentice</h4></summary>
+
+* [Remote Code Execution via Web Shell Upload](./portswigger/file-upload-vulnerabilities/remote-code-execution-via-web-shell-upload/remote-code-execution-via-web-shell-upload.md) - **업로드 검증 부재와 업로드 디렉터리의 PHP 실행을 악용한 웹 셸 업로드 및 원격 코드 실행을 통한 서버 내 파일 탈취**
+
+</details>
+
+</ul>
+</details>
+
 </ul>
 </details>
