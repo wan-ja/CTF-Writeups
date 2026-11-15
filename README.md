@@ -506,6 +506,8 @@
 
 * [User ID Controlled by Request Parameter](./portswigger/access-control-vulnerabilities/user-id-controlled-by-request-parameter/user-id-controlled-by-request-parameter.md) - **계정 페이지가 조회 대상을 클라이언트 제어 id 파라미터로만 식별하고 소유자 인가를 검증하지 않는 IDOR(수평적 권한 상승)을 이용한 타 사용자 API Key 탈취**
 
+* [User ID Controlled by Request Parameter, with Unpredictable User IDs](./portswigger/access-control-vulnerabilities/user-id-controlled-by-request-parameter-with-unpredictable-user-ids/user-id-controlled-by-request-parameter-with-unpredictable-user-ids.md) - **블로그 작성자 링크로 노출된 GUID를 수집해 추측 불가능한 식별자 보호를 우회한 IDOR(수평적 권한 상승) 및 타 사용자 API Key 탈취**
+
 * [User Role Can Be Modified in User Profile](./portswigger/access-control-vulnerabilities/user-role-can-be-modified-in-user-profile/user-role-can-be-modified-in-user-profile.md) - **이메일 변경 엔드포인트의 Mass Assignment 결함을 악용해 요청 본문에 roleid를 주입한 권한 상승 및 관리자 기능(사용자 삭제) 수행**
 
 * [User Role Controlled by Request Parameter](./portswigger/access-control-vulnerabilities/user-role-controlled-by-request-parameter/user-role-controlled-by-request-parameter.md) - **관리자 여부를 클라이언트 제어 쿠키(Admin)로 판단하는 설계 결함을 악용한 쿠키 위조 기반 권한 상승 및 관리자 기능(사용자 삭제) 수행**
