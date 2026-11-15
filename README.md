@@ -502,6 +502,8 @@
 
 * [Unprotected Admin Functionality](./portswigger/access-control-vulnerabilities/unprotected-admin-functionality/unprotected-admin-functionality.md) - **robots.txt를 통한 관리자 패널 경로(/administrator-panel) 노출과 서버 측 인가 검증 부재를 악용한 비인가 관리자 기능 접근 및 사용자 삭제**
 
+* [Unprotected Admin Functionality with Unpredictable URL](./portswigger/access-control-vulnerabilities/unprotected-admin-functionality-with-unpredictable-url/unprotected-admin-functionality-with-unpredictable-url.md) - **메인 페이지 응답의 인라인 스크립트에 하드코딩된 관리자 패널 경로 노출과 서버 측 인가 검증 부재를 악용한 비인가 관리자 기능 접근 및 사용자 삭제**
+
 </details>
 
 </ul>
