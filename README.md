@@ -494,6 +494,20 @@
 <ul style="list-style-type: none;">
 
 <details>
+<summary><h3>Access Control Vulnerabilities</h3></summary>
+<ul>
+
+<details>
+<summary><h4>Apprentice</h4></summary>
+
+* [Unprotected Admin Functionality](./portswigger/access-control-vulnerabilities/unprotected-admin-functionality/unprotected-admin-functionality.md) - **robots.txt를 통한 관리자 패널 경로(/administrator-panel) 노출과 서버 측 인가 검증 부재를 악용한 비인가 관리자 기능 접근 및 사용자 삭제**
+
+</details>
+
+</ul>
+</details>
+
+<details>
 <summary><h3>Authentication</h3></summary>
 <ul>
 
