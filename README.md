@@ -504,6 +504,8 @@
 
 * [Unprotected Admin Functionality with Unpredictable URL](./portswigger/access-control-vulnerabilities/unprotected-admin-functionality-with-unpredictable-url/unprotected-admin-functionality-with-unpredictable-url.md) - **메인 페이지 응답의 인라인 스크립트에 하드코딩된 관리자 패널 경로 노출과 서버 측 인가 검증 부재를 악용한 비인가 관리자 기능 접근 및 사용자 삭제**
 
+* [User Role Controlled by Request Parameter](./portswigger/access-control-vulnerabilities/user-role-controlled-by-request-parameter/user-role-controlled-by-request-parameter.md) - **관리자 여부를 클라이언트 제어 쿠키(Admin)로 판단하는 설계 결함을 악용한 쿠키 위조 기반 권한 상승 및 관리자 기능(사용자 삭제) 수행**
+
 </details>
 
 </ul>
